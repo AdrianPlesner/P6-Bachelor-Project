@@ -5,13 +5,12 @@ from gluonts.dataset.util import to_pandas
 import matplotlib.pyplot as plt
 
 
-def load_h5_to_gluon(path, train_size=0, test_size=0, freq="1H", key=""):
+def load_h5_to_gluon(path, train_size=0, test_size=0, freq="1H", key="", sensor=0):
     store = pd.HDFStore(path)
     if key == "":
         key = store.keys()[0]
     data = store[key]
     store.close()
-    sensor = 0
     size = len(data.values)
     if train_size == 0 and test_size == 0:
         train_size = size - size // 10
