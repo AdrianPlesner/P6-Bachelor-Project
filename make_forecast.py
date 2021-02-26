@@ -12,8 +12,8 @@ from pathlib import Path
 from gluonts.model.predictor import Predictor
 
 data = []
-for s in range(5):
-    train, test = load_h5_to_gluon("./pems-bay.h5", train_size=288 * 3, test_size=288, freq="5Min", sensor=s)
+for s in range(4):
+    train, test = load_h5_to_gluon("./data/pems-bay.h5", train_size=288 * 3, test_size=288, freq="5Min", sensor=s)
     arr = np.array(train.list_data[0]['target'].reshape(-1, 1))
     scaler = preprocessing.StandardScaler().fit(arr)
     x = scaler.transform(arr)
@@ -29,7 +29,7 @@ for s in range(5):
 metadata = {'prediction_length': 288, 'freq': "5Min", 'train_length': 288 * 3}
 
 e = []
-for n in range(5):
+for n in range(4):
     e.append(GaussianProcessEstimator(
         metadata['freq'],
         metadata['prediction_length'],
@@ -47,11 +47,11 @@ f = []
 t = []
 f_e = []
 t_e = []
-for n in range(5):
+for n in range(4):
     ### train data
     p = e[n].train(data[n]['train'])
     ### load pretrained model (model only works for first 4 sensors, 3 days training, 1 day prediction
-    # p = Predictor.deserialize(Path("./predictor/p" + str(n)))
+    #p = Predictor.deserialize(Path("./predictor/p" + str(n)))
     predictor.append(p)
     forecast_it, ts_it = make_evaluation_predictions(
         dataset=data[n]['test'],  # test dataset
@@ -60,8 +60,8 @@ for n in range(5):
     )
     f.append(list(forecast_it))
     t.append(list(ts_it))
-    t_e = t[n]
-    f_e = f[0]
+    t_e.append(t[n][0])
+    f_e.append(f[n][0])
 
 
 def plot_prob_forecasts(ts_entry, forecast_entry):
@@ -77,5 +77,5 @@ def plot_prob_forecasts(ts_entry, forecast_entry):
     plt.show()
 
 
-for n in range(5):
+for n in range(4):
     plot_prob_forecasts(t_e[n], f_e[n])
