@@ -39,7 +39,7 @@ def train_predictor(data=None, prediction_length=0, freq="1H", train_length=0, m
     e = []
     predictor = []
 
-    for n in metadata['data_sets']:
+    for n in range(metadata['data_sets']):
         e.append(estimator)
         p = e[n].train(data[n]['train'])
         predictor.append(p)
@@ -48,11 +48,12 @@ def train_predictor(data=None, prediction_length=0, freq="1H", train_length=0, m
 
 
 def make_forecast(predictor, data, metadata):
+    metadata['data_sets'] = len(data)
     f = []
     t = []
     f_e = []
     t_e = []
-    for n in metadata['data_sets']:
+    for n in range(metadata['data_sets']):
         forecast_it, ts_it = make_evaluation_predictions(
             dataset=data[n],  # test dataset
             predictor=predictor[n],  # predictor
@@ -66,7 +67,7 @@ def make_forecast(predictor, data, metadata):
 
 
 def plot_prob_forecasts(ts_entry, forecast_entry, num, metadata):
-    plot_length = metadata['prediction_length'] + metadata['train_length']
+    plot_length = metadata['test_length'] + metadata['train_length']
     prediction_intervals = (50.0, 90.0)
     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
 

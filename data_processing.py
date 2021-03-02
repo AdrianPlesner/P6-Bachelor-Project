@@ -3,9 +3,9 @@ import numpy as np
 
 
 def preprocess_data(x):
-    arr = np.array(x.reshape(-1, 1))
+    arr = np.array(x).reshape(-1, 1)
     scaler = preprocessing.StandardScaler().fit(arr)
-    return scaler.transform(arr)
+    return scaler.transform(arr).reshape(-1)
 
 
 def preprocess_data_set(x):

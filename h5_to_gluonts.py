@@ -27,7 +27,7 @@ def load_h5_to_gluon(path, train_size=0, test_size=0, freq="1H", key="", sensor=
     train_data = ListDataset([{
         "start": start,
         "target": target}
-        for (start, target) in zip(data_start[data_points:], [data.values[:data_points, sensor]])],
+        for (start, target) in zip(data_start[:data_points], [data.values[:data_points, sensor]])],
         freq=freq
     )
     test_data = ListDataset([{
