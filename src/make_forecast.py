@@ -4,9 +4,12 @@ from gluonts.evaluation.backtest import make_evaluation_predictions
 import matplotlib.pyplot as plt
 from pathlib import Path
 from gluonts.model.predictor import Predictor
+import mxnet as mx
+import data_processing as dp
+import numpy as np
 
 
-def train_predictor(data=None, prediction_length=0, freq="1H", train_length=0, metadata=None, estimator=None):
+def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadata=None, estimator=None):
     if metadata is None:
         metadata = {}
     if data is None:
@@ -14,21 +17,21 @@ def train_predictor(data=None, prediction_length=0, freq="1H", train_length=0, m
     if estimator is None:
         estimator = GaussianProcessEstimator(
             metadata['freq'],
-            metadata['prediction_length'],
+            metadata['test_length'],
             1,
-            Trainer(ctx="cpu",
+            Trainer(ctx=mx.context.gpu(),
                     epochs=10,
                     learning_rate=1e-3,
                     hybridize=False,
-                    num_batches_per_epoch=50),
+                    num_batches_per_epoch=300),
             metadata['train_length']
         )
 
     assert (len(data) > 0)
 
-    if "prediction_length" not in metadata.keys():
-        metadata['prediction_length'] = prediction_length
-    assert(metadata['prediction_length'] > 0)
+    if "test_length" not in metadata.keys():
+        metadata['test_length'] = test_length
+    assert(metadata['test_length'] > 0)
 
     if "train_length" not in metadata.keys():
         metadata['train_length'] = train_length
@@ -68,12 +71,16 @@ def make_forecast(predictor, data, metadata):
 
 def plot_prob_forecasts(ts_entry, forecast_entry, num, metadata):
     plot_length = metadata['test_length'] + metadata['train_length']
-    prediction_intervals = (50.0, 90.0)
+    prediction_intervals = (90.0, 50.0)
     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
 
     fig, ax = plt.subplots(1, 1, figsize=(20, 10))
     ts_entry[-plot_length:].plot(ax=ax)  # plot the time series
-    forecast_entry.plot(prediction_intervals=prediction_intervals, color='g')
+    forecast_entry.plot(prediction_intervals=(), color='#008000')
+    y1, y2 = dp.make_prediction_interval(forecast_entry.mean, 0.67)
+    plt.fill_between(ts_entry.axes[0][metadata['train_length']:plot_length], y1, y2, color='#00800080')
+    y1, y2 = dp.make_prediction_interval(forecast_entry.mean, 1.64)
+    plt.fill_between(ts_entry.axes[0][metadata['train_length']:plot_length], y1, y2, color='#00800050')
     plt.grid(which="both")
     plt.legend(legend, loc="upper left")
     plt.title("dataset " + str(num))

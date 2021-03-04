@@ -22,18 +22,18 @@ def load_h5_to_gluon(path, train_size=0, test_size=0, freq="1H", key="", sensor=
     data_points = train_size
     test_points = test_size + train_size
 
-    data_start = [pd.Timestamp(data.axes[0].array[0], freq=freq) for _ in range(test_points)]
+    data_start = [pd.Timestamp(data.axes[0].array[288], freq=freq) for _ in range(test_points)]
 
     train_data = ListDataset([{
         "start": start,
         "target": target}
-        for (start, target) in zip(data_start[:data_points], [data.values[:data_points, sensor]])],
+        for (start, target) in zip(data_start[:data_points], [data.values[288:data_points+288, sensor]])],
         freq=freq
     )
     test_data = ListDataset([{
         "start": start,
         "target": target}
-        for (start, target) in zip(data_start[:test_points], [data.values[:test_points, sensor]])],
+        for (start, target) in zip(data_start[:test_points], [data.values[288:test_points+288, sensor]])],
         freq=freq
     )
     return train_data, test_data
