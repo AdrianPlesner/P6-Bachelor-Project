@@ -22,6 +22,9 @@ test_data = []
 for n in data:
     test_data.append(n['test'])
 test, forecast = fc.make_forecast(predictor, test_data, metadata)
+for n in range(iterations):
+    test[n], forecast[n] = dp.postprocess_data(test[n], forecast[n], data[n]['test'].list_data[0]['scaler'])
+
 
 for n in range(iterations):
     fc.plot_prob_forecasts(test[n], forecast[n], n, metadata)
