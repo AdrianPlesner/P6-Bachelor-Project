@@ -19,7 +19,7 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
             metadata['freq'],
             metadata['test_length'],
             1,
-            Trainer(ctx=mx.context.gpu(),
+            Trainer(ctx="cpu",
                     epochs=10,
                     learning_rate=1e-3,
                     hybridize=False,
@@ -85,6 +85,7 @@ def plot_prob_forecasts(ts_entry, forecast_entry, num, metadata):
     plt.legend(legend, loc="upper left")
     plt.title("dataset " + str(num))
     plt.show()
+    #plt.savefig("out-data/plot" + str(num))
 
 
 def load_predictors(path, num, sub_paths=None):

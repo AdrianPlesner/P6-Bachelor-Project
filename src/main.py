@@ -1,11 +1,11 @@
-from pathlib import Path
+import data_processing as dp
+import evaluation
 import h5_to_gluonts as hg
-import data_processing as dp, evaluation
 import make_forecast as fc
 
-metadata = {'train_length': 288*2, 'test_length': 288, 'freq': "5Min"}
+metadata = {'train_length': 288*7, 'test_length': 288, 'freq': "5Min"}
 data = []
-iterations = 4
+iterations = 1
 for n in range(iterations):
     train, test = hg.load_h5_to_gluon("./data/pems-bay.h5", metadata['train_length'], metadata['test_length'],
                                       metadata['freq'], "/speed", n)
@@ -17,7 +17,7 @@ for n in range(iterations):
 #predictor = fc.train_predictor(data, metadata=metadata)
 #for n in range(iterations):
     #predictor[n].serialize(Path("./out-data/p" + str(n) + "/"))
-predictor = fc.load_predictors("./predictor/", iterations)
+predictor = fc.load_predictors("./predictor/out-data/", iterations)
 test_data = []
 for n in data:
     test_data.append(n['test'])
