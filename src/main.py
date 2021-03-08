@@ -1,9 +1,11 @@
+from pathlib import Path
+
 import data_processing as dp
 import evaluation
 import h5_to_gluonts as hg
 import make_forecast as fc
 
-metadata = {'train_length': 288*7, 'test_length': 288, 'freq': "5Min"}
+metadata = {'train_length': 288*3, 'test_length': 288, 'freq': "5Min"}
 data = []
 iterations = 1
 for n in range(iterations):
@@ -14,24 +16,21 @@ for n in range(iterations):
     test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
     data.append({'train': train, 'test': test})
 
-#predictor = fc.train_predictor(data, metadata=metadata)
-#for n in range(iterations):
-    #predictor[n].serialize(Path("./out-data/p" + str(n) + "/"))
+# predictor = fc.train_predictor(data, metadata=metadata)
+# for n in range(iterations):
+#     predictor[n].serialize(Path("./out-data/p" + str(n) + "/"))
 predictor = fc.load_predictors("./predictor/out-data/", iterations)
-test_data = []
-for n in data:
-    test_data.append(n['test'])
-test, forecast = fc.make_forecast(predictor, test_data, metadata)
+
+
+forecast = fc.make_forecast(predictor, data, metadata)
 for n in range(iterations):
-    test[n], forecast[n] = dp.postprocess_data(test[n], forecast[n], data[n]['test'].list_data[0]['scaler'])
+    data[n], forecast[n] = dp.postprocess_data(data[n], forecast[n])
 
 
-for n in range(iterations):
-    fc.plot_prob_forecasts(test[n], forecast[n], n, metadata)
-
-evals = []
-for n in range(iterations):
-    e = evaluation.evaluate_forecast(test[n], forecast[n], metadata['test_length'])
-    evals.append(e)
-
-print(evals)
+fc.plot_forecast(data[0]['test'], forecast[0], 0, metadata)
+# evals = []
+# for n in range(iterations):
+#     e = evaluation.evaluate_forecast(test[n], forecast[n], metadata['test_length'])
+#     evals.append(e)
+#
+# print(evals)

@@ -7,6 +7,7 @@ from gluonts.model.predictor import Predictor
 import mxnet as mx
 import data_processing as dp
 import numpy as np
+import pandas as pd
 
 
 def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadata=None, estimator=None):
@@ -19,11 +20,11 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
             metadata['freq'],
             metadata['test_length'],
             1,
-            Trainer(ctx="cpu",
-                    epochs=10,
+            Trainer(ctx=mx.context.gpu(),
+                    epochs=8,
                     learning_rate=1e-3,
                     hybridize=False,
-                    num_batches_per_epoch=300),
+                    num_batches_per_epoch=150),
             metadata['train_length']
         )
 
@@ -53,39 +54,65 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
 def make_forecast(predictor, data, metadata):
     metadata['data_sets'] = len(data)
     f = []
-    t = []
-    f_e = []
-    t_e = []
     for n in range(metadata['data_sets']):
-        forecast_it, ts_it = make_evaluation_predictions(
-            dataset=data[n],  # test dataset
-            predictor=predictor[n],  # predictor
-            num_samples=100,  # number of sample paths we want for evaluation
-        )
-        f.append(list(forecast_it))
-        t.append(list(ts_it))
-        t_e.append(t[n][0])
-        f_e.append(f[n][0])
-    return t_e, f_e
+        f.append(list(predictor[0].predict(data[n]['train']))[0])
+    return f
+
+# def make_forecast(predictor, data, metadata):
+#     metadata['data_sets'] = len(data)
+#     f = []
+#     t = []
+#     f_e = []
+#     t_e = []
+#     for n in range(metadata['data_sets']):
+#         forecast_it, ts_it = make_evaluation_predictions(
+#             dataset=data[n],  # test dataset
+#             predictor=predictor[n],  # predictor
+#             num_samples=100,  # number of sample paths we want for evaluation
+#         )
+#         f.append(list(forecast_it))
+#         t.append(list(ts_it))
+#         t_e.append(t[n][0])
+#         f_e.append(f[n][0])
+#     return t_e, f_e
 
 
-def plot_prob_forecasts(ts_entry, forecast_entry, num, metadata):
+# def plot_prob_forecasts(ts_entry, forecast_entry, num, metadata):
+#     plot_length = metadata['test_length'] + metadata['train_length']
+#     prediction_intervals = (90.0, 50.0)
+#     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
+#
+#     fig, ax = plt.subplots(1, 1, figsize=(20, 10))
+#     ts_entry[-plot_length:].plot(ax=ax)  # plot the time series
+#     forecast_entry.plot(prediction_intervals=(), color='#008000')
+#     y1, y2 = dp.make_prediction_interval(forecast_entry.mean, 0.67)
+#     plt.fill_between(ts_entry[metadata['train_length']:plot_length], y1, y2, color='#00800080')
+#     y1, y2 = dp.make_prediction_interval(forecast_entry.mean, 1.64)
+#     plt.fill_between(ts_entry[metadata['train_length']:plot_length], y1, y2, color='#00800060')
+#     plt.grid(which="both")
+#     plt.legend(legend, loc="upper left")
+#     plt.title("dataset " + str(num))
+#     plt.show()
+#     #plt.savefig("out-data/plot" + str(num))
+
+
+def plot_forecast(lst_data, forecast_entry, num, metadata):
     plot_length = metadata['test_length'] + metadata['train_length']
     prediction_intervals = (90.0, 50.0)
     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
-
+    data = [pd.date_range(start=lst_data.list_data[0]['start'], freq=metadata['freq'], periods=plot_length),
+            lst_data.list_data[0]['target']]
     fig, ax = plt.subplots(1, 1, figsize=(20, 10))
-    ts_entry[-plot_length:].plot(ax=ax)  # plot the time series
-    forecast_entry.plot(prediction_intervals=(), color='#008000')
-    y1, y2 = dp.make_prediction_interval(forecast_entry.mean, 0.67)
-    plt.fill_between(ts_entry.axes[0][metadata['train_length']:plot_length], y1, y2, color='#00800080')
-    y1, y2 = dp.make_prediction_interval(forecast_entry.mean, 1.64)
-    plt.fill_between(ts_entry.axes[0][metadata['train_length']:plot_length], y1, y2, color='#00800050')
+    plt.plot(data[0], data[1])
+    plt.plot(forecast_entry.index, forecast_entry.median, color='#008000')
+    y1, y2 = dp.make_prediction_interval(forecast_entry.median, 0.67)
+    plt.fill_between(data[0][metadata['train_length']:plot_length], y1, y2, color='#00800080')
+    y1, y2 = dp.make_prediction_interval(forecast_entry.median, 1.64)
+    plt.fill_between(data[0][metadata['train_length']:plot_length], y1, y2, color='#00800060')
     plt.grid(which="both")
     plt.legend(legend, loc="upper left")
     plt.title("dataset " + str(num))
     plt.show()
-    #plt.savefig("out-data/plot" + str(num))
 
 
 def load_predictors(path, num, sub_paths=None):
@@ -96,6 +123,8 @@ def load_predictors(path, num, sub_paths=None):
 
     predictor = []
     for n in range(num):
-        predictor.append(Predictor.deserialize(Path(path + sub_paths[n])))
+        p = Predictor.deserialize(Path(path + sub_paths[n]))
+        p.prediction_net.ctx = p.ctx
+        predictor.append(p)
 
     return predictor
