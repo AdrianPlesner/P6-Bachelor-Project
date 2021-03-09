@@ -5,7 +5,7 @@ from gluonts.dataset.util import to_pandas
 import matplotlib.pyplot as plt
 
 
-def load_h5_to_gluon(path, train_size=0, test_size=0, freq="1H", key="", sensor=0):
+def load_h5_to_gluon(path, train_size=0, test_size=0, offset=0, freq="1H", key="", sensor=0):
     store = pd.HDFStore(path)
     if key == "":
         key = store.keys()[0]
@@ -21,19 +21,20 @@ def load_h5_to_gluon(path, train_size=0, test_size=0, freq="1H", key="", sensor=
         test_size = size - train_size
     data_points = train_size
     test_points = test_size + train_size
+    offset = offset + 288  # skip first day because of irregularity
 
-    data_start = [pd.Timestamp(data.axes[0].array[288], freq=freq) for _ in range(test_points)]
+    data_start = [pd.Timestamp(data.axes[0].array[offset], freq=freq) for _ in range(test_points)]
 
     train_data = ListDataset([{
         "start": start,
         "target": target}
-        for (start, target) in zip(data_start[:data_points], [data.values[288:data_points+288, sensor]])],
+        for (start, target) in zip(data_start[:data_points], [data.values[offset:data_points+offset, sensor]])],
         freq=freq
     )
     test_data = ListDataset([{
         "start": start,
         "target": target}
-        for (start, target) in zip(data_start[:test_points], [data.values[288:test_points+288, sensor]])],
+        for (start, target) in zip(data_start[:test_points], [data.values[offset:test_points+offset, sensor]])],
         freq=freq
     )
     return train_data, test_data
