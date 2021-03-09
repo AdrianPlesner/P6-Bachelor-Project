@@ -4,10 +4,10 @@ from gluonts.evaluation.backtest import make_evaluation_predictions
 import matplotlib.pyplot as plt
 from pathlib import Path
 from gluonts.model.predictor import Predictor
-import mxnet as mx
 import data_processing as dp
 import numpy as np
 import pandas as pd
+import mxnet as mx
 
 
 def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadata=None, estimator=None):
@@ -102,7 +102,7 @@ def plot_forecast(lst_data, forecast_entry, num, metadata):
     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
     data = [pd.date_range(start=lst_data.list_data[0]['start'], freq=metadata['freq'], periods=plot_length),
             lst_data.list_data[0]['target']]
-    fig, ax = plt.subplots(1, 1, figsize=(20, 10))
+    fig, ax = plt.subplots(1, 1, figsize=(10, 5))
     plt.plot(data[0], data[1])
     plt.plot(forecast_entry.index, forecast_entry.median, color='#008000')
     y1, y2 = dp.make_prediction_interval(forecast_entry.median, 0.67)
