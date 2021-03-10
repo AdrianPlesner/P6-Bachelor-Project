@@ -5,26 +5,29 @@ import tsv_to_gluon as tg
 import h5_to_gluonts as hg
 import make_forecast as fc
 import random
+import csv_to_gluon as cg
 
-metadata = {'train_length': 22, 'test_length': 2, 'freq': "1M"}
+metadata = {'train_length': 416, 'test_length': 7, 'freq': "1D"}
 data = []
-iterations = 10
+iterations = 1
 off = 0  # random.randint(0, 7*288 - 12 * 24)
-train_p = False
+train_p = True
 normalize = True
-plot = True
+plot = False
 
 ### Load data
 for n in range(iterations):
-    train, test = tg.load_tsv_to_gluon("data/Earthquakes_TRAIN.tsv", metadata['train_length'], metadata['test_length'],
-                                       n, metadata['freq'])
+    train, test = cg.load_csv_to_gluon("data/time_series_covid19_confirmed_global.csv", metadata['train_length'], metadata['test_length'], location=103)
+        #tg.load_tsv_to_gluon("data/Earthquakes_TRAIN.tsv", metadata['train_length'], metadata['test_length'],
+                                       #n, metadata['freq'])
         #hg.load_h5_to_gluon("data/pems-bay.h5", metadata['train_length'], metadata['test_length'], off,
                                       #metadata['freq'], "/speed", n)
-    hg.plot_train_test(train, test)
+    #hg.plot_train_test(train, test)
     if normalize:
         train.list_data[0]['target'], train.list_data[0]['scaler'] = dp.preprocess_data(train.list_data[0]['target'])
         test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
     data.append({'train': train, 'test': test})
+    #hg.plot_train_test(train, test)
 
 # ### Train network
 # if train_p:
