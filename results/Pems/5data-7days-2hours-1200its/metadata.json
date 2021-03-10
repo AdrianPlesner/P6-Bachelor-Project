@@ -2,7 +2,7 @@
   "path": "data/pems-bay.h5",
   "iterations": 5,
   "offset": 0,
-  "data-type": "h5",
+  "data_type": "h5",
   "train_length": 2016,
   "test_length": 24,
   "freq": "5Min",
@@ -13,5 +13,5 @@
   "normalize": true,
   "train_predictor": false,
   "serialize_path": "out-data/p",
-  "deserialize_path": "results/Pems/5data-7days-4hours-1200its/"
+  "deserialize_path": "results/Pems/5data-7days-2hours-1200its/"
 }

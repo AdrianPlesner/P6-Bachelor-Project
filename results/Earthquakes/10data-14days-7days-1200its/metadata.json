@@ -2,7 +2,7 @@
   "path": "data/Earthquakes_TRAIN.tsv",
   "iterations": 10,
   "offset": 0,
-  "data-type": "tsv",
+  "data_type": "tsv",
   "train_length": 344,
   "test_length": 168,
   "freq": "1H",

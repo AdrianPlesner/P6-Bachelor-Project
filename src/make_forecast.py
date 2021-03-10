@@ -1,4 +1,6 @@
 from gluonts.model.gp_forecaster import GaussianProcessEstimator
+from gluonts.model.deep_factor import DeepFactorEstimator
+from gluonts.model.deepar import DeepAREstimator
 from gluonts.mx.trainer import Trainer
 from gluonts.evaluation.backtest import make_evaluation_predictions
 import matplotlib.pyplot as plt
@@ -15,16 +17,31 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
         metadata = {}
     if data is None:
         data = [{}]
-    if estimator is None:
+    trainer = Trainer(ctx=mx.context.gpu(),
+                      epochs=8,
+                      learning_rate=1e-3,
+                      hybridize=False,
+                      num_batches_per_epoch=150)
+    if estimator is None or estimator == "GP":
         estimator = GaussianProcessEstimator(
             metadata['freq'],
             metadata['test_length'],
             1,
-            Trainer(ctx=mx.context.gpu(),
-                    epochs=8,
-                    learning_rate=1e-3,
-                    hybridize=False,
-                    num_batches_per_epoch=150),
+            trainer,
+            metadata['train_length']
+        )
+    elif estimator == "rnn":
+        estimator = DeepFactorEstimator(
+            metadata['freq'],
+            metadata['test_length'],
+            trainer=trainer,
+            context_length=metadata['train_length']
+        )
+    elif estimator == "AR":
+        estimator = DeepAREstimator(
+            metadata['freq'],
+            metadata['test_length'],
+            trainer,
             metadata['train_length']
         )
 
@@ -32,11 +49,11 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
 
     if "test_length" not in metadata.keys():
         metadata['test_length'] = test_length
-    assert(metadata['test_length'] > 0)
+    assert (metadata['test_length'] > 0)
 
     if "train_length" not in metadata.keys():
         metadata['train_length'] = train_length
-    assert(metadata['train_length'] > 0)
+    assert (metadata['train_length'] > 0)
     if "freq" not in metadata.keys():
         metadata['freq'] = freq
     metadata['data_sets'] = len(data)
@@ -57,6 +74,7 @@ def make_forecast(predictor, data, metadata):
     for n in range(metadata['data_sets']):
         f.append(list(predictor[0].predict(data[n]['train']))[0])
     return f
+
 
 # def make_forecast(predictor, data, metadata):
 #     metadata['data_sets'] = len(data)

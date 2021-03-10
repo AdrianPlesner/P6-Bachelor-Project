@@ -54,7 +54,7 @@ if md['train_predictor']:
         predictor[n].serialize(Path(md['serialize_path'] + str(n) + "/"))
 else:
     ### Load pre-trained predictors
-    predictor = fc.load_predictors(md['deserilize_path'], iterations)
+    predictor = fc.load_predictors(md['deserialize_path'], iterations)
 
 ### Make forecasts
 forecast = fc.make_forecast(predictor, data, md)
