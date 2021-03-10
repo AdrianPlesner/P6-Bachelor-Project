@@ -6,52 +6,70 @@ import h5_to_gluonts as hg
 import make_forecast as fc
 import random
 import csv_to_gluon as cg
+import sys
+import json
 
-metadata = {'train_length': 416, 'test_length': 7, 'freq': "1D"}
+if len(sys.argv) < 2:
+    path = input("Missing program argument: metadata path\n"
+                 "please give it:")
+    if path == "":
+        exit()
+else:
+    path = sys.argv[1]
+
+with open(path) as md_file:
+    md = json.load(md_file)
+
 data = []
-iterations = 1
-off = 0  # random.randint(0, 7*288 - 12 * 24)
-train_p = True
-normalize = True
-plot = False
+iterations = md['iterations']
+offset = md['offset']  # random.randint(0, 7*288 - 12 * 24)
+
 
 ### Load data
 for n in range(iterations):
-    train, test = cg.load_csv_to_gluon("data/time_series_covid19_confirmed_global.csv", metadata['train_length'], metadata['test_length'], location=103)
-        #tg.load_tsv_to_gluon("data/Earthquakes_TRAIN.tsv", metadata['train_length'], metadata['test_length'],
-                                       #n, metadata['freq'])
-        #hg.load_h5_to_gluon("data/pems-bay.h5", metadata['train_length'], metadata['test_length'], off,
-                                      #metadata['freq'], "/speed", n)
-    #hg.plot_train_test(train, test)
-    if normalize:
+    if md['data_type'] == 'csv':
+        train, test = cg.load_csv_to_gluon(md['path'], md['train_length'], md['test_length'], md['freq'], offset,
+                                           md['location'], md['sum'])
+    elif md['data_type'] == 'tsv':
+        train, test = tg.load_tsv_to_gluon(md['path'], md['train_length'], md['test_length'], n, md['freq'])
+    elif md['data_type'] == 'h5':
+        train, test = hg.load_h5_to_gluon(md['path'], md['train_length'], md['test_length'], offset, md['freq'],
+                                          md['h5_key'], n)
+    else:
+        print("No data type in metadata")
+        exit()
+    if md['make_plots']:
+        hg.plot_train_test(train, test)
+    if md['normalize']:
         train.list_data[0]['target'], train.list_data[0]['scaler'] = dp.preprocess_data(train.list_data[0]['target'])
         test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
     data.append({'train': train, 'test': test})
-    #hg.plot_train_test(train, test)
+    if md['make_plots']:
+        hg.plot_train_test(train, test)
 
-# ### Train network
-# if train_p:
-#     predictor = fc.train_predictor(data, metadata=metadata)
-#     for n in range(iterations):
-#         predictor[n].serialize(Path("./out-data/p" + str(n) + "/"))
-# else:
-# ### Load pre-trained predictors
-#     predictor = fc.load_predictors("./results/Earthquakes/10data-14days-7days-1200its/", iterations)
-#
-# ### Make forecasts
-# forecast = fc.make_forecast(predictor, data, metadata)
-# if normalize:
-#     for n in range(iterations):
-#         data[n], forecast[n] = dp.postprocess_data(data[n], forecast[n])
-#
-# ### Plot forecasts
-# if plot:
-#     for n in range(iterations):
-#         fc.plot_forecast(data[n]['test'], forecast[n], n, metadata)
-#
-# ### Evaluate predictions
-# evals = []
-# for n in range(iterations):
-#     e = evaluation.evaluate_forecast(data[n]['test'], forecast[n], metadata['test_length'])
-#     evals.append(e)
-# print(evals)
+### Train network
+if md['train_predictor']:
+    predictor = fc.train_predictor(data, metadata=md)
+    for n in range(iterations):
+        predictor[n].serialize(Path(md['serialize_path'] + str(n) + "/"))
+else:
+    ### Load pre-trained predictors
+    predictor = fc.load_predictors(md['deserilize_path'], iterations)
+
+### Make forecasts
+forecast = fc.make_forecast(predictor, data, md)
+if md['normalize']:
+    for n in range(iterations):
+        data[n], forecast[n] = dp.postprocess_data(data[n], forecast[n])
+
+### Plot forecasts
+if md['make_plots']:
+    for n in range(iterations):
+        fc.plot_forecast(data[n]['test'], forecast[n], n, md)
+
+### Evaluate predictions
+evals = []
+for n in range(iterations):
+    e = evaluation.evaluate_forecast(data[n]['test'], forecast[n], md['test_length'])
+    evals.append(e)
+print(evals)

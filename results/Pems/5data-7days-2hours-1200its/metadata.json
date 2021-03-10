@@ -1,0 +1,17 @@
+{
+  "path": "data/pems-bay.h5",
+  "iterations": 5,
+  "offset": 0,
+  "data-type": "h5",
+  "train_length": 2016,
+  "test_length": 24,
+  "freq": "5Min",
+  "location": 0,
+  "sum": false,
+  "h5_key": "/speed",
+  "make_plots": true,
+  "normalize": true,
+  "train_predictor": false,
+  "serialize_path": "out-data/p",
+  "deserialize_path": "results/Pems/5data-7days-4hours-1200its/"
+}
