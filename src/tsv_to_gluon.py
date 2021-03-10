@@ -1,8 +1,6 @@
 import csv
 import pandas as pd
 from gluonts.dataset.common import ListDataset
-import os
-import sys
 
 
 def load_tsv_to_gluon(path, train_length=0, test_length=0, sensor=0, freq='1H', start_date=0):
@@ -14,5 +12,5 @@ def load_tsv_to_gluon(path, train_length=0, test_length=0, sensor=0, freq='1H', 
     data = [row[1:] for row in reader]
     file.close()
     return ListDataset([{'start': start_date, 'target': data[sensor][:train_length]}], freq), \
-           ListDataset([{'start': start_date, 'target': data[sensor][:test_length]}], freq)
+        ListDataset([{'start': start_date, 'target': data[sensor][:test_length]}], freq)
 
