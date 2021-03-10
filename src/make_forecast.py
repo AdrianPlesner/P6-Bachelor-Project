@@ -97,7 +97,6 @@ def make_forecast(predictor, data, metadata):
 
 
 def plot_forecast(lst_data, forecast_entry, num, metadata, offset=0):
-    offset = 5*288
     plot_length = metadata['test_length'] + metadata['train_length']
     prediction_intervals = (90.0, 50.0)
     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
