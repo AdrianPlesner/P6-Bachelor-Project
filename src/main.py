@@ -9,7 +9,7 @@ metadata = {'train_length': 288*7, 'test_length': 12*4, 'freq': "5Min"}
 data = []
 iterations = 5
 off = 0  # random.randint(0, 7*288 - 12 * 24)
-train_p = True
+train_p = False
 
 ### Load data
 for n in range(iterations):
@@ -27,7 +27,7 @@ if train_p:
         predictor[n].serialize(Path("./out-data/p" + str(n) + "/"))
 else:
 ### Load pre-trained predictors
-    predictor = fc.load_predictors("./results/5data-7days-1hour-1200its/", iterations)
+    predictor = fc.load_predictors("./results/5data-7days-4hours-1200its/", iterations)
 
 ### Make forecasts
 forecast = fc.make_forecast(predictor, data, metadata)

@@ -40,7 +40,7 @@ def postprocess_data(data, forecast):
 
 
 def make_prediction_interval(x, p):
-    std = np.std(x, axis=0)
-    top = x + p * std
-    bottom = x - p * std
+    std = np.std(x.samples, axis=0)
+    top = x.median + p * std
+    bottom = x.median - p * std
     return top, bottom

@@ -96,18 +96,19 @@ def make_forecast(predictor, data, metadata):
 #     #plt.savefig("out-data/plot" + str(num))
 
 
-def plot_forecast(lst_data, forecast_entry, num, metadata):
+def plot_forecast(lst_data, forecast_entry, num, metadata, offset=0):
+    offset = 5*288
     plot_length = metadata['test_length'] + metadata['train_length']
     prediction_intervals = (90.0, 50.0)
     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
     data = [pd.date_range(start=lst_data.list_data[0]['start'], freq=metadata['freq'], periods=plot_length),
             lst_data.list_data[0]['target']]
     fig, ax = plt.subplots(1, 1, figsize=(10, 5))
-    plt.plot(data[0], data[1])
+    plt.plot(data[0][offset:plot_length], data[1][offset:plot_length])
     plt.plot(forecast_entry.index, forecast_entry.median, color='#008000')
-    y1, y2 = dp.make_prediction_interval(forecast_entry.median, 0.67)
+    y1, y2 = dp.make_prediction_interval(forecast_entry, 0.67)
     plt.fill_between(data[0][metadata['train_length']:plot_length], y1, y2, color='#00800080')
-    y1, y2 = dp.make_prediction_interval(forecast_entry.median, 1.64)
+    y1, y2 = dp.make_prediction_interval(forecast_entry, 1.64)
     plt.fill_between(data[0][metadata['train_length']:plot_length], y1, y2, color='#00800060')
     plt.grid(which="both")
     plt.legend(legend, loc="upper left")
