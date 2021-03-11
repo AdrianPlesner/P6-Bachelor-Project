@@ -8,6 +8,8 @@ import random
 import csv_to_gluon as cg
 import sys
 import json
+import os
+
 
 if len(sys.argv) < 2:
     path = input("Missing program argument: metadata path\n"
@@ -49,8 +51,10 @@ for n in range(iterations):
 
 ### Train network
 if md['train_predictor']:
-    predictor = fc.train_predictor(data, metadata=md)
+    predictor = fc.train_predictor(data, metadata=md, estimator=md['estimator'])
     for n in range(iterations):
+        if not os.path.isdir(md['serialize_path'] + str(n)):
+            os.makedirs(md['serialize_path'] + str(n))
         predictor[n].serialize(Path(md['serialize_path'] + str(n) + "/"))
 else:
     ### Load pre-trained predictors

@@ -1,0 +1,18 @@
+{
+  "path": "data/time_series_covid19_confirmed_global.csv",
+  "iterations": 1,
+  "offset": 376,
+  "data_type": "csv",
+  "train_length": 30,
+  "test_length":7,
+  "freq": "1D",
+  "location": 103,
+  "sum": false,
+  "h5_key": "",
+  "make_plots": false,
+  "normalize": true,
+  "train_predictor": true,
+  "serialize_path": "out-data/ar-30days/p",
+  "deserialize_path": "results/Covid19/dk-30days-7days-1500its/",
+  "estimator": "AR"
+}
