@@ -40,14 +40,14 @@ for n in range(iterations):
     else:
         print("No data type in metadata")
         exit()
-    if md['make_plots']:
-        hg.plot_train_test(train, test)
+    #if md['make_plots']:
+        #hg.plot_train_test(train, test)
     if md['normalize']:
         train.list_data[0]['target'], train.list_data[0]['scaler'] = dp.preprocess_data(train.list_data[0]['target'])
         test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
     data.append({'train': train, 'test': test})
-    if md['make_plots']:
-        hg.plot_train_test(train, test)
+    #if md['make_plots']:
+        #hg.plot_train_test(train, test)
 
 ### Train network
 if md['train_predictor']:

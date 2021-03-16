@@ -117,13 +117,15 @@ def make_forecast(predictor, data, metadata):
 #     #plt.savefig("out-data/plot" + str(num))
 
 
-def plot_forecast(lst_data, forecast_entry, num, metadata, offset=0):
+def plot_forecast(lst_data, forecast_entry, num, metadata, offset=0, path="", sensor=-1):
+    if sensor == -1:
+        sensor = num
     plot_length = metadata['test_length'] + metadata['train_length']
     prediction_intervals = (90.0, 50.0)
     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
     data = [pd.date_range(start=lst_data.list_data[0]['start'], freq=metadata['freq'], periods=plot_length),
             lst_data.list_data[0]['target']]
-    fig, ax = plt.subplots(1, 1, figsize=(10, 5))
+    fig, ax = plt.subplots(1, 1, figsize=(20, 10))
     plt.plot(data[0][offset:plot_length], data[1][offset:plot_length])
     plt.plot(forecast_entry.index, forecast_entry.median, color='#008000')
     y1, y2 = dp.make_prediction_interval(forecast_entry, 0.67)
@@ -132,8 +134,9 @@ def plot_forecast(lst_data, forecast_entry, num, metadata, offset=0):
     plt.fill_between(data[0][metadata['train_length']:plot_length], y1, y2, color='#00800060')
     plt.grid(which="both")
     plt.legend(legend, loc="upper left")
-    plt.title("dataset " + str(num))
-    plt.show()
+    plt.title("dataset " + str(sensor))
+    plt.savefig(metadata['deserialize_path'] + "pictures/" + str(num) + "/" + path)
+    plt.close()
 
 
 def load_predictors(path, num, sub_paths=None):

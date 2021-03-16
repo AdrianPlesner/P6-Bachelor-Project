@@ -1,18 +1,18 @@
 {
   "path": "data/pems-bay.h5",
   "iterations": 5,
-  "offset": 0,
+  "offset": 8568,
   "data_type": "h5",
-  "train_length": 8640,
+  "train_length": 24,
   "test_length": 24,
   "freq": "5Min",
   "location": 0,
   "sum": false,
   "h5_key": "/speed",
-  "make_plots": false,
+  "make_plots": true,
   "normalize": true,
-  "train_predictor": true,
+  "train_predictor": false,
   "serialize_path": "out-data/rnn-5d-30d-2h/p",
-  "deserialize_path": "results/Pems/rnn-5data-30days-2hours-1200its/",
+  "deserialize_path": "results/Pems/rnn-5data-30days-2hours-2400its/",
   "estimator": "rnn"
 }
