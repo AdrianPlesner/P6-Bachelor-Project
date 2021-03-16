@@ -9,10 +9,10 @@
   "location": 0,
   "sum": false,
   "h5_key": "/speed",
-  "make_plots": false,
+  "make_plots": true,
   "normalize": true,
-  "train_predictor": true,
-  "serialize_path": "out-data/rnn-5d-7d-2h/p",
-  "deserialize_path": "results/Pems/rnn-5data-7days-1hour-1200its/",
+  "train_predictor": false,
+  "serialize_path": "out-data/rnn-5d-7d-1h/p",
+  "deserialize_path": "results/Pems/rnn-5data-7days-1hour-2400its/",
   "estimator": "rnn"
 }
