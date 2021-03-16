@@ -17,13 +17,15 @@ import numpy as np
 ### 52116 time steps
 ### we skip the first 288
 
-with open("results/Pems/rnn-5data-30days-2hours-2400its/metadata.json") as md_file:
+with open("results/Pems/5data-7days-1hour-1200its/metadata.json") as md_file:
     md = json.load(md_file)
-train_length = 24
-max_offset = 52116-288-48-1
-min_offset = 30*288  # train data
+train_length = 12
+max_offset = 52116-288-24-1
+min_offset = 7*288  # train data
 evals = np.zeros((md['iterations'], 100, 2))
+
 for n in range(md['iterations']):
+    os.makedirs(md['deserialize_path'] + "pictures/" + str(n))
     for i in range(100):
         ### make predicton and evaluation with the same sensor
         # get random offset
@@ -36,6 +38,7 @@ for n in range(md['iterations']):
         data = {'train': train, 'test': test}
         # load predictor
         predictor = Predictor.deserialize(Path(md['deserialize_path'] + "p" + str(n)))
+        predictor.prediction_net.ctx = predictor.ctx
         # make forecast
         forecast = list(predictor.predict(train))[0]
         data, forecast = dp.postprocess_data(data, forecast)
@@ -66,7 +69,7 @@ for n in range(md['iterations']):
         evals[n, i, 1] = e
 with open(md['deserialize_path']+"evaluation.txt", "w") as file:
     file.write(str(md))
-    for n in range( md['iterations']):
+    for n in range(md['iterations']):
         file.write("\nSensor " + str(n) + ":\n")
         for i in range(100):
             file.write(str(evals[n, i, 0]) + "\n")
