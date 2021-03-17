@@ -17,10 +17,10 @@ import numpy as np
 ### 52116 time steps
 ### we skip the first 288
 
-with open("results/Pems/5data-7days-1hour-1200its/metadata.json") as md_file:
+with open("results/Pems/5data-7days-4hours-1200its/metadata.json") as md_file:
     md = json.load(md_file)
-train_length = 12
-max_offset = 52116-288-24-1
+train_length = 48
+max_offset = 52116-288-96-1
 min_offset = 7*288  # train data
 evals = np.zeros((md['iterations'], 100, 2))
 

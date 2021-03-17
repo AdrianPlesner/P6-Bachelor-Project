@@ -1,9 +1,9 @@
 {
   "path": "data/pems-bay.h5",
   "iterations": 5,
-  "offset": 0,
+  "offset": 1968,
   "data_type": "h5",
-  "train_length": 2016,
+  "train_length": 48,
   "test_length":48,
   "freq": "5Min",
   "location": 0,
