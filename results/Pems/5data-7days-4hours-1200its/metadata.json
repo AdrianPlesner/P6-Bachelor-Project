@@ -3,7 +3,7 @@
   "iterations": 5,
   "offset": 1968,
   "data_type": "h5",
-  "train_length": 48,
+  "train_length": 288,
   "test_length":48,
   "freq": "5Min",
   "location": 0,

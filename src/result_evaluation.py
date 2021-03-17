@@ -17,14 +17,19 @@ import numpy as np
 ### 52116 time steps
 ### we skip the first 288
 
+### Covid19 data
+### 274 locations
+### 413 time steps
+
 with open("results/Pems/5data-7days-4hours-1200its/metadata.json") as md_file:
     md = json.load(md_file)
-train_length = 48
-max_offset = 52116-288-96-1
+train_length = 288
+max_offset = 50000-1-288-48
 min_offset = 7*288  # train data
 evals = np.zeros((md['iterations'], 100, 2))
 
 for n in range(md['iterations']):
+    print(str(n))
     os.makedirs(md['deserialize_path'] + "pictures/" + str(n))
     for i in range(100):
         ### make predicton and evaluation with the same sensor
@@ -32,6 +37,7 @@ for n in range(md['iterations']):
         offset = random.randint(min_offset, max_offset)
         # load data
         train, test = hg.load_h5_to_gluon("data/pems-bay.h5", train_length, md['test_length'], offset, md['freq'], sensor=n)
+        #train, test = cg.load_csv_to_gluon("data/time_series_covid19_confirmed_global.csv", train_length, md['test_length'], md['freq'], offset, md['location'])
         # normalize data
         train.list_data[0]['target'], train.list_data[0]['scaler'] = dp.preprocess_data(train.list_data[0]['target'])
         test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
@@ -53,8 +59,8 @@ for n in range(md['iterations']):
         # get a random sensor
         sensor = random.randint(0, 324)
         # load data
-        train, test = hg.load_h5_to_gluon("data/pems-bay.h5", train_length, md['test_length'], offset, md['freq'],
-                                          sensor=sensor)
+        train, test = hg.load_h5_to_gluon("data/pems-bay.h5", train_length, md['test_length'], offset, md['freq'],sensor=sensor)
+        #train, test = cg.load_csv_to_gluon("data/time_series_covid19_confirmed_global.csv", train_length,md['test_length'], md['freq'], offset, sensor)
         # normalize data
         train.list_data[0]['target'], train.list_data[0]['scaler'] = dp.preprocess_data(train.list_data[0]['target'])
         test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
@@ -80,6 +86,6 @@ with open(md['deserialize_path']+"evaluation.txt", "w") as file:
         file.write("Average = " + str(np.average(evals[n, ::, 1])) + "\n\n")
         file.write("Total average for sensor = " + str(np.average(evals[n])) + "\n\n\n")
     file.write("Total average for model = " + str(np.average(evals)))
-
+print("done")
 
 

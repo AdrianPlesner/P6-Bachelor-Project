@@ -3,7 +3,7 @@
   "iterations": 1,
   "offset": 0,
   "data_type": "csv",
-  "train_length": 406,
+  "train_length": 30,
   "test_length":7,
   "freq": "1D",
   "location": 103,
