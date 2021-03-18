@@ -9,10 +9,10 @@
   "location": 103,
   "sum": false,
   "h5_key": "",
-  "make_plots": true,
+  "make_plots": false,
   "normalize": true,
-  "train_predictor": false,
-  "serialize_path": "out-data/rnn-dk-full/p",
-  "deserialize_path": "results/Covid19/rnn-dk-full/",
-  "estimator": "rnn"
+  "train_predictor": true,
+  "serialize_path": "out-data/p",
+  "deserialize_path": "results/Covid19/total/gp-dk-full-1200its/",
+  "estimator": "GP"
 }

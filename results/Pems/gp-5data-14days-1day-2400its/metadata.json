@@ -1,0 +1,18 @@
+{
+  "path": "data/pems-bay.h5",
+  "iterations": 5,
+  "offset": 0,
+  "data_type": "h5",
+  "train_length": 4032,
+  "test_length": 288,
+  "freq": "5Min",
+  "location": 0,
+  "sum": false,
+  "h5_key": "/speed",
+  "make_plots": false,
+  "normalize": true,
+  "train_predictor": true,
+  "serialize_path": "results/Pems/gp-5d-14d-1d/p",
+  "deserialize_path": "results/Pems/gp-5data-14days-1day-2400its/",
+  "estimator": "GP"
+}

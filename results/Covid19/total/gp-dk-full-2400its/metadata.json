@@ -1,7 +1,7 @@
 {
   "path": "data/time_series_covid19_confirmed_global.csv",
   "iterations": 1,
-  "offset": 376,
+  "offset": 0,
   "data_type": "csv",
   "train_length": 30,
   "test_length":7,
@@ -12,7 +12,6 @@
   "make_plots": true,
   "normalize": true,
   "train_predictor": false,
-  "serialize_path": "out-data/rnn-30days/p",
-  "deserialize_path": "results/Covid19/rnn-dk-30days/",
-  "estimator": "rnn"
+  "serialize_path": "out-data/p",
+  "deserialize_path": "results/Covid19/total/gp-dk-full-2400its/"
 }

@@ -13,6 +13,6 @@
   "normalize": true,
   "train_predictor": true,
   "serialize_path": "out-data/ar-30days/p",
-  "deserialize_path": "results/Covid19/ar-dk-30days/",
+  "deserialize_path": "results/Covid19/total/ar-dk-30days/",
   "estimator": "AR"
 }

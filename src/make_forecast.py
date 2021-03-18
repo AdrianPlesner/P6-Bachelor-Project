@@ -26,7 +26,7 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
         estimator = GaussianProcessEstimator(
             metadata['freq'],
             metadata['test_length'],
-            1,
+            5,
             trainer,
             metadata['train_length']
         )
@@ -35,7 +35,8 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
             metadata['freq'],
             metadata['test_length'],
             trainer=trainer,
-            context_length=metadata['train_length']
+            context_length=metadata['train_length'],
+            cardinality=list([5])
         )
     elif estimator == "AR":
         estimator = DeepAREstimator(
@@ -62,11 +63,15 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
     metadata['data_sets'] = len(data)
     e = []
     predictor = []
-
-    for n in range(metadata['data_sets']):
-        e.append(estimator)
-        p = e[n].train(data[n]['train'])
-        predictor.append(p)
+    d = data[0]['train']
+    for n in range(1, metadata['data_sets']):
+        d.list_data.extend(data[n]['train'].list_data)
+    p = estimator.train(d)
+    predictor.append(p)
+    # for n in range(metadata['data_sets']):
+    #     e.append(estimator)
+    #     p = e[n].train(data[n]['train'])
+    #     predictor.append(p)
 
     return predictor
 
