@@ -9,9 +9,9 @@
   "location": 0,
   "sum": false,
   "h5_key": "/speed",
-  "make_plots": false,
+  "make_plots": true,
   "normalize": true,
-  "train_predictor": true,
+  "train_predictor": false,
   "serialize_path": "results/Pems/gp-5d-7d-1d/p",
   "deserialize_path": "results/Pems/gp-5data-7days-1day-2400its/",
   "estimator": "GP"

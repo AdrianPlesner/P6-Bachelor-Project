@@ -140,7 +140,8 @@ def plot_forecast(lst_data, forecast_entry, num, metadata, offset=0, path="", se
     plt.grid(which="both")
     plt.legend(legend, loc="upper left")
     plt.title("dataset " + str(sensor))
-    plt.savefig(metadata['deserialize_path'] + "pictures/" + str(num) + "/" + path)
+    plt.show()
+#    plt.savefig(metadata['deserialize_path'] + "pictures/" + str(num) + "/" + path)
     plt.close()
 
 
