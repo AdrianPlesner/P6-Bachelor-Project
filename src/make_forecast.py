@@ -18,17 +18,19 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
     if data is None:
         data = [{}]
     trainer = Trainer(ctx=mx.context.gpu(),
-                      epochs=8,
+                      epochs=100,
+                      batch_size=32,
                       learning_rate=1e-3,
                       hybridize=False,
-                      num_batches_per_epoch=300)
+                      num_batches_per_epoch=50)
     if estimator is None or estimator == "GP":
         estimator = GaussianProcessEstimator(
-            metadata['freq'],
-            metadata['test_length'],
-            100,
-            trainer,
-            metadata['train_length']
+            freq=metadata['freq'],
+            prediction_length=metadata['prediction_length'],
+            context_length=metadata['prediction_length'],
+            cardinality=100,
+            trainer=trainer,
+
         )
     elif estimator == "rnn":
         estimator = DeepFactorEstimator(
