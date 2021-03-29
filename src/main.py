@@ -22,43 +22,27 @@ else:
 with open(path) as md_file:
     md = json.load(md_file)
 
-data = []
-iterations = md['iterations']
-offset = md['offset']  # random.randint(0, 7*288 - 12 * 24)
-
-
 ### Load data
-for n in range(iterations):
-    if md['data_type'] == 'csv':
-        train, test = cg.load_csv_to_gluon(md['path'], md['train_length'], md['test_length'], md['freq'], offset,
-                                           md['location'], md['sum'])
-    elif md['data_type'] == 'tsv':
-        train, test = tg.load_tsv_to_gluon(md['path'], md['train_length'], md['test_length'], n, md['freq'])
-    elif md['data_type'] == 'h5':
-        train, test = hg.load_h5_to_gluon(md['path'], md['train_length'], md['test_length'], offset, md['freq'],
-                                          md['h5_key'], n)
-    else:
-        print("No data type in metadata")
-        exit()
-    #if md['make_plots']:
-        #hg.plot_train_test(train, test)
-    if md['normalize']:
-        train.list_data[0]['target'], train.list_data[0]['scaler'] = dp.preprocess_data(train.list_data[0]['target'])
-        test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
-    data.append({'train': train, 'test': test})
-    #if md['make_plots']:
-        #hg.plot_train_test(train, test)
+
+train, valid, test = hg.load_h5_to_gluon(md['path'], md['freq'])
+#if md['make_plots']:
+    #hg.plot_train_test(train, test)
+if md['normalize']:
+    train.list_data[0]['target'], train.list_data[0]['scaler'] = dp.preprocess_data(train.list_data[0]['target'])
+    test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
+
+#if md['make_plots']:
+    #hg.plot_train_test(train, test)
 
 ### Train network
 if md['train_predictor']:
     predictor = fc.train_predictor(data, metadata=md, estimator=md['estimator'])
-    for n in range(1):
-        if not os.path.isdir(md['serialize_path'] + str(n)):
-            os.makedirs(md['serialize_path'] + str(n))
-        predictor[n].serialize(Path(md['serialize_path'] + str(n) + "/"))
+    if not os.path.isdir(md['serialize_path']):
+        os.makedirs(md['serialize_path'])
+    predictor.serialize(Path(md['serialize_path'] + "/"))
 else:
     ### Load pre-trained predictors
-    predictor = fc.load_predictors(md['deserialize_path'], iterations)
+    predictor = fc.load_predictors(md['deserialize_path'])
 
 # ### Make forecasts
 # forecast = fc.make_forecast(predictor, data, md)

@@ -1,43 +1,55 @@
 import pandas as pd
-
+from gluonts.core.component import DType
+import numpy as np
 from gluonts.dataset.common import ListDataset
 from gluonts.dataset.util import to_pandas
 import matplotlib.pyplot as plt
+from gluonts.transform import AddConstFeature
 
 
-def load_h5_to_gluon(path, train_size=0, test_size=0, offset=0, freq="1H", key="", sensor=0):
+def load_h5_to_gluon(path, freq="1H"):
     store = pd.HDFStore(path)
-    if key == "":
-        key = store.keys()[0]
-    data = store[key]
+    train = store["train"],
+    valid = store["validation"]
+    test = store["test"]
     store.close()
-    size = len(data.values)
-    if train_size == 0 and test_size == 0:
-        train_size = size - size // 10
-        test_size = size - train_size
-    elif train_size == 0:
-        train_size = size - test_size
-    elif test_size == 0:
-        test_size = size - train_size
-    data_points = train_size
-    test_points = test_size + train_size
-    offset = offset + 288  # skip first day because of irregularity
 
-    data_start = [pd.Timestamp(data.axes[0].array[offset], freq=freq) for _ in range(test_points)]
+    train = train.swapaxes(0, 1)
 
     train_data = ListDataset([{
-        "start": start,
-        "target": target}
-        for (start, target) in zip(data_start[:data_points], [data.values[offset:data_points+offset, sensor]])],
+        "start": pd.Timestamp(train.axes[1].array[0], freq=freq),
+        "target": row}
+        for row in train.values],
         freq=freq
     )
+    for n in range(len(train_data.list_data)):
+        t = AddConstFeature("sensor_id", "target", 12, train.axes[0].values[n], int)
+        train_data.list_data[n] = t.map_transform(train_data.list_data[n], True)
+
+    valid = valid.swapaxes(0, 1)
+
+    valid_data = ListDataset([{
+        "start": pd.Timestamp(valid.axes[1].array[0], freq=freq),
+        "target": row}
+        for row in valid.values],
+        freq=freq
+    )
+    for n in range(len(valid_data.list_data)):
+        t = AddConstFeature("sensor_id", "target", 12, valid.axes[0].values[n], int)
+        valid_data.list_data[n] = t.map_transform(valid_data.list_data[n], False)
+
+    test = test.swapaxes(0, 1)
+
     test_data = ListDataset([{
-        "start": start,
-        "target": target}
-        for (start, target) in zip(data_start[:test_points], [data.values[offset:test_points+offset, sensor]])],
+        "start": pd.Timestamp(test.axes[1].array[0], freq=freq),
+        "target": row}
+        for row in test.values],
         freq=freq
     )
-    return train_data, test_data
+    for n in range(len(test_data.list_data)):
+        t = AddConstFeature("sensor_id", "target", 12, test.axes[0].values[n], int)
+        test_data.list_data[n] = t.map_transform(test_data.list_data[n], False)
+    return train_data, valid_data, test_data
 
 
 def plot_train_test(train_data, test_data, size_x=20, size_y=10):

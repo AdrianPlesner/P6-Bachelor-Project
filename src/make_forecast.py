@@ -1,6 +1,8 @@
 from gluonts.model.gp_forecaster import GaussianProcessEstimator
 from gluonts.model.deep_factor import DeepFactorEstimator
 from gluonts.model.deepar import DeepAREstimator
+from gluonts.mx.distribution import StudentTOutput, MultivariateGaussianOutput, LowrankMultivariateGaussianOutput
+from gluonts.mx.kernels import RBFKernelOutput, PeriodicKernelOutput
 from gluonts.mx.trainer import Trainer
 from gluonts.evaluation.backtest import make_evaluation_predictions
 import matplotlib.pyplot as plt
@@ -24,28 +26,51 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
                       hybridize=False,
                       num_batches_per_epoch=50)
     if estimator is None or estimator == "GP":
+        if metadata['kernel'] == "RBF":
+            kernel = RBFKernelOutput()
+        else:
+            kernel = PeriodicKernelOutput()
         estimator = GaussianProcessEstimator(
             freq=metadata['freq'],
             prediction_length=metadata['prediction_length'],
             context_length=metadata['prediction_length'],
-            cardinality=100,
+            cardinality=metadata["sensors"],
             trainer=trainer,
+            kernel_output=kernel
 
         )
-    elif estimator == "rnn":
+    elif estimator == "DeepFactor":
+        if metadata['distribution'] == "StudentT":
+            distribution = StudentTOutput()
+        elif metadata['distribution'] == "Gaussian":
+            distribution = MultivariateGaussianOutput()
+        elif metadata['distribution'] == "Low-rank gaussian":
+            distribution = LowrankMultivariateGaussianOutput()
         estimator = DeepFactorEstimator(
-            metadata['freq'],
-            metadata['test_length'],
+            freq=metadata['freq'],
+            prediction_length=metadata['prediction_length'],
             trainer=trainer,
-            context_length=metadata['train_length'],
-            cardinality=list([5])
+            context_length=metadata['prediction_length'],
+            cardinality=list(metadata["sensors"]),
+            num_hidden_global=metadata['global_units'],
+            num_layers_global=metadata['global_layers'],
+            num_factors=metadata['factors'],
+            num_hidden_local=metadata['local_units'],
+            num_layers_local=metadata['local_layers'],
+            cell_type=metadata["cell_type"],
+            distr_output=distribution
+
         )
-    elif estimator == "AR":
+    elif estimator == "DeepAR":
         estimator = DeepAREstimator(
-            metadata['freq'],
-            metadata['test_length'],
-            trainer,
-            metadata['train_length']
+            freq=metadata['freq'],
+            prediction_length=metadata['prediction_length'],
+            trainer=trainer,
+            context_length=metadata['prediction_length'],
+            num_layers=metadata['layers'],
+            num_cells=metadata['cells'],
+            cell_type=metadata['cell_type'],
+            dropout_rate=metadata['dropout_rate']
         )
     else:
         print("Estimator error")
