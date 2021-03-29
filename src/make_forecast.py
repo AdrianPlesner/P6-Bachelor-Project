@@ -26,7 +26,7 @@ def train_predictor(data=None, test_length=0, freq="1H", train_length=0, metadat
         estimator = GaussianProcessEstimator(
             metadata['freq'],
             metadata['test_length'],
-            5,
+            100,
             trainer,
             metadata['train_length']
         )

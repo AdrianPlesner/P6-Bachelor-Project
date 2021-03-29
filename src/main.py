@@ -52,7 +52,7 @@ for n in range(iterations):
 ### Train network
 if md['train_predictor']:
     predictor = fc.train_predictor(data, metadata=md, estimator=md['estimator'])
-    for n in range(iterations):
+    for n in range(1):
         if not os.path.isdir(md['serialize_path'] + str(n)):
             os.makedirs(md['serialize_path'] + str(n))
         predictor[n].serialize(Path(md['serialize_path'] + str(n) + "/"))
@@ -60,20 +60,20 @@ else:
     ### Load pre-trained predictors
     predictor = fc.load_predictors(md['deserialize_path'], iterations)
 
-### Make forecasts
-forecast = fc.make_forecast(predictor, data, md)
-if md['normalize']:
-    for n in range(iterations):
-        data[n], forecast[n] = dp.postprocess_data(data[n], forecast[n])
-
-### Plot forecasts
-if md['make_plots']:
-    for n in range(iterations):
-        fc.plot_forecast(data[n]['test'], forecast[n], n, md)
-
-### Evaluate predictions
-evals = []
-for n in range(iterations):
-    e = evaluation.evaluate_forecast(data[n]['test'], forecast[n], md['test_length'])
-    evals.append(e)
-print(evals)
+# ### Make forecasts
+# forecast = fc.make_forecast(predictor, data, md)
+# if md['normalize']:
+#     for n in range(iterations):
+#         data[n], forecast[n] = dp.postprocess_data(data[n], forecast[n])
+#
+# ### Plot forecasts
+# if md['make_plots']:
+#     for n in range(iterations):
+#         fc.plot_forecast(data[n]['test'], forecast[n], n, md)
+#
+# ### Evaluate predictions
+# evals = []
+# for n in range(iterations):
+#     e = evaluation.evaluate_forecast(data[n]['test'], forecast[n], md['test_length'])
+#     evals.append(e)
+# print(evals)
