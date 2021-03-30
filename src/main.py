@@ -5,7 +5,7 @@ import tsv_to_gluon as tg
 import h5_to_gluonts as hg
 import make_forecast as fc
 import random
-import csv_to_gluon as cg
+
 import sys
 import json
 import os
@@ -24,25 +24,29 @@ with open(path) as md_file:
 
 ### Load data
 
-train, valid, test = hg.load_h5_to_gluon(md['path'], md['freq'])
+train, valid, test = hg.load_h5_to_gluon(md['path'], md)
 #if md['make_plots']:
     #hg.plot_train_test(train, test)
 if md['normalize']:
-    train.list_data[0]['target'], train.list_data[0]['scaler'] = dp.preprocess_data(train.list_data[0]['target'])
-    test.list_data[0]['target'], test.list_data[0]['scaler'] = dp.preprocess_data(test.list_data[0]['target'])
+    for data in (train, valid, test):
+        for n in range(len(data)):
+            data.list_data[n]['target'], data.list_data[n]['scaler'] = dp.preprocess_data(data.list_data[n]['target'])
 
 #if md['make_plots']:
     #hg.plot_train_test(train, test)
 
 ### Train network
 if md['train_predictor']:
-    predictor = fc.train_predictor(data, metadata=md, estimator=md['estimator'])
+    predictor = fc.train_predictor(train, md)
     if not os.path.isdir(md['serialize_path']):
         os.makedirs(md['serialize_path'])
     predictor.serialize(Path(md['serialize_path'] + "/"))
 else:
     ### Load pre-trained predictors
-    predictor = fc.load_predictors(md['deserialize_path'])
+    predictor = fc.load_predictor(md['serialize_path'])
+
+### Compute validation metrics
+
 
 # ### Make forecasts
 # forecast = fc.make_forecast(predictor, data, md)
