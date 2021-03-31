@@ -85,12 +85,8 @@ def train_predictor(data=None, md=None):
     return estimator.train(data)
 
 
-def make_forecast(predictor, data, md):
-    md['data_sets'] = len(data)
-    f = []
-    for n in range(md['data_sets']):
-        f.append(list(predictor[0].predict(data[n]['train']))[0])
-    return f
+def make_forecast(predictor, data):
+    return list(predictor.predict(data, num_samples=250))
 
 
 # def make_forecast(predictor, data, md):

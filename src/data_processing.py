@@ -20,23 +20,21 @@ def rescale_data(x, scaler):
     return scaler.inverse_transform(x)
 
 
-def postprocess_data(data, forecast):
-    data['test'].list_data[0]['target'] = rescale_data(data['test'].list_data[0]['target'],
-                                                       data['test'].list_data[0]['scaler'])
+def postprocess_data(ld, forecast):
 
-    data['train'].list_data[0]['target'] = rescale_data(data['train'].list_data[0]['target'],
-                                                       data['train'].list_data[0]['scaler'])
-    f_mean = rescale_data(forecast.mean.reshape(-1, 1), data['train'].list_data[0]['scaler']).reshape(-1)
-    for n in range(len(f_mean)):
-        forecast.mean[n] = f_mean[n]
-    f_median = rescale_data(forecast.median.reshape(-1, 1), data['train'].list_data[0]['scaler']).reshape(-1)
-    for n in range(len(f_median)):
-        forecast.median[n] = f_median[n]
-    for n in range(len(forecast.samples)):
-        sample = rescale_data(forecast.samples[n].reshape(-1, 1), data['train'].list_data[0]['scaler']).reshape(-1)
-        for m in range(len(sample)):
-            forecast.samples[n][m] = sample[m]
-    return data, forecast
+    for n in range(len(ld.list_data)):
+        ld.list_data[n]['target'] = rescale_data(ld.list_data[n]['target'],ld.list_data[n]['scaler'])
+        f_mean = rescale_data(forecast[n].mean.reshape(-1, 1), ld.list_data[n]['scaler']).reshape(-1)
+        for m in range(len(f_mean)):
+            forecast[n].mean[m] = f_mean[m]
+        f_median = rescale_data(forecast[n].median.reshape(-1, 1), ld.list_data[n]['scaler']).reshape(-1)
+        for m in range(len(f_median)):
+            forecast[n].median[m] = f_median[m]
+        for m in range(len(forecast[n].samples)):
+            sample = rescale_data(forecast[n].samples[m].reshape(-1, 1), ld.list_data[n]['scaler']).reshape(-1)
+            for k in range(len(sample)):
+                forecast[n].samples[m][k] = sample[k]
+    return ld, forecast
 
 
 def make_prediction_interval(x, p):

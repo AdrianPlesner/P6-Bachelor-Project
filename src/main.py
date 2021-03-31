@@ -5,7 +5,7 @@ import tsv_to_gluon as tg
 import h5_to_gluonts as hg
 import make_forecast as fc
 import random
-
+import numpy as np
 import sys
 import json
 import os
@@ -29,8 +29,8 @@ train, valid, test = hg.load_h5_to_gluon(md['path'], md)
     #hg.plot_train_test(train, test)
 if md['normalize']:
     for data in (train, valid, test):
-        for n in range(len(data)):
-            data.list_data[n]['target'], data.list_data[n]['scaler'] = dp.preprocess_data(data.list_data[n]['target'])
+        for i in range(len(data)):
+            data.list_data[i]['target'], data.list_data[i]['scaler'] = dp.preprocess_data(data.list_data[i]['target'])
 
 #if md['make_plots']:
     #hg.plot_train_test(train, test)
@@ -46,6 +46,27 @@ else:
     predictor = fc.load_predictor(md['serialize_path'])
 
 ### Compute validation metrics
+validation_slices = evaluation.split_validation(valid, md)
+evals = []
+for i in range(len(validation_slices)):
+    s = validation_slices[i]
+    forecast = fc.make_forecast(predictor, s)
+    s, forecast = dp.postprocess_data(s, forecast)
+    e = evaluation.validate(s, forecast)
+    evals.append(e)
+
+with open(md['serialize_path']+"evaluation.txt", "w") as file:
+    e = np.asarray(evals)
+    for i in range(len(evals)):
+        file.write("Slice: " + str(i) + "\n")
+        for j in range(len(evals[i])):
+            file.write("Sensor: " + str(j) + "\n")
+            for k in range(len(evals[i][j])):
+                file.write(str(evals[i][j][k]) + ", ")
+            file.write("\n")
+
+        file.write("\n\n")
+    file.write("Average: " + str(np.average(evals)))
 
 
 # ### Make forecasts
