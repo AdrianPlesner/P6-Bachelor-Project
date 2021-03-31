@@ -136,12 +136,12 @@ def plot_forecast(lst_data, forecast_entry, num, md, offset=0, path="", sensor=-
         sensor = num
     plot_length = md['test_length'] + md['train_length']
     prediction_intervals = (90.0, 50.0)
-    legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
+    legend = ["observations", "mean prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
     data = [pd.date_range(start=lst_data.list_data[0]['start'], freq=md['freq'], periods=plot_length),
             lst_data.list_data[0]['target']]
     fig, ax = plt.subplots(1, 1, figsize=(20, 10))
     plt.plot(data[0][offset:plot_length], data[1][offset:plot_length])
-    plt.plot(forecast_entry.index, forecast_entry.median, color='#008000')
+    plt.plot(forecast_entry.index, forecast_entry.mean, color='#008000')
     y1, y2 = dp.make_prediction_interval(forecast_entry, 0.67)
     plt.fill_between(data[0][md['train_length']:plot_length], y1, y2, color='#00800080')
     y1, y2 = dp.make_prediction_interval(forecast_entry, 1.64)
