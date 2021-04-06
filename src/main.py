@@ -48,7 +48,10 @@ else:
 ### Compute validation metrics
 validation_slices = evaluation.split_validation(valid, md)
 evals = []
+forecast = fc.make_forecast_vector(predictor, validation_slices),
+
 for i in range(len(validation_slices)):
+    print("slice " + str(i) + " of " + str(len(validation_slices)))
     s = validation_slices[i]
     forecast = fc.make_forecast(predictor, s)
     s, forecast = dp.postprocess_data(s, forecast)

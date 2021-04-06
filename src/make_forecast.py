@@ -89,6 +89,9 @@ def make_forecast(predictor, data):
     return list(predictor.predict(data, num_samples=250))
 
 
+make_forecast_vector = np.vectorize(make_forecast)
+
+
 # def make_forecast(predictor, data, md):
 #     md['data_sets'] = len(data)
 #     f = []
@@ -146,7 +149,7 @@ def plot_forecast(lst_data, forecast_entry, num, md, offset=0, path="", sensor=-
     plt.legend(legend, loc="upper left")
     plt.title("dataset " + str(sensor))
     plt.show()
-#    plt.savefig(md['deserialize_path'] + "pictures/" + str(num) + "/" + path)
+    #    plt.savefig(md['deserialize_path'] + "pictures/" + str(num) + "/" + path)
     plt.close()
 
 
