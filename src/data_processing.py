@@ -23,7 +23,7 @@ def rescale_data(x, scaler):
 def postprocess_data(ld, forecast):
 
     for n in range(len(ld.list_data)):
-        ld.list_data[n]['target'] = rescale_data(ld.list_data[n]['target'],ld.list_data[n]['scaler'])
+        ld.list_data[n]['target'] = rescale_data(ld.list_data[n]['target'], ld.list_data[n]['scaler'])
         f_mean = rescale_data(forecast[n].mean.reshape(-1, 1), ld.list_data[n]['scaler']).reshape(-1)
         for m in range(len(f_mean)):
             forecast[n].mean[m] = f_mean[m]
@@ -35,6 +35,9 @@ def postprocess_data(ld, forecast):
             for k in range(len(sample)):
                 forecast[n].samples[m][k] = sample[k]
     return ld, forecast
+
+
+postprocess_data_vector = np.vectorize(postprocess_data, otypes=[list, list])
 
 
 def make_prediction_interval(x, p):

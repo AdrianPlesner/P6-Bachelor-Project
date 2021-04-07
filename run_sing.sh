@@ -8,5 +8,5 @@
 
 #srun singularity build --fakeroot tensorflow_custom.sif <build-file-path>
 
-srun singularity exec --nv -B src:/src -B results:/results -B data:/data  mxnet_21.02-py3.sif python /src/main.py data/md/md-gp-default.json
+srun singularity exec --nv -B src:/src -B results:/results -B data:/data  mxnet_21.02-py3.sif python /src/main.py results/Pems/GP-more/metadata.json
 srun echo "finished successful"

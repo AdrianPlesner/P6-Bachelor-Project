@@ -18,13 +18,13 @@ def train_predictor(data=None, md=None):
     if md is None:
         exit("Missing metadata for training")
     if data is None:
-        exit("Missing data fro training")
+        exit("Missing data for training")
     trainer = Trainer(ctx=mx.context.gpu(),
-                      epochs=100,
+                      epochs=250,
                       batch_size=32,
                       learning_rate=1e-3,
                       hybridize=False,
-                      num_batches_per_epoch=50)
+                      num_batches_per_epoch=1143)
     if md['estimator'] is None or md['estimator'] == "GP":
         if md['kernel'] == "RBF":
             kernel = RBFKernelOutput()
@@ -89,7 +89,7 @@ def make_forecast(predictor, data):
     return list(predictor.predict(data, num_samples=250))
 
 
-make_forecast_vector = np.vectorize(make_forecast)
+make_forecast_vector = np.vectorize(make_forecast, otypes=[list])
 
 
 # def make_forecast(predictor, data, md):

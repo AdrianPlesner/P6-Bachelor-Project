@@ -45,31 +45,26 @@ else:
     ### Load pre-trained predictors
     predictor = fc.load_predictor(md['serialize_path'])
 
-### Compute validation metrics
-validation_slices = evaluation.split_validation(valid, md)
-evals = []
-forecast = fc.make_forecast_vector(predictor, validation_slices),
-
-for i in range(len(validation_slices)):
-    print("slice " + str(i) + " of " + str(len(validation_slices)))
-    s = validation_slices[i]
-    forecast = fc.make_forecast(predictor, s)
-    s, forecast = dp.postprocess_data(s, forecast)
-    e = evaluation.validate(s, forecast)
-    evals.append(e)
-
-with open(md['serialize_path']+"evaluation.txt", "w") as file:
-    e = np.asarray(evals)
-    for i in range(len(evals)):
-        file.write("Slice: " + str(i) + "\n")
-        for j in range(len(evals[i])):
-            file.write("Sensor: " + str(j) + "\n")
-            for k in range(len(evals[i][j])):
-                file.write(str(evals[i][j][k]) + ", ")
-            file.write("\n")
-
-        file.write("\n\n")
-    file.write("Average: " + str(np.average(evals)))
+# ### Compute validation metrics
+# validation_slices = evaluation.split_validation(valid, md)
+# validation_slices = validation_slices
+# forecast = fc.make_forecast_vector(predictor, validation_slices)
+# validation_slices, forecast = dp.postprocess_data_vector(validation_slices, forecast)
+# evals = evaluation.validate_vector(validation_slices, forecast)
+#
+#
+# with open(md['serialize_path']+"evaluation.txt", "w") as file:
+#     e = np.stack(evals)
+#     for i in range(len(evals)):
+#         file.write("Slice: " + str(i) + "\n")
+#         for j in range(len(evals[i])):
+#             file.write("Sensor: " + str(j) + "\n")
+#             for k in range(len(evals[i][j])):
+#                 file.write(str(evals[i][j][k]) + ", ")
+#             file.write("\n")
+#
+#         file.write("\n\n")
+#     file.write("Average: " + str(np.average(e)))
 
 
 # ### Make forecasts
