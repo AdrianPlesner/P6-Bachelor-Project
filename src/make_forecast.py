@@ -34,7 +34,7 @@ def train_predictor(data=None, md=None):
             freq=md['freq'],
             prediction_length=md['prediction_length'],
             context_length=md['prediction_length'],
-            cardinality=md["sensors"],
+            cardinality=md['sensors'],
             trainer=trainer,
             kernel_output=kernel
 
