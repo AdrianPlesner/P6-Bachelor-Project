@@ -86,7 +86,7 @@ def train_predictor(data=None, md=None):
 
 
 def make_forecast(predictor, data):
-    return list(predictor.predict(data, num_samples=250))
+    return list(predictor.predict(data, num_samples=100))
 
 
 make_forecast_vector = np.vectorize(make_forecast, otypes=[list])

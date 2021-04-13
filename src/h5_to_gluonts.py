@@ -18,7 +18,8 @@ def load_h5_to_gluon(path, md):
         data = data.swapaxes(0, 1)
         list_data = ListDataset([{
             "start": pd.Timestamp(data.axes[1].array[0], freq=md['freq']),
-            "target": data.values[0]}],
+            "target": row}
+            for row in data.values],
             freq=md['freq']
         )
         for n in range(len(list_data.list_data)):

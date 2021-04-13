@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
     ### Compute validation metrics
     validation_slices = evaluation.split_validation(valid, md)
-#    validation_slices = validation_slices
+#    validation_slices = validation_slices[:50]
     start = time.perf_counter()
     forecast = fc.make_forecast_vector(predictor, validation_slices)
     end = time.perf_counter() - start

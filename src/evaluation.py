@@ -4,6 +4,7 @@ import pandas as pd
 from gluonts.dataset.common import ListDataset
 import multiprocessing as mp
 import time
+import scipy.integrate as integrate
 
 
 def evaluate_forecast(data, forecast, length):
@@ -31,12 +32,10 @@ def validate(data, forecast):
     start = time.perf_counter()
     x = [np.sort(n.samples, 0) for n in forecast]
     evaluation = []
-    for n in range(len(x)):
+    for n in range(len(x)-1):
         ar = x[n].swapaxes(0, 1)
         cdf = [CdfShell(a) for a in ar]
-        xmin = [-np.inf for _ in ar]
-        xmax = [np.inf for _ in ar]
-        b = ps.crps_quadrature(data.list_data[n]['target'], cdf, xmin, xmax)
+        b = crps_vector(data.list_data[n]['target'], cdf)
         evaluation.append(b)
     end = time.perf_counter() - start
     print(f'Data with start {data.list_data[0]["start"]} done. Time = {end}')
@@ -73,14 +72,40 @@ def validate_mp(data, forecast):
     with mp.Pool(processes=n_proc) as pool:
         # starts the sub-processes without blocking
         # pass the chunk to each worker process
-        proc_results = [pool.apply_async(validate_vector, args=(chunk[0], chunk[1], )) for chunk in proc_chunks]
+        proc_results = [pool.apply_async(validate_vector, args=(chunk[0], chunk[1],)) for chunk in proc_chunks]
 
+        result_chunks = []
         # blocks until all results are fetched
-        result_chunks = [r.get() for r in proc_results]
+        for r in proc_results:
+            result_chunks.append(r.get())
     result = np.array([])
     for n in result_chunks:
         result = np.append(result, n)
     return result
+
+
+def _crps(val, a):
+    x = a.x
+    y = a.y
+    split = np.searchsorted(x, val)
+    if split < 0:
+        split = 0
+    if split == len(x):
+        split -= 1
+    lhs = np.square(y[:split])
+    rhs = np.square(1 - y[split:])
+    if len(lhs) == 0:
+        lc = 0
+    else:
+        lc = integrate.simpson(lhs, x[:split], even="first")
+    if len(rhs) == 0:
+        rhs == 0
+    else:
+        rc = integrate.simpson(rhs, x[split:], even="first")
+    return lc + rc
+
+
+crps_vector = np.vectorize(_crps, otypes=[list])
 
 
 class CdfShell:
