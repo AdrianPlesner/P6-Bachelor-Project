@@ -58,11 +58,11 @@ if __name__ == '__main__':
     start = time.perf_counter()
     forecast = fc.make_forecast_vector(predictor, validation_slices)
     end = time.perf_counter() - start
-    print("Creating forecasts took", end, "seconds")
+    print("Creating forecasts took", end, "seconds\n Start rescaling")
     start = time.perf_counter()
     validation_slices, forecast = dp.postprocess_data_vector(validation_slices, forecast)
     end = time.perf_counter() - start
-    print("Rescaling took", end, "seconds")
+    print("Rescaling took", end, "seconds\n Start validating...")
     start = time.perf_counter()
     slices = dp.listdata_to_array(validation_slices)
     f = [Forecast([m.samples for m in n]) for n in forecast]

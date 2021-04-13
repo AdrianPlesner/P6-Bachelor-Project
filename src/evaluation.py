@@ -28,13 +28,16 @@ def split_validation(data, md):
 
 
 def validate(data_slice, forecast):
+    start = time.perf_counter()
     x = [np.sort(n, 0) for n in forecast.samples]
     evaluation = []
     for n in range(len(x)):
         ar = x[n].swapaxes(0, 1)
         cdf = [CdfShell(a) for a in ar]
-        b = crps_vector(data_slice.data, cdf)
+        b = crps_vector(data_slice.data[n], cdf)
         evaluation.append(b)
+    end = time.perf_counter() - start
+    print(f"Slice took {end} seconds")
     return np.asarray(evaluation)
 
 
