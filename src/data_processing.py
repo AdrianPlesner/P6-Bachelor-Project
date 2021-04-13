@@ -1,5 +1,6 @@
 from sklearn import preprocessing
 import numpy as np
+from evaluation import DataSlice
 
 
 def preprocess_data(x):
@@ -45,3 +46,10 @@ def make_prediction_interval(x, p):
     top = x.median + p * std
     bottom = x.median - p * std
     return top, bottom
+
+
+def listdata_to_array(data):
+    result = []
+    for n in data:
+        result.append(DataSlice([m['target'] for m in n.list_data]))
+    return np.asarray(result)

@@ -10,6 +10,7 @@ import sys
 import json
 import os
 import time
+from evaluation import Forecast
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
@@ -22,7 +23,7 @@ if __name__ == '__main__':
 
     with open(path) as md_file:
         md = json.load(md_file)
-
+    print(str(md))
     ### Load data
     start = time.perf_counter()
     train, valid, test = hg.load_h5_to_gluon(md['path'], md)
@@ -63,7 +64,9 @@ if __name__ == '__main__':
     end = time.perf_counter() - start
     print("Rescaling took", end, "seconds")
     start = time.perf_counter()
-    evals = evaluation.validate_mp(validation_slices, forecast)
+    slices = dp.listdata_to_array(validation_slices)
+    f = [Forecast([m.samples for m in n]) for n in forecast]
+    evals = evaluation.validate_mp(slices, f)
     end = time.perf_counter() - start
     print("Evaluation took", end, "seconds")
 

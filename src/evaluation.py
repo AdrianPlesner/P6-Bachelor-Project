@@ -27,18 +27,14 @@ def split_validation(data, md):
     } for d in data.list_data], freq=md['freq']) for n in range(0, len(t), step)]
 
 
-def validate(data, forecast):
-    print(f'Beginning data with start {data.list_data[0]["start"]}')
-    start = time.perf_counter()
-    x = [np.sort(n.samples, 0) for n in forecast]
+def validate(data_slice, forecast):
+    x = [np.sort(n, 0) for n in forecast.samples]
     evaluation = []
-    for n in range(len(x)-1):
+    for n in range(len(x)):
         ar = x[n].swapaxes(0, 1)
         cdf = [CdfShell(a) for a in ar]
-        b = crps_vector(data.list_data[n]['target'], cdf)
+        b = crps_vector(data_slice.data, cdf)
         evaluation.append(b)
-    end = time.perf_counter() - start
-    print(f'Data with start {data.list_data[0]["start"]} done. Time = {end}')
     return np.asarray(evaluation)
 
 
@@ -121,3 +117,20 @@ class CdfShell:
         if v == len(self.y):
             return 1.0
         return self.y[v]
+
+
+class Forecast:
+    """Expects a 3d array/list with dimensions (n,m,o)
+    n is the number of sensors i.e. 325 sensors
+    m is the number of samples per sensor i.e. 250 samples
+    o is the prediction length i.e. 12 data point"""
+    def __init__(self, f):
+        self.samples = f
+
+
+class DataSlice:
+    """Expects a 2d array/list with dimensions (n,m)
+    n is the number of sensors i.e. 325 sensors
+    m is the data length i.e. 12 data points"""
+    def __init__(self, data):
+        self.data = data
