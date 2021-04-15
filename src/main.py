@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
     ### Compute validation metrics
     validation_slices = evaluation.split_validation(valid, md)
-#    validation_slices = validation_slices[:50]
+    #validation_slices = validation_slices[:5]
     start = time.perf_counter()
     forecast = fc.make_forecast_vector(predictor, validation_slices)
     end = time.perf_counter() - start
@@ -77,7 +77,7 @@ if __name__ == '__main__':
             for j in range(len(evals[i])):
                 file.write("Sensor: " + str(j) + "\n")
                 for k in range(len(evals[i][j])):
-                    file.write(str(evals[i][j][k]) + ", ")
+                    file.write("{:.2f}".format(evals[i][j][k]) + ", ")
                 file.write("\n")
 
             file.write("\n\n")

@@ -55,7 +55,7 @@ def train_predictor(data=None, md=None):
             prediction_length=md['prediction_length'],
             trainer=trainer,
             context_length=md['prediction_length'],
-            cardinality=list(md["sensors"]),
+            cardinality=list([md["sensors"]]),
             num_hidden_global=md['global_units'],
             num_layers_global=md['global_layers'],
             num_factors=md['factors'],

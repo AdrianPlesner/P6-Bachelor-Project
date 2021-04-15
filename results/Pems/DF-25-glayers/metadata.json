@@ -15,5 +15,5 @@
   "local_units": 5,
   "local_layers": 1,
   "cell_type": "lstm",
-  "serialize_path": "results/Pems/DF-default/"
+  "serialize_path": "results/Pems/DF-25-glayers/"
 }

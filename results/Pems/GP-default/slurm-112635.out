@@ -1,0 +1,971 @@
+[09:24:56] ../src/storage/storage.cc:199: Using Pooled (Naive) StorageManager for CPU
+[09:25:01] ../src/storage/storage.cc:199: Using Pooled (Naive) StorageManager for GPU
+  0%|          | 0/1143 [00:00<?, ?it/s] 15%|█▍        | 170/1143 [00:10<00:57, 16.97it/s, epoch=1/250, avg_epoch_loss=5.28e+3] 71%|███████   | 807/1143 [00:20<00:07, 44.42it/s, epoch=1/250, avg_epoch_loss=3.22e+3]100%|██████████| 1143/1143 [00:25<00:00, 45.00it/s, epoch=1/250, avg_epoch_loss=2.68e+3]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 608/1143 [00:10<00:08, 60.73it/s, epoch=2/250, avg_epoch_loss=1.07e+3]100%|██████████| 1143/1143 [00:18<00:00, 62.14it/s, epoch=2/250, avg_epoch_loss=991]   
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 634/1143 [00:10<00:08, 63.34it/s, epoch=3/250, avg_epoch_loss=837]100%|██████████| 1143/1143 [00:18<00:00, 63.13it/s, epoch=3/250, avg_epoch_loss=795]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 633/1143 [00:10<00:08, 63.24it/s, epoch=4/250, avg_epoch_loss=708]100%|██████████| 1143/1143 [00:18<00:00, 62.34it/s, epoch=4/250, avg_epoch_loss=707]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 639/1143 [00:10<00:07, 63.87it/s, epoch=5/250, avg_epoch_loss=693]100%|██████████| 1143/1143 [00:18<00:00, 63.32it/s, epoch=5/250, avg_epoch_loss=695]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 620/1143 [00:10<00:08, 61.96it/s, epoch=6/250, avg_epoch_loss=691]100%|██████████| 1143/1143 [00:18<00:00, 62.22it/s, epoch=6/250, avg_epoch_loss=691]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 649/1143 [00:10<00:07, 64.84it/s, epoch=7/250, avg_epoch_loss=685]100%|██████████| 1143/1143 [00:17<00:00, 64.05it/s, epoch=7/250, avg_epoch_loss=681]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▋    | 645/1143 [00:10<00:07, 64.42it/s, epoch=8/250, avg_epoch_loss=673]100%|██████████| 1143/1143 [00:18<00:00, 62.57it/s, epoch=8/250, avg_epoch_loss=667]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 632/1143 [00:10<00:08, 63.15it/s, epoch=9/250, avg_epoch_loss=638]100%|██████████| 1143/1143 [00:18<00:00, 63.32it/s, epoch=9/250, avg_epoch_loss=628]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 639/1143 [00:10<00:07, 63.88it/s, epoch=10/250, avg_epoch_loss=599]100%|██████████| 1143/1143 [00:18<00:00, 62.78it/s, epoch=10/250, avg_epoch_loss=591]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 639/1143 [00:10<00:07, 63.85it/s, epoch=11/250, avg_epoch_loss=556]100%|██████████| 1143/1143 [00:18<00:00, 62.96it/s, epoch=11/250, avg_epoch_loss=544]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 623/1143 [00:10<00:08, 62.22it/s, epoch=12/250, avg_epoch_loss=525]100%|██████████| 1143/1143 [00:18<00:00, 62.47it/s, epoch=12/250, avg_epoch_loss=518]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 650/1143 [00:10<00:07, 64.93it/s, epoch=13/250, avg_epoch_loss=498]100%|██████████| 1143/1143 [00:17<00:00, 64.91it/s, epoch=13/250, avg_epoch_loss=493]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 642/1143 [00:10<00:07, 64.11it/s, epoch=14/250, avg_epoch_loss=488]100%|██████████| 1143/1143 [00:18<00:00, 62.77it/s, epoch=14/250, avg_epoch_loss=484]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 633/1143 [00:10<00:08, 63.29it/s, epoch=15/250, avg_epoch_loss=474]100%|██████████| 1143/1143 [00:18<00:00, 63.34it/s, epoch=15/250, avg_epoch_loss=475]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 628/1143 [00:10<00:08, 62.78it/s, epoch=16/250, avg_epoch_loss=467]100%|██████████| 1143/1143 [00:18<00:00, 61.98it/s, epoch=16/250, avg_epoch_loss=469]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 633/1143 [00:10<00:08, 63.23it/s, epoch=17/250, avg_epoch_loss=465]100%|██████████| 1143/1143 [00:18<00:00, 62.81it/s, epoch=17/250, avg_epoch_loss=466]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▎    | 614/1143 [00:10<00:08, 61.32it/s, epoch=18/250, avg_epoch_loss=462]100%|██████████| 1143/1143 [00:18<00:00, 61.01it/s, epoch=18/250, avg_epoch_loss=461]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▋    | 645/1143 [00:10<00:07, 64.49it/s, epoch=19/250, avg_epoch_loss=462]100%|██████████| 1143/1143 [00:17<00:00, 63.90it/s, epoch=19/250, avg_epoch_loss=461]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 621/1143 [00:10<00:08, 62.01it/s, epoch=20/250, avg_epoch_loss=460]100%|██████████| 1143/1143 [00:18<00:00, 61.90it/s, epoch=20/250, avg_epoch_loss=458]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▋    | 643/1143 [00:10<00:07, 64.28it/s, epoch=21/250, avg_epoch_loss=460]100%|██████████| 1143/1143 [00:17<00:00, 64.05it/s, epoch=21/250, avg_epoch_loss=459]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 609/1143 [00:10<00:08, 60.84it/s, epoch=22/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:18<00:00, 62.24it/s, epoch=22/250, avg_epoch_loss=455]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 636/1143 [00:10<00:07, 63.58it/s, epoch=23/250, avg_epoch_loss=459]100%|██████████| 1143/1143 [00:18<00:00, 62.24it/s, epoch=23/250, avg_epoch_loss=458]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 624/1143 [00:10<00:08, 62.39it/s, epoch=24/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 62.62it/s, epoch=24/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 642/1143 [00:10<00:07, 64.13it/s, epoch=25/250, avg_epoch_loss=458]100%|██████████| 1143/1143 [00:18<00:00, 63.11it/s, epoch=25/250, avg_epoch_loss=457]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 619/1143 [00:10<00:08, 61.87it/s, epoch=26/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:18<00:00, 62.98it/s, epoch=26/250, avg_epoch_loss=453]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 649/1143 [00:10<00:07, 64.89it/s, epoch=27/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:18<00:00, 63.24it/s, epoch=27/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 601/1143 [00:10<00:09, 60.02it/s, epoch=28/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 62.02it/s, epoch=28/250, avg_epoch_loss=455]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 629/1143 [00:10<00:08, 62.86it/s, epoch=29/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:18<00:00, 62.95it/s, epoch=29/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 629/1143 [00:10<00:08, 62.88it/s, epoch=30/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 63.49it/s, epoch=30/250, avg_epoch_loss=455]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 627/1143 [00:10<00:08, 62.60it/s, epoch=31/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 61.96it/s, epoch=31/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 620/1143 [00:10<00:08, 61.98it/s, epoch=32/250, avg_epoch_loss=454]100%|██████████| 1143/1143 [00:18<00:00, 63.01it/s, epoch=32/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 628/1143 [00:10<00:08, 62.78it/s, epoch=33/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 62.27it/s, epoch=33/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 626/1143 [00:10<00:08, 62.53it/s, epoch=34/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:18<00:00, 62.87it/s, epoch=34/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 629/1143 [00:10<00:08, 62.89it/s, epoch=35/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 62.49it/s, epoch=35/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 616/1143 [00:10<00:08, 61.50it/s, epoch=36/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:18<00:00, 62.68it/s, epoch=36/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 629/1143 [00:10<00:08, 62.83it/s, epoch=37/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 61.91it/s, epoch=37/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 635/1143 [00:10<00:08, 63.43it/s, epoch=38/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:17<00:00, 63.75it/s, epoch=38/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 629/1143 [00:10<00:08, 62.81it/s, epoch=39/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 62.58it/s, epoch=39/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 635/1143 [00:10<00:08, 63.45it/s, epoch=40/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 63.23it/s, epoch=40/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 617/1143 [00:10<00:08, 61.62it/s, epoch=41/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:18<00:00, 62.11it/s, epoch=41/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 642/1143 [00:10<00:07, 64.12it/s, epoch=42/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:17<00:00, 63.82it/s, epoch=42/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 634/1143 [00:10<00:08, 63.35it/s, epoch=43/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 62.69it/s, epoch=43/250, avg_epoch_loss=455]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 647/1143 [00:10<00:07, 64.66it/s, epoch=44/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:17<00:00, 63.98it/s, epoch=44/250, avg_epoch_loss=453]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 635/1143 [00:10<00:08, 63.41it/s, epoch=45/250, avg_epoch_loss=458]100%|██████████| 1143/1143 [00:18<00:00, 63.29it/s, epoch=45/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 638/1143 [00:10<00:07, 63.76it/s, epoch=46/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 63.28it/s, epoch=46/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 647/1143 [00:10<00:07, 64.65it/s, epoch=47/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:17<00:00, 65.50it/s, epoch=47/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 59%|█████▉    | 676/1143 [00:10<00:06, 67.50it/s, epoch=48/250, avg_epoch_loss=451]100%|██████████| 1143/1143 [00:16<00:00, 67.38it/s, epoch=48/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 58%|█████▊    | 664/1143 [00:10<00:07, 66.32it/s, epoch=49/250, avg_epoch_loss=458]100%|██████████| 1143/1143 [00:17<00:00, 66.02it/s, epoch=49/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 58%|█████▊    | 662/1143 [00:10<00:07, 66.17it/s, epoch=50/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:17<00:00, 65.27it/s, epoch=50/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 610/1143 [00:10<00:08, 60.94it/s, epoch=51/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:18<00:00, 62.43it/s, epoch=51/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▋    | 643/1143 [00:10<00:07, 64.26it/s, epoch=52/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:17<00:00, 64.14it/s, epoch=52/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 636/1143 [00:10<00:07, 63.57it/s, epoch=53/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:18<00:00, 61.93it/s, epoch=53/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 635/1143 [00:10<00:08, 63.44it/s, epoch=54/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:17<00:00, 63.99it/s, epoch=54/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 655/1143 [00:10<00:07, 65.46it/s, epoch=55/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:17<00:00, 63.98it/s, epoch=55/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 628/1143 [00:10<00:08, 62.78it/s, epoch=56/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:17<00:00, 64.02it/s, epoch=56/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 639/1143 [00:10<00:07, 63.83it/s, epoch=57/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:18<00:00, 63.43it/s, epoch=57/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 601/1143 [00:10<00:09, 60.10it/s, epoch=58/250, avg_epoch_loss=454]100%|██████████| 1143/1143 [00:18<00:00, 61.62it/s, epoch=58/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 631/1143 [00:10<00:08, 63.00it/s, epoch=59/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:17<00:00, 63.68it/s, epoch=59/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 52%|█████▏    | 600/1143 [00:10<00:09, 59.97it/s, epoch=60/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 60.38it/s, epoch=60/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 640/1143 [00:10<00:07, 63.91it/s, epoch=61/250, avg_epoch_loss=454]100%|██████████| 1143/1143 [00:17<00:00, 63.82it/s, epoch=61/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 607/1143 [00:10<00:08, 60.70it/s, epoch=62/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 60.99it/s, epoch=62/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 652/1143 [00:10<00:07, 65.16it/s, epoch=63/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:17<00:00, 65.28it/s, epoch=63/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▎    | 612/1143 [00:10<00:08, 61.18it/s, epoch=64/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 62.03it/s, epoch=64/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 657/1143 [00:10<00:07, 65.65it/s, epoch=65/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:17<00:00, 65.42it/s, epoch=65/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 641/1143 [00:10<00:07, 64.03it/s, epoch=66/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:18<00:00, 63.06it/s, epoch=66/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 632/1143 [00:10<00:08, 63.18it/s, epoch=67/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:17<00:00, 63.92it/s, epoch=67/250, avg_epoch_loss=455]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▋    | 644/1143 [00:10<00:07, 64.34it/s, epoch=68/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 63.26it/s, epoch=68/250, avg_epoch_loss=453]
+  0%|          | 0/1143 [00:00<?, ?it/s] 58%|█████▊    | 658/1143 [00:10<00:07, 65.72it/s, epoch=69/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:17<00:00, 65.05it/s, epoch=69/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 627/1143 [00:10<00:08, 62.66it/s, epoch=70/250, avg_epoch_loss=450]100%|██████████| 1143/1143 [00:18<00:00, 62.04it/s, epoch=70/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 647/1143 [00:10<00:07, 64.62it/s, epoch=71/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:17<00:00, 64.43it/s, epoch=71/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 627/1143 [00:10<00:08, 62.65it/s, epoch=72/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 62.63it/s, epoch=72/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 648/1143 [00:10<00:07, 64.79it/s, epoch=73/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:17<00:00, 63.98it/s, epoch=73/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 629/1143 [00:10<00:08, 62.86it/s, epoch=74/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 63.17it/s, epoch=74/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 58%|█████▊    | 661/1143 [00:10<00:07, 66.07it/s, epoch=75/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:17<00:00, 65.32it/s, epoch=75/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 640/1143 [00:10<00:07, 63.93it/s, epoch=76/250, avg_epoch_loss=454]100%|██████████| 1143/1143 [00:18<00:00, 63.00it/s, epoch=76/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 646/1143 [00:10<00:07, 64.52it/s, epoch=77/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:17<00:00, 63.56it/s, epoch=77/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 620/1143 [00:10<00:08, 61.99it/s, epoch=78/250, avg_epoch_loss=454]100%|██████████| 1143/1143 [00:18<00:00, 62.96it/s, epoch=78/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▋    | 643/1143 [00:10<00:07, 64.23it/s, epoch=79/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:17<00:00, 64.11it/s, epoch=79/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 623/1143 [00:10<00:08, 62.26it/s, epoch=80/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:18<00:00, 62.74it/s, epoch=80/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 634/1143 [00:10<00:08, 63.35it/s, epoch=81/250, avg_epoch_loss=451]100%|██████████| 1143/1143 [00:17<00:00, 63.83it/s, epoch=81/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 619/1143 [00:10<00:08, 61.81it/s, epoch=82/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 63.04it/s, epoch=82/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 637/1143 [00:10<00:07, 63.66it/s, epoch=83/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:17<00:00, 64.12it/s, epoch=83/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 602/1143 [00:10<00:08, 60.17it/s, epoch=84/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:18<00:00, 61.26it/s, epoch=84/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 642/1143 [00:10<00:07, 64.11it/s, epoch=85/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:17<00:00, 65.20it/s, epoch=85/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 59%|█████▉    | 677/1143 [00:10<00:06, 67.63it/s, epoch=86/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:16<00:00, 67.40it/s, epoch=86/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 58%|█████▊    | 661/1143 [00:10<00:07, 66.06it/s, epoch=87/250, avg_epoch_loss=454]100%|██████████| 1143/1143 [00:17<00:00, 64.84it/s, epoch=87/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 57%|█████▋    | 647/1143 [00:10<00:07, 64.62it/s, epoch=88/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:17<00:00, 64.89it/s, epoch=88/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 622/1143 [00:10<00:08, 62.14it/s, epoch=89/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:18<00:00, 63.12it/s, epoch=89/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 607/1143 [00:10<00:08, 60.61it/s, epoch=90/250, avg_epoch_loss=451]100%|██████████| 1143/1143 [00:18<00:00, 60.81it/s, epoch=90/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 638/1143 [00:10<00:07, 63.77it/s, epoch=91/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:18<00:00, 62.70it/s, epoch=91/250, avg_epoch_loss=455]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 605/1143 [00:10<00:08, 60.46it/s, epoch=92/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:18<00:00, 61.56it/s, epoch=92/250, avg_epoch_loss=453]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 634/1143 [00:10<00:08, 63.38it/s, epoch=93/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:18<00:00, 61.93it/s, epoch=93/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 634/1143 [00:10<00:08, 63.37it/s, epoch=94/250, avg_epoch_loss=451]100%|██████████| 1143/1143 [00:18<00:00, 62.80it/s, epoch=94/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 632/1143 [00:10<00:08, 63.13it/s, epoch=95/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:18<00:00, 61.94it/s, epoch=95/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 627/1143 [00:10<00:08, 62.64it/s, epoch=96/250, avg_epoch_loss=453]100%|██████████| 1143/1143 [00:18<00:00, 62.44it/s, epoch=96/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 601/1143 [00:10<00:09, 60.07it/s, epoch=97/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:18<00:00, 61.24it/s, epoch=97/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▌    | 630/1143 [00:10<00:08, 62.98it/s, epoch=98/250, avg_epoch_loss=454]100%|██████████| 1143/1143 [00:18<00:00, 62.54it/s, epoch=98/250, avg_epoch_loss=452]
+  0%|          | 0/1143 [00:00<?, ?it/s] 53%|█████▎    | 611/1143 [00:10<00:08, 61.05it/s, epoch=99/250, avg_epoch_loss=457]100%|██████████| 1143/1143 [00:18<00:00, 61.99it/s, epoch=99/250, avg_epoch_loss=456]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 638/1143 [00:10<00:07, 63.79it/s, epoch=100/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:18<00:00, 62.86it/s, epoch=100/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 55%|█████▍    | 628/1143 [00:10<00:08, 62.74it/s, epoch=101/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:18<00:00, 63.34it/s, epoch=101/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 54%|█████▍    | 622/1143 [00:10<00:08, 62.16it/s, epoch=102/250, avg_epoch_loss=452]100%|██████████| 1143/1143 [00:18<00:00, 62.35it/s, epoch=102/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 56%|█████▌    | 640/1143 [00:10<00:07, 63.98it/s, epoch=103/250, avg_epoch_loss=455]100%|██████████| 1143/1143 [00:18<00:00, 63.05it/s, epoch=103/250, avg_epoch_loss=454]
+  0%|          | 0/1143 [00:00<?, ?it/s] 58%|█████▊    | 664/1143 [00:10<00:07, 66.34it/s, epoch=104/250, avg_epoch_loss=456]100%|██████████| 1143/1143 [00:16<00:00, 67.26it/s, epoch=104/250, avg_epoch_loss=456]
+WARNING:root:Serializing RepresentableBlockPredictor instances does not save the prediction network structure in a backwards-compatible manner. Be careful not to use this method in production.
+{'path': 'data/pems-bay.h5', 'sensors': 325, 'freq': '5Min', 'make_plots': False, 'normalize': True, 'train_predictor': True, 'prediction_length': 12, 'estimator': 'GP', 'kernel': 'RBF', 'serialize_path': 'results/Pems/GP-default/'}
+Loading data took 3.224459821358323 seconds
+learning rate from ``lr_scheduler`` has been overwritten by ``learning_rate`` in optimizer.
+Training the predictor took 1901.2623980762437 seconds
+Creating forecasts took 111.03029887750745 seconds
+Rescaling took 458.0072004618123 seconds
+Beginning data with start 2017-05-08 00:00:00
+Data with start 2017-05-08 00:00:00 done. Time = 0.6671822527423501
+Beginning data with start 2017-05-08 01:00:00
+Data with start 2017-05-08 01:00:00 done. Time = 0.6594823747873306
+Beginning data with start 2017-05-08 02:00:00
+Data with start 2017-05-08 02:00:00 done. Time = 0.6834369823336601
+Beginning data with start 2017-05-08 03:00:00
+Data with start 2017-05-08 03:00:00 done. Time = 0.7750804824754596
+Beginning data with start 2017-05-08 04:00:00
+Data with start 2017-05-08 04:00:00 done. Time = 1.572560883127153
+Beginning data with start 2017-05-08 10:00:00
+Data with start 2017-05-08 10:00:00 done. Time = 0.6676976922899485
+Beginning data with start 2017-05-08 11:00:00
+Data with start 2017-05-08 11:00:00 done. Time = 0.6379122110083699
+Beginning data with start 2017-05-08 12:00:00
+Data with start 2017-05-08 12:00:00 done. Time = 0.7296534068882465
+Beginning data with start 2017-05-08 13:00:00
+Data with start 2017-05-08 13:00:00 done. Time = 1.3870147606357932
+Beginning data with start 2017-05-08 14:00:00
+Data with start 2017-05-08 14:00:00 done. Time = 1.851808869279921
+Beginning data with start 2017-05-08 05:00:00
+Data with start 2017-05-08 05:00:00 done. Time = 0.6936277057975531
+Beginning data with start 2017-05-08 06:00:00
+Data with start 2017-05-08 06:00:00 done. Time = 1.3863204633817077
+Beginning data with start 2017-05-08 07:00:00
+Data with start 2017-05-08 07:00:00 done. Time = 1.434205305762589
+Beginning data with start 2017-05-08 08:00:00
+Data with start 2017-05-08 08:00:00 done. Time = 1.3432798217982054
+Beginning data with start 2017-05-08 09:00:00
+Data with start 2017-05-08 09:00:00 done. Time = 1.6508375387638807
+Beginning data with start 2017-05-08 15:00:00
+Data with start 2017-05-08 15:00:00 done. Time = 1.461640146560967
+Beginning data with start 2017-05-08 16:00:00
+Data with start 2017-05-08 16:00:00 done. Time = 1.342855623923242
+Beginning data with start 2017-05-08 17:00:00
+Data with start 2017-05-08 17:00:00 done. Time = 1.4613364404067397
+Beginning data with start 2017-05-08 18:00:00
+Data with start 2017-05-08 18:00:00 done. Time = 1.6218764875084162
+Beginning data with start 2017-05-08 19:00:00
+Data with start 2017-05-08 19:00:00 done. Time = 1.3822941994294524
+Beginning data with start 2017-05-09 01:00:00
+Data with start 2017-05-09 01:00:00 done. Time = 1.364147700369358
+Beginning data with start 2017-05-09 02:00:00
+Data with start 2017-05-09 02:00:00 done. Time = 1.3059059167280793
+Beginning data with start 2017-05-09 03:00:00
+Data with start 2017-05-09 03:00:00 done. Time = 1.7815459314733744
+Beginning data with start 2017-05-09 04:00:00
+Data with start 2017-05-09 04:00:00 done. Time = 1.3620421029627323
+Beginning data with start 2017-05-09 05:00:00
+Data with start 2017-05-09 05:00:00 done. Time = 0.9218438360840082
+Beginning data with start 2017-05-09 06:00:00
+Data with start 2017-05-09 06:00:00 done. Time = 2.0230811685323715
+Beginning data with start 2017-05-09 07:00:00
+Data with start 2017-05-09 07:00:00 done. Time = 1.9157320484519005
+Beginning data with start 2017-05-09 08:00:00
+Data with start 2017-05-09 08:00:00 done. Time = 2.613797180354595
+Beginning data with start 2017-05-09 09:00:00
+Data with start 2017-05-09 09:00:00 done. Time = 1.6761835562065244
+Beginning data with start 2017-05-09 10:00:00
+Data with start 2017-05-09 10:00:00 done. Time = 1.6115882713347673
+Beginning data with start 2017-05-09 21:00:00
+Data with start 2017-05-09 21:00:00 done. Time = 1.6037259371951222
+Beginning data with start 2017-05-09 22:00:00
+Data with start 2017-05-09 22:00:00 done. Time = 1.174294101074338
+Beginning data with start 2017-05-09 23:00:00
+Data with start 2017-05-09 23:00:00 done. Time = 0.9630236374214292
+Beginning data with start 2017-05-10 00:00:00
+Data with start 2017-05-10 00:00:00 done. Time = 1.4014156460762024
+Beginning data with start 2017-05-10 01:00:00
+Data with start 2017-05-10 01:00:00 done. Time = 2.5526175256818533
+Beginning data with start 2017-05-08 20:00:00
+Data with start 2017-05-08 20:00:00 done. Time = 1.4527624528855085
+Beginning data with start 2017-05-08 21:00:00
+Data with start 2017-05-08 21:00:00 done. Time = 1.2781336093321443
+Beginning data with start 2017-05-08 22:00:00
+Data with start 2017-05-08 22:00:00 done. Time = 1.4853815473616123
+Beginning data with start 2017-05-08 23:00:00
+Data with start 2017-05-08 23:00:00 done. Time = 1.6565207662060857
+Beginning data with start 2017-05-09 00:00:00
+Data with start 2017-05-09 00:00:00 done. Time = 1.1832615928724408
+Beginning data with start 2017-05-09 11:00:00
+Data with start 2017-05-09 11:00:00 done. Time = 1.7038102755323052
+Beginning data with start 2017-05-09 12:00:00
+Data with start 2017-05-09 12:00:00 done. Time = 2.240753570571542
+Beginning data with start 2017-05-09 13:00:00
+Data with start 2017-05-09 13:00:00 done. Time = 2.284379838965833
+Beginning data with start 2017-05-09 14:00:00
+Data with start 2017-05-09 14:00:00 done. Time = 1.643552108667791
+Beginning data with start 2017-05-09 15:00:00
+Data with start 2017-05-09 15:00:00 done. Time = 1.5850104577839375
+Beginning data with start 2017-05-10 07:00:00
+Data with start 2017-05-10 07:00:00 done. Time = 2.6177240759134293
+Beginning data with start 2017-05-10 08:00:00
+Data with start 2017-05-10 08:00:00 done. Time = 1.6382434898987412
+Beginning data with start 2017-05-10 09:00:00
+Data with start 2017-05-10 09:00:00 done. Time = 1.6962796011939645
+Beginning data with start 2017-05-10 10:00:00
+Data with start 2017-05-10 10:00:00 done. Time = 1.0014995578676462
+Beginning data with start 2017-05-10 11:00:00
+Data with start 2017-05-10 11:00:00 done. Time = 1.0294664548709989
+Beginning data with start 2017-05-09 16:00:00
+Data with start 2017-05-09 16:00:00 done. Time = 1.9514746824279428
+Beginning data with start 2017-05-09 17:00:00
+Data with start 2017-05-09 17:00:00 done. Time = 2.343910116702318
+Beginning data with start 2017-05-09 18:00:00
+Data with start 2017-05-09 18:00:00 done. Time = 1.822513579390943
+Beginning data with start 2017-05-09 19:00:00
+Data with start 2017-05-09 19:00:00 done. Time = 1.5825140615925193
+Beginning data with start 2017-05-09 20:00:00
+Data with start 2017-05-09 20:00:00 done. Time = 1.3063496965914965
+Beginning data with start 2017-05-10 17:00:00
+Data with start 2017-05-10 17:00:00 done. Time = 1.7897666124626994
+Beginning data with start 2017-05-10 18:00:00
+Data with start 2017-05-10 18:00:00 done. Time = 1.6156328544020653
+Beginning data with start 2017-05-10 19:00:00
+Data with start 2017-05-10 19:00:00 done. Time = 1.3640100015327334
+Beginning data with start 2017-05-10 20:00:00
+Data with start 2017-05-10 20:00:00 done. Time = 0.7603430831804872
+Beginning data with start 2017-05-10 21:00:00
+Data with start 2017-05-10 21:00:00 done. Time = 1.7167149689048529
+Beginning data with start 2017-05-10 02:00:00
+Data with start 2017-05-10 02:00:00 done. Time = 2.084411001764238
+Beginning data with start 2017-05-10 03:00:00
+Data with start 2017-05-10 03:00:00 done. Time = 2.231853824108839
+Beginning data with start 2017-05-10 04:00:00
+Data with start 2017-05-10 04:00:00 done. Time = 2.536036742851138
+Beginning data with start 2017-05-10 05:00:00
+Data with start 2017-05-10 05:00:00 done. Time = 2.2230120999738574
+Beginning data with start 2017-05-10 06:00:00
+Data with start 2017-05-10 06:00:00 done. Time = 1.9683839417994022
+Beginning data with start 2017-05-10 22:00:00
+Data with start 2017-05-10 22:00:00 done. Time = 2.40361787378788
+Beginning data with start 2017-05-10 23:00:00
+Data with start 2017-05-10 23:00:00 done. Time = 2.54538915771991
+Beginning data with start 2017-05-11 00:00:00
+Data with start 2017-05-11 00:00:00 done. Time = 2.018916920758784
+Beginning data with start 2017-05-11 01:00:00
+Data with start 2017-05-11 01:00:00 done. Time = 1.7997627006843686
+Beginning data with start 2017-05-11 02:00:00
+Data with start 2017-05-11 02:00:00 done. Time = 1.683931059204042
+Beginning data with start 2017-05-11 03:00:00
+Data with start 2017-05-11 03:00:00 done. Time = 2.5899988748133183
+Beginning data with start 2017-05-11 04:00:00
+Data with start 2017-05-11 04:00:00 done. Time = 2.257293318398297
+Beginning data with start 2017-05-11 05:00:00
+Data with start 2017-05-11 05:00:00 done. Time = 2.0514768781140447
+Beginning data with start 2017-05-11 06:00:00
+Data with start 2017-05-11 06:00:00 done. Time = 1.5844067828729749
+Beginning data with start 2017-05-11 07:00:00
+Data with start 2017-05-11 07:00:00 done. Time = 1.8162689888849854
+Beginning data with start 2017-05-11 08:00:00
+Data with start 2017-05-11 08:00:00 done. Time = 2.633491311222315
+Beginning data with start 2017-05-11 09:00:00
+Data with start 2017-05-11 09:00:00 done. Time = 2.052391093224287
+Beginning data with start 2017-05-11 10:00:00
+Data with start 2017-05-11 10:00:00 done. Time = 1.943299040198326
+Beginning data with start 2017-05-11 11:00:00
+Data with start 2017-05-11 11:00:00 done. Time = 1.7999815847724676
+Beginning data with start 2017-05-11 12:00:00
+Data with start 2017-05-11 12:00:00 done. Time = 1.9884367808699608
+Beginning data with start 2017-05-11 13:00:00
+Data with start 2017-05-11 13:00:00 done. Time = 2.519857246428728
+Beginning data with start 2017-05-11 14:00:00
+Data with start 2017-05-11 14:00:00 done. Time = 1.9167057881131768
+Beginning data with start 2017-05-11 15:00:00
+Data with start 2017-05-11 15:00:00 done. Time = 1.8480245312675834
+Beginning data with start 2017-05-11 16:00:00
+Data with start 2017-05-11 16:00:00 done. Time = 1.6759560527279973
+Beginning data with start 2017-05-11 17:00:00
+Data with start 2017-05-11 17:00:00 done. Time = 1.9739151140674949
+Beginning data with start 2017-05-11 23:00:00
+Data with start 2017-05-11 23:00:00 done. Time = 1.8340543750673532
+Beginning data with start 2017-05-12 00:00:00
+Data with start 2017-05-12 00:00:00 done. Time = 2.424301744438708
+Beginning data with start 2017-05-12 01:00:00
+Data with start 2017-05-12 01:00:00 done. Time = 2.488095948472619
+Beginning data with start 2017-05-12 02:00:00
+Data with start 2017-05-12 02:00:00 done. Time = 2.1983891995623708
+Beginning data with start 2017-05-12 03:00:00
+Data with start 2017-05-12 03:00:00 done. Time = 2.2345762187615037
+Beginning data with start 2017-05-11 18:00:00
+Data with start 2017-05-11 18:00:00 done. Time = 1.6661311872303486
+Beginning data with start 2017-05-11 19:00:00
+Data with start 2017-05-11 19:00:00 done. Time = 2.203677170909941
+Beginning data with start 2017-05-11 20:00:00
+Data with start 2017-05-11 20:00:00 done. Time = 2.4698682855814695
+Beginning data with start 2017-05-11 21:00:00
+Data with start 2017-05-11 21:00:00 done. Time = 2.2031840356066823
+Beginning data with start 2017-05-11 22:00:00
+Data with start 2017-05-11 22:00:00 done. Time = 2.1302670408040285
+Beginning data with start 2017-05-12 09:00:00
+Data with start 2017-05-12 09:00:00 done. Time = 2.271729671396315
+Beginning data with start 2017-05-12 10:00:00
+Data with start 2017-05-12 10:00:00 done. Time = 2.3177070496603847
+Beginning data with start 2017-05-12 11:00:00
+Data with start 2017-05-12 11:00:00 done. Time = 2.3426078502088785
+Beginning data with start 2017-05-12 12:00:00
+Data with start 2017-05-12 12:00:00 done. Time = 1.6702208472415805
+Beginning data with start 2017-05-12 13:00:00
+Data with start 2017-05-12 13:00:00 done. Time = 1.2859139181673527
+Beginning data with start 2017-05-10 12:00:00
+Data with start 2017-05-10 12:00:00 done. Time = 2.5598279973492026
+Beginning data with start 2017-05-10 13:00:00
+Data with start 2017-05-10 13:00:00 done. Time = 2.5736216865479946
+Beginning data with start 2017-05-10 14:00:00
+Data with start 2017-05-10 14:00:00 done. Time = 2.318622020073235
+Beginning data with start 2017-05-10 15:00:00
+Data with start 2017-05-10 15:00:00 done. Time = 1.9064900381490588
+Beginning data with start 2017-05-10 16:00:00
+Data with start 2017-05-10 16:00:00 done. Time = 1.7068580277264118
+Beginning data with start 2017-05-12 04:00:00
+Data with start 2017-05-12 04:00:00 done. Time = 2.31149226706475
+Beginning data with start 2017-05-12 05:00:00
+Data with start 2017-05-12 05:00:00 done. Time = 2.4530605524778366
+Beginning data with start 2017-05-12 06:00:00
+Data with start 2017-05-12 06:00:00 done. Time = 2.5489740213379264
+Beginning data with start 2017-05-12 07:00:00
+Data with start 2017-05-12 07:00:00 done. Time = 1.8015992678701878
+Beginning data with start 2017-05-12 08:00:00
+Data with start 2017-05-12 08:00:00 done. Time = 1.9530766494572163
+Beginning data with start 2017-05-12 14:00:00
+Data with start 2017-05-12 14:00:00 done. Time = 2.4945696853101254
+Beginning data with start 2017-05-12 15:00:00
+Data with start 2017-05-12 15:00:00 done. Time = 2.2361903581768274
+Beginning data with start 2017-05-12 16:00:00
+Data with start 2017-05-12 16:00:00 done. Time = 2.1314911311492324
+Beginning data with start 2017-05-12 17:00:00
+Data with start 2017-05-12 17:00:00 done. Time = 1.9779553767293692
+Beginning data with start 2017-05-12 18:00:00
+Data with start 2017-05-12 18:00:00 done. Time = 1.4606665186583996
+Beginning data with start 2017-05-13 00:00:00
+Data with start 2017-05-13 00:00:00 done. Time = 2.4613001327961683
+Beginning data with start 2017-05-13 01:00:00
+Data with start 2017-05-13 01:00:00 done. Time = 2.2816174747422338
+Beginning data with start 2017-05-13 02:00:00
+Data with start 2017-05-13 02:00:00 done. Time = 2.0211043627932668
+Beginning data with start 2017-05-13 03:00:00
+Data with start 2017-05-13 03:00:00 done. Time = 1.2944011632353067
+Beginning data with start 2017-05-13 04:00:00
+Data with start 2017-05-13 04:00:00 done. Time = 1.4189900802448392
+Beginning data with start 2017-05-12 19:00:00
+Data with start 2017-05-12 19:00:00 done. Time = 2.4744102554395795
+Beginning data with start 2017-05-12 20:00:00
+Data with start 2017-05-12 20:00:00 done. Time = 2.4925890043377876
+Beginning data with start 2017-05-12 21:00:00
+Data with start 2017-05-12 21:00:00 done. Time = 2.7214892841875553
+Beginning data with start 2017-05-12 22:00:00
+Data with start 2017-05-12 22:00:00 done. Time = 3.047721963375807
+Beginning data with start 2017-05-12 23:00:00
+Data with start 2017-05-12 23:00:00 done. Time = 2.1465368140488863
+Beginning data with start 2017-05-13 05:00:00
+Data with start 2017-05-13 05:00:00 done. Time = 1.889122499153018
+Beginning data with start 2017-05-13 06:00:00
+Data with start 2017-05-13 06:00:00 done. Time = 2.420683493837714
+Beginning data with start 2017-05-13 07:00:00
+Data with start 2017-05-13 07:00:00 done. Time = 3.0593901984393597
+Beginning data with start 2017-05-13 08:00:00
+Data with start 2017-05-13 08:00:00 done. Time = 2.8764442382380366
+Beginning data with start 2017-05-13 09:00:00
+Data with start 2017-05-13 09:00:00 done. Time = 2.826227303594351
+Beginning data with start 2017-05-13 10:00:00
+Data with start 2017-05-13 10:00:00 done. Time = 2.0073948241770267
+Beginning data with start 2017-05-13 11:00:00
+Data with start 2017-05-13 11:00:00 done. Time = 2.792819428257644
+Beginning data with start 2017-05-13 12:00:00
+Data with start 2017-05-13 12:00:00 done. Time = 2.9651919212192297
+Beginning data with start 2017-05-13 13:00:00
+Data with start 2017-05-13 13:00:00 done. Time = 2.767664580605924
+Beginning data with start 2017-05-13 14:00:00
+Data with start 2017-05-13 14:00:00 done. Time = 2.8900087689980865
+Beginning data with start 2017-05-13 15:00:00
+Data with start 2017-05-13 15:00:00 done. Time = 2.2145916102454066
+Beginning data with start 2017-05-13 16:00:00
+Data with start 2017-05-13 16:00:00 done. Time = 2.9892181595787406
+Beginning data with start 2017-05-13 17:00:00
+Data with start 2017-05-13 17:00:00 done. Time = 3.02395277004689
+Beginning data with start 2017-05-13 18:00:00
+Data with start 2017-05-13 18:00:00 done. Time = 2.8078095633536577
+Beginning data with start 2017-05-13 19:00:00
+Data with start 2017-05-13 19:00:00 done. Time = 2.632803311571479
+Beginning data with start 2017-05-13 20:00:00
+Data with start 2017-05-13 20:00:00 done. Time = 2.688226480036974
+Beginning data with start 2017-05-13 21:00:00
+Data with start 2017-05-13 21:00:00 done. Time = 3.240571497939527
+Beginning data with start 2017-05-13 22:00:00
+Data with start 2017-05-13 22:00:00 done. Time = 2.7241581892594695
+Beginning data with start 2017-05-13 23:00:00
+Data with start 2017-05-13 23:00:00 done. Time = 2.9874573359265924
+Beginning data with start 2017-05-14 00:00:00
+Data with start 2017-05-14 00:00:00 done. Time = 2.4656656458973885
+Beginning data with start 2017-05-14 01:00:00
+Data with start 2017-05-14 01:00:00 done. Time = 3.1738375136628747
+Beginning data with start 2017-05-14 02:00:00
+Data with start 2017-05-14 02:00:00 done. Time = 3.0529758175835013
+Beginning data with start 2017-05-14 03:00:00
+Data with start 2017-05-14 03:00:00 done. Time = 2.706608360633254
+Beginning data with start 2017-05-14 04:00:00
+Data with start 2017-05-14 04:00:00 done. Time = 2.9272189447656274
+Beginning data with start 2017-05-14 05:00:00
+Data with start 2017-05-14 05:00:00 done. Time = 2.548047786578536
+Beginning data with start 2017-05-14 06:00:00
+Data with start 2017-05-14 06:00:00 done. Time = 3.197535065934062
+Beginning data with start 2017-05-14 07:00:00
+Data with start 2017-05-14 07:00:00 done. Time = 3.0100295627489686
+Beginning data with start 2017-05-14 08:00:00
+Data with start 2017-05-14 08:00:00 done. Time = 2.9359367778524756
+Beginning data with start 2017-05-14 09:00:00
+Data with start 2017-05-14 09:00:00 done. Time = 2.3976734094321728
+Beginning data with start 2017-05-14 10:00:00
+Data with start 2017-05-14 10:00:00 done. Time = 2.843559619039297
+Beginning data with start 2017-05-14 11:00:00
+Data with start 2017-05-14 11:00:00 done. Time = 3.246269015595317
+Beginning data with start 2017-05-14 12:00:00
+Data with start 2017-05-14 12:00:00 done. Time = 2.804219940677285
+Beginning data with start 2017-05-14 13:00:00
+Data with start 2017-05-14 13:00:00 done. Time = 3.0882985135540366
+Beginning data with start 2017-05-14 14:00:00
+Data with start 2017-05-14 14:00:00 done. Time = 2.453691844828427
+Beginning data with start 2017-05-14 15:00:00
+Data with start 2017-05-14 15:00:00 done. Time = 2.5172877619042993
+Beginning data with start 2017-05-14 16:00:00
+Data with start 2017-05-14 16:00:00 done. Time = 2.912568125873804
+Beginning data with start 2017-05-14 17:00:00
+Data with start 2017-05-14 17:00:00 done. Time = 2.9782938957214355
+Beginning data with start 2017-05-14 18:00:00
+Data with start 2017-05-14 18:00:00 done. Time = 2.344964375719428
+Beginning data with start 2017-05-14 19:00:00
+Data with start 2017-05-14 19:00:00 done. Time = 2.528750834055245
+Beginning data with start 2017-05-14 20:00:00
+Data with start 2017-05-14 20:00:00 done. Time = 2.4945279685780406
+Beginning data with start 2017-05-14 21:00:00
+Data with start 2017-05-14 21:00:00 done. Time = 1.9100348753854632
+Beginning data with start 2017-05-14 22:00:00
+Data with start 2017-05-14 22:00:00 done. Time = 2.2609002934768796
+Beginning data with start 2017-05-14 23:00:00
+Data with start 2017-05-14 23:00:00 done. Time = 2.6686226967722178
+Beginning data with start 2017-05-15 00:00:00
+Data with start 2017-05-15 00:00:00 done. Time = 3.159495135769248
+Beginning data with start 2017-05-15 01:00:00
+Data with start 2017-05-15 01:00:00 done. Time = 2.9530211621895432
+Beginning data with start 2017-05-15 02:00:00
+Data with start 2017-05-15 02:00:00 done. Time = 1.8665861180052161
+Beginning data with start 2017-05-15 03:00:00
+Data with start 2017-05-15 03:00:00 done. Time = 2.5027567986398935
+Beginning data with start 2017-05-15 04:00:00
+Data with start 2017-05-15 04:00:00 done. Time = 3.2365126591175795
+Beginning data with start 2017-05-15 05:00:00
+Data with start 2017-05-15 05:00:00 done. Time = 2.8446834459900856
+Beginning data with start 2017-05-15 06:00:00
+Data with start 2017-05-15 06:00:00 done. Time = 2.846088326536119
+Beginning data with start 2017-05-15 07:00:00
+Data with start 2017-05-15 07:00:00 done. Time = 2.311586966738105
+Beginning data with start 2017-05-15 08:00:00
+Data with start 2017-05-15 08:00:00 done. Time = 2.9946327907964587
+Beginning data with start 2017-05-15 09:00:00
+Data with start 2017-05-15 09:00:00 done. Time = 2.415861401706934
+Beginning data with start 2017-05-15 10:00:00
+Data with start 2017-05-15 10:00:00 done. Time = 2.7401502458378673
+Beginning data with start 2017-05-15 11:00:00
+Data with start 2017-05-15 11:00:00 done. Time = 2.4751874459907413
+Beginning data with start 2017-05-15 12:00:00
+Data with start 2017-05-15 12:00:00 done. Time = 2.6352752093225718
+Beginning data with start 2017-05-15 13:00:00
+Data with start 2017-05-15 13:00:00 done. Time = 2.804617497138679
+Beginning data with start 2017-05-15 14:00:00
+Data with start 2017-05-15 14:00:00 done. Time = 3.227364785037935
+Beginning data with start 2017-05-15 15:00:00
+Data with start 2017-05-15 15:00:00 done. Time = 2.838248874992132
+Beginning data with start 2017-05-15 16:00:00
+Data with start 2017-05-15 16:00:00 done. Time = 2.1794171752408147
+Beginning data with start 2017-05-15 17:00:00
+Data with start 2017-05-15 17:00:00 done. Time = 2.711781343445182
+Beginning data with start 2017-05-15 18:00:00
+Data with start 2017-05-15 18:00:00 done. Time = 3.2008269149810076
+Beginning data with start 2017-05-15 19:00:00
+Data with start 2017-05-15 19:00:00 done. Time = 2.884847196750343
+Beginning data with start 2017-05-15 20:00:00
+Data with start 2017-05-15 20:00:00 done. Time = 2.9332855762913823
+Beginning data with start 2017-05-15 21:00:00
+Data with start 2017-05-15 21:00:00 done. Time = 2.380895915441215
+Beginning data with start 2017-05-15 22:00:00
+Data with start 2017-05-15 22:00:00 done. Time = 2.7499261340126395
+Beginning data with start 2017-05-15 23:00:00
+Data with start 2017-05-15 23:00:00 done. Time = 3.1857620729133487
+Beginning data with start 2017-05-16 00:00:00
+Data with start 2017-05-16 00:00:00 done. Time = 2.93506842572242
+Beginning data with start 2017-05-16 01:00:00
+Data with start 2017-05-16 01:00:00 done. Time = 2.5725784357637167
+Beginning data with start 2017-05-16 02:00:00
+Data with start 2017-05-16 02:00:00 done. Time = 2.6826156433671713
+Beginning data with start 2017-05-16 03:00:00
+Data with start 2017-05-16 03:00:00 done. Time = 3.167951976880431
+Beginning data with start 2017-05-16 04:00:00
+Data with start 2017-05-16 04:00:00 done. Time = 3.131807784549892
+Beginning data with start 2017-05-16 05:00:00
+Data with start 2017-05-16 05:00:00 done. Time = 2.989402700215578
+Beginning data with start 2017-05-16 06:00:00
+Data with start 2017-05-16 06:00:00 done. Time = 2.2545488430187106
+Beginning data with start 2017-05-16 07:00:00
+Data with start 2017-05-16 07:00:00 done. Time = 2.9374914476647973
+Beginning data with start 2017-05-16 08:00:00
+Data with start 2017-05-16 08:00:00 done. Time = 3.2138307513669133
+Beginning data with start 2017-05-16 09:00:00
+Data with start 2017-05-16 09:00:00 done. Time = 3.148654910735786
+Beginning data with start 2017-05-16 10:00:00
+Data with start 2017-05-16 10:00:00 done. Time = 2.801392136141658
+Beginning data with start 2017-05-16 11:00:00
+Data with start 2017-05-16 11:00:00 done. Time = 2.406813914887607
+Beginning data with start 2017-05-16 12:00:00
+Data with start 2017-05-16 12:00:00 done. Time = 3.074463496915996
+Beginning data with start 2017-05-16 13:00:00
+Data with start 2017-05-16 13:00:00 done. Time = 3.2058058604598045
+Beginning data with start 2017-05-16 14:00:00
+Data with start 2017-05-16 14:00:00 done. Time = 3.0743254981935024
+Beginning data with start 2017-05-16 15:00:00
+Data with start 2017-05-16 15:00:00 done. Time = 2.369858818128705
+Beginning data with start 2017-05-16 16:00:00
+Data with start 2017-05-16 16:00:00 done. Time = 2.7633543461561203
+Beginning data with start 2017-05-16 17:00:00
+Data with start 2017-05-16 17:00:00 done. Time = 3.2096563447266817
+Beginning data with start 2017-05-16 18:00:00
+Data with start 2017-05-16 18:00:00 done. Time = 3.1347122192382812
+Beginning data with start 2017-05-16 19:00:00
+Data with start 2017-05-16 19:00:00 done. Time = 3.0295376162976027
+Beginning data with start 2017-05-16 20:00:00
+Data with start 2017-05-16 20:00:00 done. Time = 2.302256718277931
+Beginning data with start 2017-05-16 21:00:00
+Data with start 2017-05-16 21:00:00 done. Time = 2.7406480154022574
+Beginning data with start 2017-05-16 22:00:00
+Data with start 2017-05-16 22:00:00 done. Time = 3.055778826586902
+Beginning data with start 2017-05-16 23:00:00
+Data with start 2017-05-16 23:00:00 done. Time = 2.8533831844106317
+Beginning data with start 2017-05-17 00:00:00
+Data with start 2017-05-17 00:00:00 done. Time = 2.6584810568019748
+Beginning data with start 2017-05-17 01:00:00
+Data with start 2017-05-17 01:00:00 done. Time = 2.732713426463306
+Beginning data with start 2017-05-17 02:00:00
+Data with start 2017-05-17 02:00:00 done. Time = 2.653733258135617
+Beginning data with start 2017-05-17 03:00:00
+Data with start 2017-05-17 03:00:00 done. Time = 2.643736056983471
+Beginning data with start 2017-05-17 04:00:00
+Data with start 2017-05-17 04:00:00 done. Time = 2.597392776980996
+Beginning data with start 2017-05-17 05:00:00
+Data with start 2017-05-17 05:00:00 done. Time = 2.873087932355702
+Beginning data with start 2017-05-17 06:00:00
+Data with start 2017-05-17 06:00:00 done. Time = 2.6536230901256204
+Beginning data with start 2017-05-17 07:00:00
+Data with start 2017-05-17 07:00:00 done. Time = 2.640663642436266
+Beginning data with start 2017-05-17 08:00:00
+Data with start 2017-05-17 08:00:00 done. Time = 2.586040242575109
+Beginning data with start 2017-05-18 00:00:00
+Data with start 2017-05-18 00:00:00 done. Time = 2.848767695017159
+Beginning data with start 2017-05-18 01:00:00
+Data with start 2017-05-18 01:00:00 done. Time = 2.645669768564403
+Beginning data with start 2017-05-18 02:00:00
+Data with start 2017-05-18 02:00:00 done. Time = 2.640441014431417
+Beginning data with start 2017-05-18 03:00:00
+Data with start 2017-05-18 03:00:00 done. Time = 2.4361344361677766
+Beginning data with start 2017-05-17 09:00:00
+Data with start 2017-05-17 09:00:00 done. Time = 2.683000149205327
+Beginning data with start 2017-05-17 10:00:00
+Data with start 2017-05-17 10:00:00 done. Time = 2.8153974767774343
+Beginning data with start 2017-05-17 11:00:00
+Data with start 2017-05-17 11:00:00 done. Time = 2.655965493991971
+Beginning data with start 2017-05-17 12:00:00
+Data with start 2017-05-17 12:00:00 done. Time = 2.6626956947147846
+Beginning data with start 2017-05-17 13:00:00
+Data with start 2017-05-17 13:00:00 done. Time = 2.5193317541852593
+Beginning data with start 2017-05-18 04:00:00
+Data with start 2017-05-18 04:00:00 done. Time = 2.7444426715373993
+Beginning data with start 2017-05-18 05:00:00
+Data with start 2017-05-18 05:00:00 done. Time = 2.648897706530988
+Beginning data with start 2017-05-18 06:00:00
+Data with start 2017-05-18 06:00:00 done. Time = 2.6861710557714105
+Beginning data with start 2017-05-18 07:00:00
+Data with start 2017-05-18 07:00:00 done. Time = 2.492657574824989
+Beginning data with start 2017-05-17 14:00:00
+Data with start 2017-05-17 14:00:00 done. Time = 2.67152460757643
+Beginning data with start 2017-05-17 15:00:00
+Data with start 2017-05-17 15:00:00 done. Time = 2.803110769018531
+Beginning data with start 2017-05-17 16:00:00
+Data with start 2017-05-17 16:00:00 done. Time = 2.641883807256818
+Beginning data with start 2017-05-17 17:00:00
+Data with start 2017-05-17 17:00:00 done. Time = 2.6317626321688294
+Beginning data with start 2017-05-17 18:00:00
+Data with start 2017-05-17 18:00:00 done. Time = 2.4620658298954368
+Beginning data with start 2017-05-18 08:00:00
+Data with start 2017-05-18 08:00:00 done. Time = 2.7322164699435234
+Beginning data with start 2017-05-18 09:00:00
+Data with start 2017-05-18 09:00:00 done. Time = 2.7061867732554674
+Beginning data with start 2017-05-18 10:00:00
+Data with start 2017-05-18 10:00:00 done. Time = 2.518379433080554
+Beginning data with start 2017-05-18 11:00:00
+Data with start 2017-05-18 11:00:00 done. Time = 2.4768305411562324
+Beginning data with start 2017-05-17 19:00:00
+Data with start 2017-05-17 19:00:00 done. Time = 2.964485453441739
+Beginning data with start 2017-05-17 20:00:00
+Data with start 2017-05-17 20:00:00 done. Time = 2.669915514998138
+Beginning data with start 2017-05-17 21:00:00
+Data with start 2017-05-17 21:00:00 done. Time = 2.626872760243714
+Beginning data with start 2017-05-17 22:00:00
+Data with start 2017-05-17 22:00:00 done. Time = 2.562421530485153
+Beginning data with start 2017-05-17 23:00:00
+Data with start 2017-05-17 23:00:00 done. Time = 2.311685270629823
+Beginning data with start 2017-05-18 12:00:00
+Data with start 2017-05-18 12:00:00 done. Time = 2.940272935666144
+Beginning data with start 2017-05-18 13:00:00
+Data with start 2017-05-18 13:00:00 done. Time = 3.1514946464449167
+Beginning data with start 2017-05-18 14:00:00
+Data with start 2017-05-18 14:00:00 done. Time = 2.981243558228016
+Beginning data with start 2017-05-18 15:00:00
+Data with start 2017-05-18 15:00:00 done. Time = 3.4409304317086935
+Beginning data with start 2017-05-18 16:00:00
+Data with start 2017-05-18 16:00:00 done. Time = 3.083153826184571
+Beginning data with start 2017-05-18 17:00:00
+Data with start 2017-05-18 17:00:00 done. Time = 3.2282686438411474
+Beginning data with start 2017-05-18 18:00:00
+Data with start 2017-05-18 18:00:00 done. Time = 2.9955276381224394
+Beginning data with start 2017-05-18 19:00:00
+Data with start 2017-05-18 19:00:00 done. Time = 3.290386628359556
+Beginning data with start 2017-05-18 20:00:00
+Data with start 2017-05-18 20:00:00 done. Time = 3.3293288834393024
+Beginning data with start 2017-05-18 21:00:00
+Data with start 2017-05-18 21:00:00 done. Time = 3.086519842967391
+Beginning data with start 2017-05-18 22:00:00
+Data with start 2017-05-18 22:00:00 done. Time = 3.0525052482262254
+Beginning data with start 2017-05-18 23:00:00
+Data with start 2017-05-18 23:00:00 done. Time = 2.9117546770721674
+Beginning data with start 2017-05-19 00:00:00
+Data with start 2017-05-19 00:00:00 done. Time = 3.2189378710463643
+Beginning data with start 2017-05-19 01:00:00
+Data with start 2017-05-19 01:00:00 done. Time = 3.103343077003956
+Beginning data with start 2017-05-19 02:00:00
+Data with start 2017-05-19 02:00:00 done. Time = 3.377401154488325
+Beginning data with start 2017-05-19 03:00:00
+Data with start 2017-05-19 03:00:00 done. Time = 2.795233807526529
+Beginning data with start 2017-05-19 04:00:00
+Data with start 2017-05-19 04:00:00 done. Time = 3.333798510953784
+Beginning data with start 2017-05-19 05:00:00
+Data with start 2017-05-19 05:00:00 done. Time = 3.021079040132463
+Beginning data with start 2017-05-19 06:00:00
+Data with start 2017-05-19 06:00:00 done. Time = 3.3818745939061046
+Beginning data with start 2017-05-19 07:00:00
+Data with start 2017-05-19 07:00:00 done. Time = 2.734421044588089
+Beginning data with start 2017-05-19 08:00:00
+Data with start 2017-05-19 08:00:00 done. Time = 3.3467892995104194
+Beginning data with start 2017-05-19 09:00:00
+Data with start 2017-05-19 09:00:00 done. Time = 2.985456426627934
+Beginning data with start 2017-05-19 10:00:00
+Data with start 2017-05-19 10:00:00 done. Time = 3.331733161583543
+Beginning data with start 2017-05-19 11:00:00
+Data with start 2017-05-19 11:00:00 done. Time = 2.6639049323275685
+Beginning data with start 2017-05-19 12:00:00
+Data with start 2017-05-19 12:00:00 done. Time = 3.0869064573198557
+Beginning data with start 2017-05-19 13:00:00
+Data with start 2017-05-19 13:00:00 done. Time = 3.178715458139777
+Beginning data with start 2017-05-19 14:00:00
+Data with start 2017-05-19 14:00:00 done. Time = 3.195448816753924
+Beginning data with start 2017-05-19 15:00:00
+Data with start 2017-05-19 15:00:00 done. Time = 2.4122588140890002
+Beginning data with start 2017-05-20 00:00:00
+Data with start 2017-05-20 00:00:00 done. Time = 2.0747139994055033
+Beginning data with start 2017-05-20 01:00:00
+Data with start 2017-05-20 01:00:00 done. Time = 1.9286439083516598
+Beginning data with start 2017-05-20 02:00:00
+Data with start 2017-05-20 02:00:00 done. Time = 2.4586665527895093
+Beginning data with start 2017-05-20 03:00:00
+Data with start 2017-05-20 03:00:00 done. Time = 3.1166576957330108
+Beginning data with start 2017-05-19 16:00:00
+Data with start 2017-05-19 16:00:00 done. Time = 3.0521525982767344
+Beginning data with start 2017-05-19 17:00:00
+Data with start 2017-05-19 17:00:00 done. Time = 3.254207467660308
+Beginning data with start 2017-05-19 18:00:00
+Data with start 2017-05-19 18:00:00 done. Time = 2.9047529567033052
+Beginning data with start 2017-05-19 19:00:00
+Data with start 2017-05-19 19:00:00 done. Time = 2.456024087034166
+Beginning data with start 2017-05-20 04:00:00
+Data with start 2017-05-20 04:00:00 done. Time = 2.04598446469754
+Beginning data with start 2017-05-20 05:00:00
+Data with start 2017-05-20 05:00:00 done. Time = 1.803852810524404
+Beginning data with start 2017-05-20 06:00:00
+Data with start 2017-05-20 06:00:00 done. Time = 2.675856376066804
+Beginning data with start 2017-05-20 07:00:00
+Data with start 2017-05-20 07:00:00 done. Time = 2.978733194991946
+Beginning data with start 2017-05-19 20:00:00
+Data with start 2017-05-19 20:00:00 done. Time = 3.1015001544728875
+Beginning data with start 2017-05-19 21:00:00
+Data with start 2017-05-19 21:00:00 done. Time = 3.257816368713975
+Beginning data with start 2017-05-19 22:00:00
+Data with start 2017-05-19 22:00:00 done. Time = 2.649504507891834
+Beginning data with start 2017-05-19 23:00:00
+Data with start 2017-05-19 23:00:00 done. Time = 2.5434583760797977
+Beginning data with start 2017-05-20 08:00:00
+Data with start 2017-05-20 08:00:00 done. Time = 1.9366074120625854
+Beginning data with start 2017-05-20 09:00:00
+Data with start 2017-05-20 09:00:00 done. Time = 1.9253594614565372
+Beginning data with start 2017-05-20 10:00:00
+Data with start 2017-05-20 10:00:00 done. Time = 2.895908936858177
+Beginning data with start 2017-05-20 11:00:00
+Data with start 2017-05-20 11:00:00 done. Time = 2.801279501989484
+Beginning data with start 2017-05-20 12:00:00
+Data with start 2017-05-20 12:00:00 done. Time = 1.7201618403196335
+Beginning data with start 2017-05-20 13:00:00
+Data with start 2017-05-20 13:00:00 done. Time = 2.4814631547778845
+Beginning data with start 2017-05-20 14:00:00
+Data with start 2017-05-20 14:00:00 done. Time = 2.967027211561799
+Beginning data with start 2017-05-20 15:00:00
+Data with start 2017-05-20 15:00:00 done. Time = 2.7154757510870695
+Beginning data with start 2017-05-20 16:00:00
+Data with start 2017-05-20 16:00:00 done. Time = 1.8254326460883021
+Beginning data with start 2017-05-20 17:00:00
+Data with start 2017-05-20 17:00:00 done. Time = 2.577191825956106
+Beginning data with start 2017-05-20 18:00:00
+Data with start 2017-05-20 18:00:00 done. Time = 3.003043359145522
+Beginning data with start 2017-05-20 19:00:00
+Data with start 2017-05-20 19:00:00 done. Time = 2.3696614587679505
+Beginning data with start 2017-05-20 20:00:00
+Data with start 2017-05-20 20:00:00 done. Time = 3.1928826281800866
+Beginning data with start 2017-05-20 21:00:00
+Data with start 2017-05-20 21:00:00 done. Time = 2.5395661937072873
+Beginning data with start 2017-05-20 22:00:00
+Data with start 2017-05-20 22:00:00 done. Time = 2.422242697328329
+Beginning data with start 2017-05-20 23:00:00
+Data with start 2017-05-20 23:00:00 done. Time = 1.5082029225304723
+Beginning data with start 2017-05-21 12:00:00
+Data with start 2017-05-21 12:00:00 done. Time = 2.396741663105786
+Beginning data with start 2017-05-21 13:00:00
+Data with start 2017-05-21 13:00:00 done. Time = 2.0684015657752752
+Beginning data with start 2017-05-21 14:00:00
+Data with start 2017-05-21 14:00:00 done. Time = 2.036125151440501
+Beginning data with start 2017-05-21 15:00:00
+Data with start 2017-05-21 15:00:00 done. Time = 1.7642170349135995
+Beginning data with start 2017-05-21 00:00:00
+Data with start 2017-05-21 00:00:00 done. Time = 2.799751926213503
+Beginning data with start 2017-05-21 01:00:00
+Data with start 2017-05-21 01:00:00 done. Time = 3.018621045164764
+Beginning data with start 2017-05-21 02:00:00
+Data with start 2017-05-21 02:00:00 done. Time = 2.492567952722311
+Beginning data with start 2017-05-21 03:00:00
+Data with start 2017-05-21 03:00:00 done. Time = 2.7165519278496504
+Beginning data with start 2017-05-21 04:00:00
+Data with start 2017-05-21 04:00:00 done. Time = 2.8586781537160277
+Beginning data with start 2017-05-21 05:00:00
+Data with start 2017-05-21 05:00:00 done. Time = 2.7378911077976227
+Beginning data with start 2017-05-21 06:00:00
+Data with start 2017-05-21 06:00:00 done. Time = 2.4962342977523804
+Beginning data with start 2017-05-21 07:00:00
+Data with start 2017-05-21 07:00:00 done. Time = 2.8461648896336555
+Beginning data with start 2017-05-21 20:00:00
+Data with start 2017-05-21 20:00:00 done. Time = 2.4925868045538664
+Beginning data with start 2017-05-21 21:00:00
+Data with start 2017-05-21 21:00:00 done. Time = 1.802812804467976
+Beginning data with start 2017-05-21 22:00:00
+Data with start 2017-05-21 22:00:00 done. Time = 1.7961021522060037
+Beginning data with start 2017-05-21 23:00:00
+Data with start 2017-05-21 23:00:00 done. Time = 2.1255994653329253
+Beginning data with start 2017-05-21 08:00:00
+Data with start 2017-05-21 08:00:00 done. Time = 3.0697416719049215
+Beginning data with start 2017-05-21 09:00:00
+Data with start 2017-05-21 09:00:00 done. Time = 2.70855678524822
+Beginning data with start 2017-05-21 10:00:00
+Data with start 2017-05-21 10:00:00 done. Time = 2.6336733857169747
+Beginning data with start 2017-05-21 11:00:00
+Data with start 2017-05-21 11:00:00 done. Time = 2.6664433097466826
+Beginning data with start 2017-05-21 16:00:00
+Data with start 2017-05-21 16:00:00 done. Time = 2.518627719953656
+Beginning data with start 2017-05-21 17:00:00
+Data with start 2017-05-21 17:00:00 done. Time = 2.432822142727673
+Beginning data with start 2017-05-21 18:00:00
+Data with start 2017-05-21 18:00:00 done. Time = 2.834555103443563
+Beginning data with start 2017-05-21 19:00:00
+Data with start 2017-05-21 19:00:00 done. Time = 2.343640965409577
+Beginning data with start 2017-05-22 00:00:00
+Data with start 2017-05-22 00:00:00 done. Time = 2.2384979305788875
+Beginning data with start 2017-05-22 01:00:00
+Data with start 2017-05-22 01:00:00 done. Time = 2.0681184520944953
+Beginning data with start 2017-05-22 02:00:00
+Data with start 2017-05-22 02:00:00 done. Time = 2.0108099645003676
+Beginning data with start 2017-05-22 03:00:00
+Data with start 2017-05-22 03:00:00 done. Time = 2.4464948186650872
+Beginning data with start 2017-05-22 04:00:00
+Data with start 2017-05-22 04:00:00 done. Time = 2.30734789557755
+Beginning data with start 2017-05-22 05:00:00
+Data with start 2017-05-22 05:00:00 done. Time = 1.9301466448232532
+Beginning data with start 2017-05-22 06:00:00
+Data with start 2017-05-22 06:00:00 done. Time = 2.1918282620608807
+Beginning data with start 2017-05-22 07:00:00
+Data with start 2017-05-22 07:00:00 done. Time = 2.5737613970413804
+Beginning data with start 2017-05-22 08:00:00
+Data with start 2017-05-22 08:00:00 done. Time = 2.1995298136025667
+Beginning data with start 2017-05-22 09:00:00
+Data with start 2017-05-22 09:00:00 done. Time = 1.8653325214982033
+Beginning data with start 2017-05-22 10:00:00
+Data with start 2017-05-22 10:00:00 done. Time = 2.201167684979737
+Beginning data with start 2017-05-22 11:00:00
+Data with start 2017-05-22 11:00:00 done. Time = 2.591315157711506
+Beginning data with start 2017-05-22 12:00:00
+Data with start 2017-05-22 12:00:00 done. Time = 2.686143101193011
+Beginning data with start 2017-05-22 13:00:00
+Data with start 2017-05-22 13:00:00 done. Time = 2.6100634802132845
+Beginning data with start 2017-05-22 14:00:00
+Data with start 2017-05-22 14:00:00 done. Time = 1.879086029715836
+Beginning data with start 2017-05-22 15:00:00
+Data with start 2017-05-22 15:00:00 done. Time = 1.6695342399179935
+Beginning data with start 2017-05-22 16:00:00
+Data with start 2017-05-22 16:00:00 done. Time = 2.8694798229262233
+Beginning data with start 2017-05-22 17:00:00
+Data with start 2017-05-22 17:00:00 done. Time = 2.3793019773438573
+Beginning data with start 2017-05-22 18:00:00
+Data with start 2017-05-22 18:00:00 done. Time = 1.7730409316718578
+Beginning data with start 2017-05-22 19:00:00
+Data with start 2017-05-22 19:00:00 done. Time = 1.6983413938432932
+Beginning data with start 2017-05-22 20:00:00
+Data with start 2017-05-22 20:00:00 done. Time = 2.8884208584204316
+Beginning data with start 2017-05-22 21:00:00
+Data with start 2017-05-22 21:00:00 done. Time = 2.0461129350587726
+Beginning data with start 2017-05-22 22:00:00
+Data with start 2017-05-22 22:00:00 done. Time = 1.5605068448930979
+Beginning data with start 2017-05-22 23:00:00
+Data with start 2017-05-22 23:00:00 done. Time = 1.7876421511173248
+Beginning data with start 2017-05-23 00:00:00
+Data with start 2017-05-23 00:00:00 done. Time = 2.69239928945899
+Beginning data with start 2017-05-23 01:00:00
+Data with start 2017-05-23 01:00:00 done. Time = 1.7985414508730173
+Beginning data with start 2017-05-23 02:00:00
+Data with start 2017-05-23 02:00:00 done. Time = 1.6010081265121698
+Beginning data with start 2017-05-23 03:00:00
+Data with start 2017-05-23 03:00:00 done. Time = 1.7450911039486527
+Beginning data with start 2017-05-23 08:00:00
+Data with start 2017-05-23 08:00:00 done. Time = 2.1607500445097685
+Beginning data with start 2017-05-23 09:00:00
+Data with start 2017-05-23 09:00:00 done. Time = 1.725524284876883
+Beginning data with start 2017-05-23 10:00:00
+Data with start 2017-05-23 10:00:00 done. Time = 1.8152730148285627
+Beginning data with start 2017-05-23 11:00:00
+Data with start 2017-05-23 11:00:00 done. Time = 1.7926181918010116
+Beginning data with start 2017-05-23 04:00:00
+Data with start 2017-05-23 04:00:00 done. Time = 1.958899193443358
+Beginning data with start 2017-05-23 05:00:00
+Data with start 2017-05-23 05:00:00 done. Time = 2.6069102687761188
+Beginning data with start 2017-05-23 06:00:00
+Data with start 2017-05-23 06:00:00 done. Time = 2.5316171338781714
+Beginning data with start 2017-05-23 07:00:00
+Data with start 2017-05-23 07:00:00 done. Time = 2.440600539557636
+Beginning data with start 2017-05-23 12:00:00
+Data with start 2017-05-23 12:00:00 done. Time = 2.8323201946914196
+Beginning data with start 2017-05-23 13:00:00
+Data with start 2017-05-23 13:00:00 done. Time = 2.5331286638975143
+Beginning data with start 2017-05-23 14:00:00
+Data with start 2017-05-23 14:00:00 done. Time = 2.44835196249187
+Beginning data with start 2017-05-23 15:00:00
+Data with start 2017-05-23 15:00:00 done. Time = 2.5638820249587297
+Beginning data with start 2017-05-23 16:00:00
+Data with start 2017-05-23 16:00:00 done. Time = 2.7780950106680393
+Beginning data with start 2017-05-23 17:00:00
+Data with start 2017-05-23 17:00:00 done. Time = 2.428163707256317
+Beginning data with start 2017-05-23 18:00:00
+Data with start 2017-05-23 18:00:00 done. Time = 2.58372843824327
+Beginning data with start 2017-05-23 19:00:00
+Data with start 2017-05-23 19:00:00 done. Time = 2.4079757519066334
+Beginning data with start 2017-05-23 20:00:00
+Data with start 2017-05-23 20:00:00 done. Time = 2.6710818903520703
+Beginning data with start 2017-05-23 21:00:00
+Data with start 2017-05-23 21:00:00 done. Time = 2.140472606755793
+Beginning data with start 2017-05-23 22:00:00
+Data with start 2017-05-23 22:00:00 done. Time = 2.3837678553536534
+Beginning data with start 2017-05-23 23:00:00
+Data with start 2017-05-23 23:00:00 done. Time = 2.4039001762866974
+Beginning data with start 2017-05-24 00:00:00
+Data with start 2017-05-24 00:00:00 done. Time = 2.616825357079506
+Beginning data with start 2017-05-24 01:00:00
+Data with start 2017-05-24 01:00:00 done. Time = 2.2621599389240146
+Beginning data with start 2017-05-24 02:00:00
+Data with start 2017-05-24 02:00:00 done. Time = 2.6269449638202786
+Beginning data with start 2017-05-24 03:00:00
+Data with start 2017-05-24 03:00:00 done. Time = 2.064284060150385
+Beginning data with start 2017-05-24 04:00:00
+Data with start 2017-05-24 04:00:00 done. Time = 2.5764818135648966
+Beginning data with start 2017-05-24 05:00:00
+Data with start 2017-05-24 05:00:00 done. Time = 2.5289856772869825
+Beginning data with start 2017-05-24 06:00:00
+Data with start 2017-05-24 06:00:00 done. Time = 2.4489248292520642
+Beginning data with start 2017-05-24 07:00:00
+Data with start 2017-05-24 07:00:00 done. Time = 1.7173848617821932
+Beginning data with start 2017-05-24 08:00:00
+Data with start 2017-05-24 08:00:00 done. Time = 2.247935026884079
+Beginning data with start 2017-05-24 09:00:00
+Data with start 2017-05-24 09:00:00 done. Time = 2.5092324325814843
+Beginning data with start 2017-05-24 10:00:00
+Data with start 2017-05-24 10:00:00 done. Time = 2.2847210709005594
+Beginning data with start 2017-05-24 11:00:00
+Data with start 2017-05-24 11:00:00 done. Time = 1.549146763049066
+Beginning data with start 2017-05-24 12:00:00
+Data with start 2017-05-24 12:00:00 done. Time = 2.000200951471925
+Beginning data with start 2017-05-24 13:00:00
+Data with start 2017-05-24 13:00:00 done. Time = 1.8326871125027537
+Beginning data with start 2017-05-24 14:00:00
+Data with start 2017-05-24 14:00:00 done. Time = 2.440380096435547
+Beginning data with start 2017-05-24 15:00:00
+Data with start 2017-05-24 15:00:00 done. Time = 2.3026302233338356
+Beginning data with start 2017-05-25 08:00:00
+Data with start 2017-05-25 08:00:00 done. Time = 2.4654158679768443
+Beginning data with start 2017-05-25 09:00:00
+Data with start 2017-05-25 09:00:00 done. Time = 1.780898186378181
+Beginning data with start 2017-05-25 10:00:00
+Data with start 2017-05-25 10:00:00 done. Time = 0.8162973625585437
+Beginning data with start 2017-05-25 11:00:00
+Data with start 2017-05-25 11:00:00 done. Time = 0.6763368993997574
+Beginning data with start 2017-05-24 16:00:00
+Data with start 2017-05-24 16:00:00 done. Time = 1.9598671412095428
+Beginning data with start 2017-05-24 17:00:00
+Data with start 2017-05-24 17:00:00 done. Time = 2.036955471150577
+Beginning data with start 2017-05-24 18:00:00
+Data with start 2017-05-24 18:00:00 done. Time = 2.3998024286702275
+Beginning data with start 2017-05-24 19:00:00
+Data with start 2017-05-24 19:00:00 done. Time = 2.167950427159667
+Beginning data with start 2017-05-25 20:00:00
+Data with start 2017-05-25 20:00:00 done. Time = 1.8644439540803432
+Beginning data with start 2017-05-25 21:00:00
+Data with start 2017-05-25 21:00:00 done. Time = 0.8850211501121521
+Beginning data with start 2017-05-25 22:00:00
+Data with start 2017-05-25 22:00:00 done. Time = 0.6588642364367843
+Beginning data with start 2017-05-25 23:00:00
+Data with start 2017-05-25 23:00:00 done. Time = 0.6463174726814032
+Beginning data with start 2017-05-24 20:00:00
+Data with start 2017-05-24 20:00:00 done. Time = 1.92869439907372
+Beginning data with start 2017-05-24 21:00:00
+Data with start 2017-05-24 21:00:00 done. Time = 2.3196468679234385
+Beginning data with start 2017-05-24 22:00:00
+Data with start 2017-05-24 22:00:00 done. Time = 2.3158569131046534
+Beginning data with start 2017-05-24 23:00:00
+Data with start 2017-05-24 23:00:00 done. Time = 1.9278469746932387
+Beginning data with start 2017-05-25 00:00:00
+Data with start 2017-05-25 00:00:00 done. Time = 1.8993298774585128
+Beginning data with start 2017-05-25 01:00:00
+Data with start 2017-05-25 01:00:00 done. Time = 2.4923146311193705
+Beginning data with start 2017-05-25 02:00:00
+Data with start 2017-05-25 02:00:00 done. Time = 2.3195173777639866
+Beginning data with start 2017-05-25 03:00:00
+Data with start 2017-05-25 03:00:00 done. Time = 1.4405128778889775
+Beginning data with start 2017-05-25 04:00:00
+Data with start 2017-05-25 04:00:00 done. Time = 1.9106927132233977
+Beginning data with start 2017-05-25 05:00:00
+Data with start 2017-05-25 05:00:00 done. Time = 2.386061637662351
+Beginning data with start 2017-05-25 06:00:00
+Data with start 2017-05-25 06:00:00 done. Time = 2.2131289103999734
+Beginning data with start 2017-05-25 07:00:00
+Data with start 2017-05-25 07:00:00 done. Time = 1.0747642843052745
+Beginning data with start 2017-05-25 12:00:00
+Data with start 2017-05-25 12:00:00 done. Time = 2.5148573387414217
+Beginning data with start 2017-05-25 13:00:00
+Data with start 2017-05-25 13:00:00 done. Time = 2.244095152243972
+Beginning data with start 2017-05-25 14:00:00
+Data with start 2017-05-25 14:00:00 done. Time = 0.8905934700742364
+Beginning data with start 2017-05-25 15:00:00
+Data with start 2017-05-25 15:00:00 done. Time = 0.5652689756825566
+Evaluation took 113.42088112514466 seconds
+finished successful

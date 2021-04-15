@@ -1,0 +1,1298 @@
+[18:28:42] ../src/storage/storage.cc:199: Using Pooled (Naive) StorageManager for CPU
+[18:28:48] ../src/storage/storage.cc:199: Using Pooled (Naive) StorageManager for GPU
+  0%|          | 0/1143 [00:00<?, ?it/s] 24%|██▎       | 271/1143 [00:10<00:32, 27.07it/s, epoch=1/250, avg_epoch_loss=0.309] 66%|██████▌   | 755/1143 [00:20<00:09, 39.58it/s, epoch=1/250, avg_epoch_loss=0.229]100%|██████████| 1143/1143 [00:28<00:00, 40.36it/s, epoch=1/250, avg_epoch_loss=0.211]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 481/1143 [00:10<00:13, 48.09it/s, epoch=2/250, avg_epoch_loss=0.173] 84%|████████▍ | 962/1143 [00:20<00:03, 47.22it/s, epoch=2/250, avg_epoch_loss=0.171]100%|██████████| 1143/1143 [00:24<00:00, 47.24it/s, epoch=2/250, avg_epoch_loss=0.171]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 482/1143 [00:10<00:13, 48.14it/s, epoch=3/250, avg_epoch_loss=0.169] 84%|████████▍ | 964/1143 [00:20<00:03, 47.06it/s, epoch=3/250, avg_epoch_loss=0.169]100%|██████████| 1143/1143 [00:24<00:00, 46.95it/s, epoch=3/250, avg_epoch_loss=0.169]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 476/1143 [00:10<00:14, 47.54it/s, epoch=4/250, avg_epoch_loss=0.168] 83%|████████▎ | 952/1143 [00:20<00:04, 47.18it/s, epoch=4/250, avg_epoch_loss=0.168]100%|██████████| 1143/1143 [00:24<00:00, 47.17it/s, epoch=4/250, avg_epoch_loss=0.168]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 476/1143 [00:10<00:14, 47.53it/s, epoch=5/250, avg_epoch_loss=0.168] 84%|████████▎ | 955/1143 [00:20<00:03, 47.71it/s, epoch=5/250, avg_epoch_loss=0.167]100%|██████████| 1143/1143 [00:24<00:00, 47.61it/s, epoch=5/250, avg_epoch_loss=0.168]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 467/1143 [00:10<00:14, 46.65it/s, epoch=6/250, avg_epoch_loss=0.168] 82%|████████▏ | 934/1143 [00:20<00:04, 46.21it/s, epoch=6/250, avg_epoch_loss=0.168]100%|██████████| 1143/1143 [00:24<00:00, 46.36it/s, epoch=6/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 470/1143 [00:10<00:14, 46.99it/s, epoch=7/250, avg_epoch_loss=0.168] 82%|████████▏ | 940/1143 [00:20<00:04, 46.87it/s, epoch=7/250, avg_epoch_loss=0.168]100%|██████████| 1143/1143 [00:24<00:00, 46.70it/s, epoch=7/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 463/1143 [00:10<00:14, 46.22it/s, epoch=8/250, avg_epoch_loss=0.167] 82%|████████▏ | 932/1143 [00:20<00:04, 46.57it/s, epoch=8/250, avg_epoch_loss=0.168]100%|██████████| 1143/1143 [00:24<00:00, 46.83it/s, epoch=8/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 472/1143 [00:10<00:14, 47.13it/s, epoch=9/250, avg_epoch_loss=0.168] 84%|████████▎ | 955/1143 [00:20<00:03, 47.82it/s, epoch=9/250, avg_epoch_loss=0.167]100%|██████████| 1143/1143 [00:24<00:00, 47.59it/s, epoch=9/250, avg_epoch_loss=0.168]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 474/1143 [00:10<00:14, 47.31it/s, epoch=10/250, avg_epoch_loss=0.166] 83%|████████▎ | 948/1143 [00:20<00:04, 47.23it/s, epoch=10/250, avg_epoch_loss=0.167]100%|██████████| 1143/1143 [00:24<00:00, 47.11it/s, epoch=10/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 485/1143 [00:10<00:13, 48.41it/s, epoch=11/250, avg_epoch_loss=0.168] 85%|████████▍ | 970/1143 [00:20<00:03, 46.92it/s, epoch=11/250, avg_epoch_loss=0.168]100%|██████████| 1143/1143 [00:24<00:00, 47.09it/s, epoch=11/250, avg_epoch_loss=0.168]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|████      | 462/1143 [00:10<00:14, 46.17it/s, epoch=12/250, avg_epoch_loss=0.166] 82%|████████▏ | 935/1143 [00:20<00:04, 46.84it/s, epoch=12/250, avg_epoch_loss=0.167]100%|██████████| 1143/1143 [00:24<00:00, 46.39it/s, epoch=12/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 472/1143 [00:10<00:14, 47.19it/s, epoch=13/250, avg_epoch_loss=0.168] 83%|████████▎ | 945/1143 [00:20<00:04, 47.22it/s, epoch=13/250, avg_epoch_loss=0.167]100%|██████████| 1143/1143 [00:24<00:00, 47.17it/s, epoch=13/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 467/1143 [00:10<00:14, 46.61it/s, epoch=14/250, avg_epoch_loss=0.167] 82%|████████▏ | 934/1143 [00:20<00:04, 46.66it/s, epoch=14/250, avg_epoch_loss=0.167]100%|██████████| 1143/1143 [00:24<00:00, 46.76it/s, epoch=14/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 466/1143 [00:10<00:14, 46.56it/s, epoch=15/250, avg_epoch_loss=0.166] 82%|████████▏ | 932/1143 [00:20<00:04, 46.56it/s, epoch=15/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.55it/s, epoch=15/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 469/1143 [00:10<00:14, 46.87it/s, epoch=16/250, avg_epoch_loss=0.166] 83%|████████▎ | 946/1143 [00:20<00:04, 47.34it/s, epoch=16/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.15it/s, epoch=16/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 466/1143 [00:10<00:14, 46.60it/s, epoch=17/250, avg_epoch_loss=0.167] 82%|████████▏ | 939/1143 [00:20<00:04, 46.97it/s, epoch=17/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.98it/s, epoch=17/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|████      | 462/1143 [00:10<00:14, 46.20it/s, epoch=18/250, avg_epoch_loss=0.167] 82%|████████▏ | 932/1143 [00:20<00:04, 46.61it/s, epoch=18/250, avg_epoch_loss=0.167]100%|██████████| 1143/1143 [00:24<00:00, 46.47it/s, epoch=18/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 474/1143 [00:10<00:14, 47.35it/s, epoch=19/250, avg_epoch_loss=0.166] 83%|████████▎ | 948/1143 [00:20<00:04, 47.14it/s, epoch=19/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.31it/s, epoch=19/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 469/1143 [00:10<00:14, 46.86it/s, epoch=20/250, avg_epoch_loss=0.167] 82%|████████▏ | 938/1143 [00:20<00:04, 46.46it/s, epoch=20/250, avg_epoch_loss=0.167]100%|██████████| 1143/1143 [00:24<00:00, 46.74it/s, epoch=20/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 471/1143 [00:10<00:14, 47.04it/s, epoch=21/250, avg_epoch_loss=0.165] 82%|████████▏ | 942/1143 [00:20<00:04, 46.63it/s, epoch=21/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.75it/s, epoch=21/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 472/1143 [00:10<00:14, 47.20it/s, epoch=22/250, avg_epoch_loss=0.167] 83%|████████▎ | 944/1143 [00:20<00:04, 47.07it/s, epoch=22/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.12it/s, epoch=22/250, avg_epoch_loss=0.167]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 479/1143 [00:10<00:13, 47.87it/s, epoch=23/250, avg_epoch_loss=0.165] 84%|████████▍ | 958/1143 [00:20<00:03, 47.27it/s, epoch=23/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.18it/s, epoch=23/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 471/1143 [00:10<00:14, 47.09it/s, epoch=24/250, avg_epoch_loss=0.167] 83%|████████▎ | 944/1143 [00:20<00:04, 47.17it/s, epoch=24/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.14it/s, epoch=24/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 466/1143 [00:10<00:14, 46.55it/s, epoch=25/250, avg_epoch_loss=0.166] 82%|████████▏ | 932/1143 [00:20<00:04, 46.52it/s, epoch=25/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.92it/s, epoch=25/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 466/1143 [00:10<00:14, 46.56it/s, epoch=26/250, avg_epoch_loss=0.165] 82%|████████▏ | 938/1143 [00:20<00:04, 46.91it/s, epoch=26/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.92it/s, epoch=26/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 466/1143 [00:10<00:14, 46.58it/s, epoch=27/250, avg_epoch_loss=0.166] 82%|████████▏ | 932/1143 [00:20<00:04, 46.58it/s, epoch=27/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.45it/s, epoch=27/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 480/1143 [00:10<00:13, 47.91it/s, epoch=28/250, avg_epoch_loss=0.167] 84%|████████▍ | 960/1143 [00:20<00:03, 47.01it/s, epoch=28/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.75it/s, epoch=28/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 480/1143 [00:10<00:13, 47.97it/s, epoch=29/250, avg_epoch_loss=0.165] 84%|████████▍ | 960/1143 [00:20<00:03, 47.33it/s, epoch=29/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.27it/s, epoch=29/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 469/1143 [00:10<00:14, 46.82it/s, epoch=30/250, avg_epoch_loss=0.167] 82%|████████▏ | 941/1143 [00:20<00:04, 47.04it/s, epoch=30/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.06it/s, epoch=30/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 463/1143 [00:10<00:14, 46.27it/s, epoch=31/250, avg_epoch_loss=0.167] 81%|████████  | 927/1143 [00:20<00:04, 46.31it/s, epoch=31/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.38it/s, epoch=31/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 474/1143 [00:10<00:14, 47.31it/s, epoch=32/250, avg_epoch_loss=0.166] 83%|████████▎ | 948/1143 [00:20<00:04, 47.26it/s, epoch=32/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.47it/s, epoch=32/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 472/1143 [00:10<00:14, 47.11it/s, epoch=33/250, avg_epoch_loss=0.167] 83%|████████▎ | 944/1143 [00:20<00:04, 46.74it/s, epoch=33/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.80it/s, epoch=33/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 467/1143 [00:10<00:14, 46.67it/s, epoch=34/250, avg_epoch_loss=0.166] 88%|████████▊ | 1010/1143 [00:20<00:02, 51.13it/s, epoch=34/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:22<00:00, 51.12it/s, epoch=34/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 50%|█████     | 573/1143 [00:10<00:09, 57.23it/s, epoch=35/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:20<00:00, 57.12it/s, epoch=35/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 50%|█████     | 572/1143 [00:10<00:09, 57.17it/s, epoch=36/250, avg_epoch_loss=0.164]100%|██████████| 1143/1143 [00:19<00:00, 57.21it/s, epoch=36/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 49%|████▉     | 563/1143 [00:10<00:10, 56.29it/s, epoch=37/250, avg_epoch_loss=0.166] 49%|████▉     | 563/1143 [00:20<00:10, 56.29it/s, epoch=37/250, avg_epoch_loss=0.165] 91%|█████████▏| 1045/1143 [00:20<00:01, 51.16it/s, epoch=37/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:22<00:00, 51.24it/s, epoch=37/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 474/1143 [00:10<00:14, 47.32it/s, epoch=38/250, avg_epoch_loss=0.165] 83%|████████▎ | 948/1143 [00:20<00:04, 47.22it/s, epoch=38/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.10it/s, epoch=38/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 479/1143 [00:10<00:13, 47.84it/s, epoch=39/250, avg_epoch_loss=0.165] 84%|████████▍ | 961/1143 [00:20<00:03, 48.05it/s, epoch=39/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.45it/s, epoch=39/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 466/1143 [00:10<00:14, 46.56it/s, epoch=40/250, avg_epoch_loss=0.166] 83%|████████▎ | 945/1143 [00:20<00:04, 47.31it/s, epoch=40/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.99it/s, epoch=40/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|███▉      | 453/1143 [00:10<00:15, 45.23it/s, epoch=41/250, avg_epoch_loss=0.165] 81%|████████  | 925/1143 [00:20<00:04, 46.36it/s, epoch=41/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.24it/s, epoch=41/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 467/1143 [00:10<00:14, 46.65it/s, epoch=42/250, avg_epoch_loss=0.166] 83%|████████▎ | 943/1143 [00:20<00:04, 47.21it/s, epoch=42/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.21it/s, epoch=42/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 475/1143 [00:10<00:14, 47.47it/s, epoch=43/250, avg_epoch_loss=0.166] 83%|████████▎ | 950/1143 [00:20<00:04, 47.24it/s, epoch=43/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.39it/s, epoch=43/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 470/1143 [00:10<00:14, 46.97it/s, epoch=44/250, avg_epoch_loss=0.166] 83%|████████▎ | 944/1143 [00:20<00:04, 47.21it/s, epoch=44/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.99it/s, epoch=44/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 472/1143 [00:10<00:14, 47.12it/s, epoch=45/250, avg_epoch_loss=0.164] 83%|████████▎ | 949/1143 [00:20<00:04, 47.43it/s, epoch=45/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.37it/s, epoch=45/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 480/1143 [00:10<00:13, 47.96it/s, epoch=46/250, avg_epoch_loss=0.166] 84%|████████▍ | 960/1143 [00:20<00:03, 47.23it/s, epoch=46/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.37it/s, epoch=46/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 482/1143 [00:10<00:13, 48.16it/s, epoch=47/250, avg_epoch_loss=0.164] 84%|████████▍ | 964/1143 [00:20<00:03, 47.47it/s, epoch=47/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.62it/s, epoch=47/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 472/1143 [00:10<00:14, 47.11it/s, epoch=48/250, avg_epoch_loss=0.167] 83%|████████▎ | 950/1143 [00:20<00:04, 47.48it/s, epoch=48/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.22it/s, epoch=48/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 476/1143 [00:10<00:14, 47.50it/s, epoch=49/250, avg_epoch_loss=0.165] 84%|████████▎ | 955/1143 [00:20<00:03, 47.72it/s, epoch=49/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.29it/s, epoch=49/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 467/1143 [00:10<00:14, 46.60it/s, epoch=50/250, avg_epoch_loss=0.165] 82%|████████▏ | 934/1143 [00:20<00:04, 46.66it/s, epoch=50/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.52it/s, epoch=50/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 476/1143 [00:10<00:14, 47.50it/s, epoch=51/250, avg_epoch_loss=0.166] 83%|████████▎ | 952/1143 [00:20<00:04, 47.05it/s, epoch=51/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.13it/s, epoch=51/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 473/1143 [00:10<00:14, 47.25it/s, epoch=52/250, avg_epoch_loss=0.165] 83%|████████▎ | 946/1143 [00:20<00:04, 47.09it/s, epoch=52/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.15it/s, epoch=52/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 477/1143 [00:10<00:13, 47.69it/s, epoch=53/250, avg_epoch_loss=0.166] 83%|████████▎ | 954/1143 [00:20<00:04, 47.01it/s, epoch=53/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.09it/s, epoch=53/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 43%|████▎     | 486/1143 [00:10<00:13, 48.59it/s, epoch=54/250, avg_epoch_loss=0.166] 85%|████████▌ | 972/1143 [00:20<00:03, 47.30it/s, epoch=54/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.22it/s, epoch=54/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 474/1143 [00:10<00:14, 47.32it/s, epoch=55/250, avg_epoch_loss=0.167] 83%|████████▎ | 948/1143 [00:20<00:04, 46.26it/s, epoch=55/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.62it/s, epoch=55/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 475/1143 [00:10<00:14, 47.43it/s, epoch=56/250, avg_epoch_loss=0.166] 83%|████████▎ | 952/1143 [00:20<00:04, 47.56it/s, epoch=56/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 47.47it/s, epoch=56/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 484/1143 [00:10<00:13, 48.34it/s, epoch=57/250, avg_epoch_loss=0.166] 85%|████████▍ | 968/1143 [00:20<00:03, 48.17it/s, epoch=57/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:23<00:00, 48.08it/s, epoch=57/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 477/1143 [00:10<00:13, 47.69it/s, epoch=58/250, avg_epoch_loss=0.165] 83%|████████▎ | 954/1143 [00:20<00:03, 47.58it/s, epoch=58/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.55it/s, epoch=58/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 479/1143 [00:10<00:13, 47.85it/s, epoch=59/250, avg_epoch_loss=0.166] 84%|████████▍ | 960/1143 [00:20<00:03, 47.99it/s, epoch=59/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:23<00:00, 48.08it/s, epoch=59/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 475/1143 [00:10<00:14, 47.44it/s, epoch=60/250, avg_epoch_loss=0.164] 84%|████████▍ | 959/1143 [00:20<00:03, 47.96it/s, epoch=60/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:23<00:00, 47.72it/s, epoch=60/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 483/1143 [00:10<00:13, 48.28it/s, epoch=61/250, avg_epoch_loss=0.165] 85%|████████▍ | 966/1143 [00:20<00:03, 48.03it/s, epoch=61/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:23<00:00, 47.99it/s, epoch=61/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 483/1143 [00:10<00:13, 48.28it/s, epoch=62/250, avg_epoch_loss=0.165] 85%|████████▍ | 966/1143 [00:20<00:03, 47.82it/s, epoch=62/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:23<00:00, 47.88it/s, epoch=62/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████▏     | 472/1143 [00:10<00:14, 47.10it/s, epoch=63/250, avg_epoch_loss=0.165] 84%|████████▍ | 959/1143 [00:20<00:03, 48.00it/s, epoch=63/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:23<00:00, 47.91it/s, epoch=63/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 475/1143 [00:10<00:14, 47.47it/s, epoch=64/250, avg_epoch_loss=0.166] 84%|████████▎ | 956/1143 [00:20<00:03, 47.78it/s, epoch=64/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:23<00:00, 47.95it/s, epoch=64/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 43%|████▎     | 492/1143 [00:10<00:13, 49.19it/s, epoch=65/250, avg_epoch_loss=0.165] 86%|████████▋ | 987/1143 [00:20<00:03, 49.32it/s, epoch=65/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:23<00:00, 49.25it/s, epoch=65/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 43%|████▎     | 486/1143 [00:10<00:13, 48.51it/s, epoch=66/250, avg_epoch_loss=0.166] 85%|████████▌ | 972/1143 [00:20<00:03, 47.67it/s, epoch=66/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:23<00:00, 47.66it/s, epoch=66/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 484/1143 [00:10<00:13, 48.33it/s, epoch=67/250, avg_epoch_loss=0.165] 85%|████████▍ | 968/1143 [00:20<00:03, 47.50it/s, epoch=67/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.18it/s, epoch=67/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 469/1143 [00:10<00:14, 46.85it/s, epoch=68/250, avg_epoch_loss=0.166] 83%|████████▎ | 945/1143 [00:20<00:04, 47.29it/s, epoch=68/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.05it/s, epoch=68/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 469/1143 [00:10<00:14, 46.89it/s, epoch=69/250, avg_epoch_loss=0.165] 83%|████████▎ | 954/1143 [00:20<00:03, 47.78it/s, epoch=69/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.60it/s, epoch=69/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 475/1143 [00:10<00:14, 47.47it/s, epoch=70/250, avg_epoch_loss=0.166] 85%|████████▍ | 966/1143 [00:20<00:03, 48.39it/s, epoch=70/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:23<00:00, 48.23it/s, epoch=70/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 475/1143 [00:10<00:14, 47.42it/s, epoch=71/250, avg_epoch_loss=0.164] 83%|████████▎ | 950/1143 [00:20<00:04, 46.88it/s, epoch=71/250, avg_epoch_loss=0.164]100%|██████████| 1143/1143 [00:23<00:00, 48.06it/s, epoch=71/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|███▉      | 456/1143 [00:10<00:15, 45.60it/s, epoch=72/250, avg_epoch_loss=0.166] 81%|████████  | 921/1143 [00:20<00:04, 46.12it/s, epoch=72/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.14it/s, epoch=72/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 480/1143 [00:10<00:13, 47.98it/s, epoch=73/250, avg_epoch_loss=0.164] 84%|████████▍ | 960/1143 [00:20<00:03, 46.76it/s, epoch=73/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.92it/s, epoch=73/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|████      | 459/1143 [00:10<00:14, 45.83it/s, epoch=74/250, avg_epoch_loss=0.165] 81%|████████  | 926/1143 [00:20<00:04, 46.29it/s, epoch=74/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.48it/s, epoch=74/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|████      | 459/1143 [00:10<00:14, 45.82it/s, epoch=75/250, avg_epoch_loss=0.164] 81%|████████▏ | 929/1143 [00:20<00:04, 46.49it/s, epoch=75/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.40it/s, epoch=75/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 469/1143 [00:10<00:14, 46.82it/s, epoch=76/250, avg_epoch_loss=0.165] 82%|████████▏ | 938/1143 [00:20<00:04, 46.56it/s, epoch=76/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.39it/s, epoch=76/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 470/1143 [00:10<00:14, 46.99it/s, epoch=77/250, avg_epoch_loss=0.165] 83%|████████▎ | 944/1143 [00:20<00:04, 47.19it/s, epoch=77/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 47.05it/s, epoch=77/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 471/1143 [00:10<00:14, 47.01it/s, epoch=78/250, avg_epoch_loss=0.165] 82%|████████▏ | 942/1143 [00:20<00:04, 46.54it/s, epoch=78/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.90it/s, epoch=78/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 467/1143 [00:10<00:14, 46.67it/s, epoch=79/250, avg_epoch_loss=0.165] 82%|████████▏ | 936/1143 [00:20<00:04, 46.79it/s, epoch=79/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.76it/s, epoch=79/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|███▉      | 456/1143 [00:10<00:15, 45.58it/s, epoch=80/250, avg_epoch_loss=0.166] 80%|████████  | 919/1143 [00:20<00:04, 45.97it/s, epoch=80/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 45.86it/s, epoch=80/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 471/1143 [00:10<00:14, 47.09it/s, epoch=81/250, avg_epoch_loss=0.166] 82%|████████▏ | 942/1143 [00:20<00:04, 47.03it/s, epoch=81/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.98it/s, epoch=81/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 466/1143 [00:10<00:14, 46.55it/s, epoch=82/250, avg_epoch_loss=0.165] 82%|████████▏ | 933/1143 [00:20<00:04, 46.60it/s, epoch=82/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.51it/s, epoch=82/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|████      | 460/1143 [00:10<00:14, 45.93it/s, epoch=83/250, avg_epoch_loss=0.166] 81%|████████  | 921/1143 [00:20<00:04, 45.99it/s, epoch=83/250, avg_epoch_loss=0.166]100%|██████████| 1143/1143 [00:24<00:00, 46.25it/s, epoch=83/250, avg_epoch_loss=0.166]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|████      | 461/1143 [00:10<00:14, 46.06it/s, epoch=84/250, avg_epoch_loss=0.164] 82%|████████▏ | 932/1143 [00:20<00:04, 46.65it/s, epoch=84/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.67it/s, epoch=84/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 464/1143 [00:10<00:14, 46.34it/s, epoch=85/250, avg_epoch_loss=0.165] 81%|████████▏ | 931/1143 [00:20<00:04, 46.52it/s, epoch=85/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.51it/s, epoch=85/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 45%|████▌     | 518/1143 [00:10<00:12, 51.77it/s, epoch=86/250, avg_epoch_loss=0.165] 95%|█████████▌| 1087/1143 [00:20<00:01, 54.74it/s, epoch=86/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:21<00:00, 54.39it/s, epoch=86/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 50%|████▉     | 571/1143 [00:10<00:10, 57.09it/s, epoch=87/250, avg_epoch_loss=0.165]100%|█████████▉| 1142/1143 [00:20<00:00, 56.86it/s, epoch=87/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:20<00:00, 56.89it/s, epoch=87/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 50%|████▉     | 567/1143 [00:10<00:10, 56.61it/s, epoch=88/250, avg_epoch_loss=0.166] 99%|█████████▉| 1134/1143 [00:20<00:00, 56.55it/s, epoch=88/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:20<00:00, 56.58it/s, epoch=88/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 42%|████▏     | 480/1143 [00:10<00:13, 47.92it/s, epoch=89/250, avg_epoch_loss=0.166] 84%|████████▍ | 960/1143 [00:20<00:03, 46.60it/s, epoch=89/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:23<00:00, 47.94it/s, epoch=89/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 41%|████      | 463/1143 [00:10<00:14, 46.29it/s, epoch=90/250, avg_epoch_loss=0.165] 81%|████████  | 926/1143 [00:20<00:04, 45.20it/s, epoch=90/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 45.76it/s, epoch=90/250, avg_epoch_loss=0.165]
+  0%|          | 0/1143 [00:00<?, ?it/s] 40%|████      | 460/1143 [00:10<00:14, 45.97it/s, epoch=91/250, avg_epoch_loss=0.166] 80%|████████  | 920/1143 [00:20<00:04, 45.39it/s, epoch=91/250, avg_epoch_loss=0.165]100%|██████████| 1143/1143 [00:24<00:00, 46.02it/s, epoch=91/250, avg_epoch_loss=0.165]
+WARNING:root:Serializing RepresentableBlockPredictor instances does not save the prediction network structure in a backwards-compatible manner. Be careful not to use this method in production.
+{'path': 'data/pems-bay.h5', 'sensors': 325, 'freq': '5Min', 'make_plots': False, 'normalize': True, 'train_predictor': True, 'prediction_length': 12, 'estimator': 'DeepFactor', 'kernel': '', 'distribution': 'StudentT', 'global_units': 50, 'global_layers': 1, 'factors': 10, 'local_units': 5, 'local_layers': 5, 'cell_type': 'lstm', 'serialize_path': 'results/Pems/DF-5-llayers/'}
+Loading data took 1.277542931959033 seconds
+learning rate from ``lr_scheduler`` has been overwritten by ``learning_rate`` in optimizer.
+Training the predictor took 2203.1223674938083 seconds
+Creating forecasts took 162.2881262684241 seconds
+ Start rescaling
+Rescaling took 498.8025677902624 seconds
+ Start validating...
+Slice took 1.129583620466292 seconds
+Slice took 2.0198084441944957 seconds
+Slice took 2.568983804434538 seconds
+Slice took 4.185902068391442 seconds
+Slice took 5.296891905367374 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 2.0214604437351227 seconds
+Slice took 2.4198657236993313 seconds
+Slice took 4.423348096199334 seconds
+Slice took 7.19046197924763 seconds
+Slice took 8.814655696973205 seconds
+Slice took 1.3118345914408565 seconds
+Slice took 3.2072096057236195 seconds
+Slice took 5.438888119533658 seconds
+Slice took 7.6801558984443545 seconds
+Slice took 10.921949658542871 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 1.4205986708402634 seconds
+Slice took 3.5320116383954883 seconds
+Slice took 6.868798894807696 seconds
+Slice took 9.643487731926143 seconds
+Slice took 13.211935703642666 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 3.264759475365281 seconds
+Slice took 4.783992661163211 seconds
+Slice took 5.9921423168852925 seconds
+Slice took 7.758523569442332 seconds
+Slice took 12.659051539376378 seconds
+Slice took 3.7175204139202833 seconds
+Slice took 4.541247718967497 seconds
+Slice took 8.073180932551622 seconds
+Slice took 9.56214971281588 seconds
+Slice took 15.023787251673639 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 2.1162437396124005 seconds
+Slice took 5.3730749832466245 seconds
+Slice took 8.833011284470558 seconds
+Slice took 10.819902670569718 seconds
+Slice took 17.740129287354648 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in multiply
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 4.994709336198866 seconds
+Slice took 6.653250873088837 seconds
+Slice took 9.445282015018165 seconds
+Slice took 6.626317105256021 seconds
+Slice took 10.972356356680393 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 5.405929917469621 seconds
+Slice took 5.582404904067516 seconds
+Slice took 8.084770128130913 seconds
+Slice took 11.527653200551867 seconds
+Slice took 16.59188195411116 seconds
+Slice took 2.0043035512790084 seconds
+Slice took 5.078891528770328 seconds
+Slice took 8.871983671560884 seconds
+Slice took 10.471420614980161 seconds
+Slice took 17.23215119820088 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 4.679723359644413 seconds
+Slice took 6.866095528937876 seconds
+Slice took 9.853694014251232 seconds
+Slice took 15.93489106092602 seconds
+Slice took 20.199321135878563 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in multiply
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 5.302578587085009 seconds
+Slice took 8.284900290891528 seconds
+Slice took 10.865017786622047 seconds
+Slice took 16.858871259726584 seconds
+Slice took 18.456025945954025 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 5.472057357430458 seconds
+Slice took 7.640318484976888 seconds
+Slice took 9.77215202525258 seconds
+Slice took 15.94769995007664 seconds
+Slice took 18.94380797818303 seconds
+Slice took 6.829378601163626 seconds
+Slice took 9.064528428949416 seconds
+Slice took 9.438630712218583 seconds
+Slice took 15.479651524685323 seconds
+Slice took 16.601111681200564 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 6.573337619192898 seconds
+Slice took 10.394076474942267 seconds
+Slice took 8.16287094540894 seconds
+Slice took 12.074888838455081 seconds
+Slice took 16.582651250064373 seconds
+Slice took 4.012186975218356 seconds
+Slice took 5.6753701362758875 seconds
+Slice took 8.495419074781239 seconds
+Slice took 11.237532676197588 seconds
+Slice took 18.852137588895857 seconds
+Slice took 4.668109528720379 seconds
+Slice took 6.10805300809443 seconds
+Slice took 8.18496922776103 seconds
+Slice took 10.369507919065654 seconds
+Slice took 17.843913639895618 seconds
+Slice took 5.548231611028314 seconds
+Slice took 8.431575254537165 seconds
+Slice took 8.812505160458386 seconds
+Slice took 13.444096175022423 seconds
+Slice took 15.905436880886555 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 6.311316364444792 seconds
+Slice took 7.484057437628508 seconds
+Slice took 10.056391138583422 seconds
+Slice took 15.527762474492192 seconds
+Slice took 16.910941557958722 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 5.147380574606359 seconds
+Slice took 8.243095981888473 seconds
+Slice took 10.657679586671293 seconds
+Slice took 16.97242653183639 seconds
+Slice took 20.195924925617874 seconds
+Slice took 7.018637084402144 seconds
+Slice took 10.199293030425906 seconds
+Slice took 12.68050085566938 seconds
+Slice took 18.709570047445595 seconds
+Slice took 16.605134985409677 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 6.455652327276766 seconds
+Slice took 9.679661806672812 seconds
+Slice took 11.831921339966357 seconds
+Slice took 19.33864400256425 seconds
+Slice took 20.31464681774378 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 6.6962365210056305 seconds
+Slice took 7.732178568840027 seconds
+Slice took 12.374209744855762 seconds
+Slice took 19.261514119803905 seconds
+Slice took 20.227621129713953 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in multiply
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 6.343289160169661 seconds
+Slice took 8.756439263001084 seconds
+Slice took 12.757171029224992 seconds
+Slice took 20.115517209284008 seconds
+Slice took 20.437465579248965 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 7.8270445596426725 seconds
+Slice took 11.936040678061545 seconds
+Slice took 15.599222106859088 seconds
+Slice took 14.399251035414636 seconds
+Slice took 6.434919758699834 seconds
+Slice took 9.078744570724666 seconds
+Slice took 14.834997214376926 seconds
+Slice took 20.21349341608584 seconds
+Slice took 20.507802178151906 seconds
+Slice took 9.334995904006064 seconds
+Slice took 7.736672015860677 seconds
+Slice took 15.962010689079762 seconds
+Slice took 16.968913107179105 seconds
+Slice took 8.976090863347054 seconds
+Slice took 15.690368854440749 seconds
+Slice took 17.383232656866312 seconds
+Slice took 11.537803777493536 seconds
+Slice took 7.213118660263717 seconds
+Slice took 13.988593936897814 seconds
+Slice took 17.32324395980686 seconds
+Slice took 18.26436932850629 seconds
+Slice took 12.436384631320834 seconds
+Slice took 15.490723137743771 seconds
+Slice took 15.677014488726854 seconds
+Slice took 9.010772484354675 seconds
+Slice took 9.26398512814194 seconds
+Slice took 11.525230569764972 seconds
+Slice took 18.177036109380424 seconds
+Slice took 18.941179746761918 seconds
+Slice took 20.03778850287199 seconds
+Slice took 12.186585146933794 seconds
+Slice took 15.097317369654775 seconds
+Slice took 9.313509355299175 seconds
+Slice took 8.509901906363666 seconds
+Slice took 13.507575010880828 seconds
+Slice took 17.28210715390742 seconds
+Slice took 12.936389779672027 seconds
+Slice took 9.6215651454404 seconds
+Slice took 9.6088678939268 seconds
+Slice took 12.002568648196757 seconds
+Slice took 18.88829674758017 seconds
+Slice took 20.176299969665706 seconds
+Slice took 21.445293746888638 seconds
+Slice took 14.199764976277947 seconds
+Slice took 17.881921387277544 seconds
+Slice took 13.943106087855995 seconds
+Slice took 9.154811781831086 seconds
+Slice took 9.378815088421106 seconds
+Slice took 11.55093883909285 seconds
+Slice took 18.163482856936753 seconds
+Slice took 19.68345253262669 seconds
+Slice took 21.251478848047554 seconds
+Slice took 10.795533464290202 seconds
+Slice took 16.016995484009385 seconds
+Slice took 20.187228492461145 seconds
+Slice took 14.037652433849871 seconds
+Slice took 15.120545106939971 seconds
+Slice took 19.356142324395478 seconds
+Slice took 8.66393587179482 seconds
+Slice took 8.512565119192004 seconds
+Slice took 16.055882496759295 seconds
+Slice took 18.253238901495934 seconds
+Slice took 6.464520757086575 seconds
+Slice took 8.722484227269888 seconds
+Slice took 7.8293578419834375 seconds
+Slice took 10.822393578477204 seconds
+Slice took 18.914813235402107 seconds
+Slice took 20.634345280006528 seconds
+Slice took 21.602781982161105 seconds
+Slice took 15.185669044964015 seconds
+Slice took 19.372846032492816 seconds
+Slice took 10.563780213706195 seconds
+Slice took 9.097566691227257 seconds
+Slice took 18.003745454363525 seconds
+Slice took 11.142526601441205 seconds
+Slice took 7.600087930448353 seconds
+Slice took 4.915817189030349 seconds
+Slice took 9.657359085045755 seconds
+Slice took 12.336176499724388 seconds
+Slice took 15.858804455026984 seconds
+Slice took 16.897323914803565 seconds
+Slice took 20.192715235985816 seconds
+Slice took 16.296030834317207 seconds
+Slice took 19.160622348077595 seconds
+Slice took 16.036339859478176 seconds
+Slice took 3.6560557689517736 seconds
+Slice took 11.238288233987987 seconds
+Slice took 18.242681246250868 seconds
+Slice took 20.405359928496182 seconds
+Slice took 21.63877377193421 seconds
+Slice took 9.609972570091486 seconds
+Slice took 8.166295488364995 seconds
+Slice took 13.154864883981645 seconds
+Slice took 19.88226321246475 seconds
+Slice took 20.318295570090413 seconds
+Slice took 22.108329735696316 seconds
+Slice took 9.879862423054874 seconds
+Slice took 19.384435451589525 seconds
+Slice took 20.63872350100428 seconds
+Slice took 15.971571293659508 seconds
+Slice took 10.422438091598451 seconds
+Slice took 16.829967462457716 seconds
+Slice took 20.118720996193588 seconds
+Slice took 21.073426771909 seconds
+Slice took 12.035060975700617 seconds
+Slice took 13.265811605378985 seconds
+Slice took 18.603896407410502 seconds
+Slice took 16.586738898418844 seconds
+Slice took 17.59185452386737 seconds
+Slice took 8.152560459449887 seconds
+Slice took 11.968650203198195 seconds
+Slice took 18.31877340283245 seconds
+Slice took 17.491107401438057 seconds
+Slice took 18.04807384684682 seconds
+Slice took 19.896832382306457 seconds
+Slice took 8.541974354535341 seconds
+Slice took 2.211663456633687 seconds
+Slice took 3.2003097785636783 seconds
+Slice took 15.492290353402495 seconds
+Slice took 16.435319050215185 seconds
+Slice took 17.108943932689726 seconds
+Slice took 18.742482982575893 seconds
+Slice took 14.509727267548442 seconds
+Slice took 20.63711583893746 seconds
+Slice took 20.028355504386127 seconds
+Slice took 20.049238024279475 seconds
+Slice took 3.5410463018342853 seconds
+Slice took 21.046418972313404 seconds
+Slice took 19.445941642858088 seconds
+Slice took 20.2225186759606 seconds
+Slice took 2.807909432798624 seconds
+Slice took 10.49048881791532 seconds
+Slice took 15.416270414367318 seconds
+Slice took 18.95661938469857 seconds
+Slice took 19.124738379381597 seconds
+Slice took 21.09243087656796 seconds
+Slice took 10.828953779302537 seconds
+Slice took 19.733696853742003 seconds
+Slice took 19.464379224926233 seconds
+Slice took 17.54271292500198 seconds
+Slice took 11.390825329348445 seconds
+Slice took 17.446385270915926 seconds
+Slice took 18.054664661176503 seconds
+Slice took 17.50410549901426 seconds
+Slice took 16.641658193431795 seconds
+Slice took 19.625625202432275 seconds
+Slice took 20.40072280075401 seconds
+Slice took 9.049644846469164 seconds
+Slice took 2.1485536145046353 seconds
+Slice took 18.185643474571407 seconds
+Slice took 10.978608665056527 seconds
+Slice took 3.203319043852389 seconds
+Slice took 2.50090622715652 seconds
+Slice took 15.759449525736272 seconds
+Slice took 13.381553834304214 seconds
+Slice took 17.02123835682869 seconds
+Slice took 4.0435342555865645 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 16.634486455470324 seconds
+Slice took 18.03593627270311 seconds
+Slice took 8.706431518308818 seconds
+Slice took 15.718370363116264 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 10.547785844653845 seconds
+Slice took 15.881978471763432 seconds
+Slice took 20.04441141989082 seconds
+Slice took 20.859134869650006 seconds
+Slice took 20.425968991592526 seconds
+Slice took 15.596800396218896 seconds
+Slice took 16.549074068665504 seconds
+Slice took 17.943577800877392 seconds
+Slice took 18.743102778680623 seconds
+Slice took 10.405031830072403 seconds
+Slice took 16.651776876300573 seconds
+Slice took 19.523819284513593 seconds
+Slice took 21.209860953502357 seconds
+Slice took 19.081068732775748 seconds
+Slice took 10.250862649641931 seconds
+Slice took 16.257893927395344 seconds
+Slice took 17.598231970332563 seconds
+Slice took 19.996019810438156 seconds
+Slice took 16.79942766856402 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: invalid value encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: invalid value encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 14.782683049328625 seconds
+Slice took 14.946816114708781 seconds
+Slice took 17.87623095791787 seconds
+Slice took 9.573855699039996 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in multiply
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in multiply
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 18.057558838278055 seconds
+Slice took 21.190508307889104 seconds
+Slice took 19.490001593716443 seconds
+Slice took 15.972046308219433 seconds
+Slice took 4.467003901489079 seconds
+Slice took 15.181873594410717 seconds
+Slice took 19.493278947658837 seconds
+Slice took 21.619803654961288 seconds
+Slice took 10.219104751944542 seconds
+Slice took 19.516103089787066 seconds
+Slice took 19.066494901664555 seconds
+Slice took 16.33203734178096 seconds
+Slice took 4.104663853533566 seconds
+Slice took 15.488272331655025 seconds
+Slice took 20.57859275303781 seconds
+Slice took 20.960480053909123 seconds
+Slice took 19.293598087504506 seconds
+Slice took 4.502588715404272 seconds
+Slice took 15.063136654905975 seconds
+Slice took 20.527248034253716 seconds
+Slice took 21.146118437871337 seconds
+Slice took 15.115363081917167 seconds
+Slice took 17.261886751279235 seconds
+Slice took 6.8797324020415545 seconds
+Slice took 8.998768196441233 seconds
+Slice took 12.927824256010354 seconds
+Slice took 20.037147139199078 seconds
+Slice took 20.61552020907402 seconds
+Slice took 20.941450022161007 seconds
+Slice took 14.607290418818593 seconds
+Slice took 16.758066880516708 seconds
+Slice took 17.108065360225737 seconds
+Slice took 16.016515946947038 seconds
+Slice took 17.702704655006528 seconds
+Slice took 10.59508124832064 seconds
+Slice took 22.169262413866818 seconds
+Slice took 17.583925331942737 seconds
+Slice took 3.3726180186495185 seconds
+Slice took 1.3827695026993752 seconds
+Slice took 19.270629845559597 seconds
+Slice took 18.393330642953515 seconds
+Slice took 21.250804177485406 seconds
+Slice took 11.157415118068457 seconds
+Slice took 13.80313821695745 seconds
+Slice took 17.672257747501135 seconds
+Slice took 18.28595400042832 seconds
+Slice took 20.0928359804675 seconds
+Slice took 10.611766474321485 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 8.195458080619574 seconds
+Slice took 18.121201066300273 seconds
+Slice took 20.39391626045108 seconds
+Slice took 21.602756129577756 seconds
+Slice took 15.084417654201388 seconds
+Slice took 10.209907817654312 seconds
+Slice took 15.716211894527078 seconds
+Slice took 20.14102341979742 seconds
+Slice took 21.857628947123885 seconds
+Slice took 16.797002223320305 seconds
+Slice took 17.536801850423217 seconds
+Slice took 16.712448646314442 seconds
+Slice took 8.493129814043641 seconds
+Slice took 1.5070771435275674 seconds
+Slice took 17.28623137436807 seconds
+Slice took 10.214481922797859 seconds
+Slice took 17.064798365347087 seconds
+Slice took 9.92380409501493 seconds
+Slice took 19.505802021361887 seconds
+Slice took 21.302394625730813 seconds
+Slice took 15.285624835640192 seconds
+Slice took 3.1697873529046774 seconds
+Slice took 21.049211470410228 seconds
+Slice took 20.8247252991423 seconds
+Slice took 16.125904709100723 seconds
+Slice took 5.923753124661744 seconds
+Slice took 19.716409591026604 seconds
+Slice took 20.11685703229159 seconds
+Slice took 20.086381025612354 seconds
+Slice took 8.100934710353613 seconds
+Slice took 14.085426725447178 seconds
+Slice took 20.05156530532986 seconds
+Slice took 20.148694336414337 seconds
+Slice took 20.97759027965367 seconds
+Slice took 9.230765183456242 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 17.708879590965807 seconds
+Slice took 20.36055233515799 seconds
+Slice took 21.14326704479754 seconds
+Slice took 13.958770094439387 seconds
+Slice took 7.182835136540234 seconds
+Slice took 15.097911500371993 seconds
+Slice took 19.258640659973025 seconds
+Slice took 20.595481266267598 seconds
+Slice took 7.600651332177222 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+Slice took 16.668078923597932 seconds
+Slice took 15.843572173267603 seconds
+Slice took 13.747985952533782 seconds
+Slice took 5.83269717451185 seconds
+Slice took 19.1635548658669 seconds
+Slice took 18.42083823122084 seconds
+Slice took 17.49984165839851 seconds
+Slice took 6.61313552968204 seconds
+Slice took 22.114624101668596 seconds
+Slice took 15.50840758997947 seconds
+Slice took 4.123287410475314 seconds
+Slice took 1.0066791912540793 seconds
+Slice took 19.228123587556183 seconds
+Slice took 19.081557909958065 seconds
+Slice took 9.800912176258862 seconds
+Slice took 3.3338508093729615 seconds
+Slice took 21.015662257559597 seconds
+Slice took 21.161715828813612 seconds
+Slice took 9.262945252470672 seconds
+Slice took 2.417455879971385 seconds
+Slice took 21.038533861748874 seconds
+Slice took 21.17581030074507 seconds
+Slice took 10.529049656353891 seconds
+Slice took 2.511124416254461 seconds
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in multiply
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: invalid value encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: invalid value encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in multiply
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:397: RuntimeWarning: divide by zero encountered in true_divide
+  h0divh1 = h0 / h1
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:399: RuntimeWarning: divide by zero encountered in true_divide
+  y[slice1]*hsum*hsum/hprod +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: invalid value encountered in add
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+/usr/local/lib/python3.8/dist-packages/scipy/integrate/_quadrature.py:398: RuntimeWarning: divide by zero encountered in true_divide
+  tmp = hsum/6.0 * (y[slice0]*(2-1.0/h0divh1) +
+Slice took 19.964110168628395 seconds
+Slice took 18.84357037767768 seconds
+Slice took 13.600115462206304 seconds
+Slice took 3.909578734077513 seconds
+Slice took 20.032531620934606 seconds
+Slice took 19.689165884628892 seconds
+Slice took 7.650207904167473 seconds
+Slice took 1.5520425802096725 seconds
+Evaluation took 135.903005938977 seconds
+finished successful

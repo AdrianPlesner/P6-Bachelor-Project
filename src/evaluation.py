@@ -28,7 +28,6 @@ def split_validation(data, md):
 
 
 def validate(data_slice, forecast):
-    start = time.perf_counter()
     x = [np.sort(n, 0) for n in forecast.samples]
     evaluation = []
     for n in range(len(x)):
@@ -36,8 +35,6 @@ def validate(data_slice, forecast):
         cdf = [CdfShell(a) for a in ar]
         b = crps_vector(data_slice.data[n], cdf)
         evaluation.append(b)
-    end = time.perf_counter() - start
-    print(f"Slice took {end} seconds")
     return np.asarray(evaluation)
 
 
@@ -96,11 +93,11 @@ def _crps(val, a):
     if len(lhs) == 0:
         lc = 0
     else:
-        lc = integrate.simpson(lhs, x[:split], even="first")
+        lc = integrate.trapezoid(lhs, x[:split])
     if len(rhs) == 0:
-        rhs == 0
+        rc = 0
     else:
-        rc = integrate.simpson(rhs, x[split:], even="first")
+        rc = integrate.trapezoid(rhs, x[split:])
     return lc + rc
 
 
