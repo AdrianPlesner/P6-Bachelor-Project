@@ -1,3 +1,4 @@
+import pts
 from gluonts.model.gp_forecaster import GaussianProcessEstimator
 from gluonts.model.deep_factor import DeepFactorEstimator
 from gluonts.model.deepar import DeepAREstimator
@@ -13,6 +14,8 @@ import numpy as np
 import pandas as pd
 import mxnet as mx
 from pts.model.tempflow import TempFlowEstimator
+import torch
+from gluonts.dataset.multivariate_grouper import MultivariateGrouper
 
 
 def train_predictor(data=None, md=None):
@@ -20,7 +23,7 @@ def train_predictor(data=None, md=None):
         exit("Missing metadata for training")
     if data is None:
         exit("Missing data for training")
-    trainer = Trainer(ctx=mx.context.gpu(),
+    trainer = Trainer(ctx="cpu",
                       epochs=100,
                       batch_size=32,
                       learning_rate=1e-3,
@@ -78,23 +81,32 @@ def train_predictor(data=None, md=None):
             dropout_rate=md['dropout_rate']
         )
     elif md['estimator'] == "TempFlow":
+        trainer = pts.Trainer(
+            device=torch.device('cpu'),
+            epochs=100,
+            batch_size=32,
+            learning_rate=1e-3,
+            num_batches_per_epoch=1143
+        )
         estimator = TempFlowEstimator(
-            input_size=md['sensors'],
+            input_size=656,
             freq=md['freq'],
             prediction_length=md['prediction_length'],
-            target_dim=1,
+            target_dim=325,
             trainer=trainer,
             context_length=md['prediction_length'],
             num_layers=md['layers'],
             num_cells=md['cells'],
             cell_type=md['cell_type'],
-            cardinality=list(md['sensors']),
+            cardinality=[1],
             flow_type=md['flow'],
             n_blocks=md['blocks'],
             hidden_size=md['hidden_size'],
             n_hidden=md['num_hidden'],
             conditioning_length=md['conditioning']
         )
+        grouper_train = MultivariateGrouper(max_target_dim=325)
+        data = grouper_train(data)
     else:
         estimator = None
         exit("Invalid estimator")
