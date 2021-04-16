@@ -7,12 +7,12 @@ import time
 import scipy.integrate as integrate
 
 
-def evaluate_forecast(data, forecast, length):
-    observation = data.list_data[0]['target'].reshape(-1, 1)[-length:]
-    mean = forecast.mean
-    std = np.std(forecast.samples, axis=0)
-    e = ps.crps_gaussian(observation, mean, std)
-    return np.average(e)
+# def evaluate_forecast(data, forecast, length):
+#     observation = data.list_data[0]['target'].reshape(-1, 1)[-length:]
+#     mean = forecast.mean
+#     std = np.std(forecast.samples, axis=0)
+#     e = ps.crps_gaussian(observation, mean, std)
+#     return np.average(e)
 
 
 def split_validation(data, md):
@@ -81,6 +81,12 @@ def validate_mp(data, forecast):
 
 
 def _crps(val, a):
+    """
+    Computes crps for a value and a distribution
+    :param val: the true value
+    :param a: a CdfShell object that contains the cumulutative distribution function for a forecast
+    :return: the CRPS evaluation for a on val
+    """
     x = a.x
     y = a.y
     split = np.searchsorted(x, val)

@@ -11,7 +11,7 @@
   "distribution": "StudentT",
   "global_units": 50,
   "global_layers": 25,
-  "factors": 10,
+  "factors": 25,
   "local_units": 5,
   "local_layers": 1,
   "cell_type": "lstm",

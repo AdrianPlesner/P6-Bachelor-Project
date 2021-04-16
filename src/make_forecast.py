@@ -12,6 +12,7 @@ import data_processing as dp
 import numpy as np
 import pandas as pd
 import mxnet as mx
+from pts.model.tempflow import TempFlowEstimator
 
 
 def train_predictor(data=None, md=None):
@@ -20,7 +21,7 @@ def train_predictor(data=None, md=None):
     if data is None:
         exit("Missing data for training")
     trainer = Trainer(ctx=mx.context.gpu(),
-                      epochs=250,
+                      epochs=100,
                       batch_size=32,
                       learning_rate=1e-3,
                       hybridize=False,
@@ -75,6 +76,24 @@ def train_predictor(data=None, md=None):
             num_cells=md['cells'],
             cell_type=md['cell_type'],
             dropout_rate=md['dropout_rate']
+        )
+    elif md['estimator'] == "TempFlow":
+        estimator = TempFlowEstimator(
+            input_size=md['sensors'],
+            freq=md['freq'],
+            prediction_length=md['prediction_length'],
+            target_dim=1,
+            trainer=trainer,
+            context_length=md['prediction_length'],
+            num_layers=md['layers'],
+            num_cells=md['cells'],
+            cell_type=md['cell_type'],
+            cardinality=list(md['sensors']),
+            flow_type=md['flow'],
+            n_blocks=md['blocks'],
+            hidden_size=md['hidden_size'],
+            n_hidden=md['num_hidden'],
+            conditioning_length=md['conditioning']
         )
     else:
         estimator = None
