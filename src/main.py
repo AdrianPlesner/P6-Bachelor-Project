@@ -20,6 +20,11 @@ if __name__ == '__main__':
             exit()
     else:
         path = sys.argv[1]
+        param = 'stop'
+        if len(sys.argv) > 2:
+            param = sys.argv[2]
+            step = int(sys.argv[3])
+
 
     with open(path) as md_file:
         md = json.load(md_file)
@@ -38,47 +43,59 @@ if __name__ == '__main__':
     print("Loading data took", end, "seconds")
     # if md['make_plots']:
     # hg.plot_train_test(train, test)
+    flag = True
+    res = 10.0
+    while flag:
+        try:
+            ### Train network
+            if md['train_predictor']:
+                start = time.perf_counter()
+                predictor = fc.train_predictor(train, md)
+                end = time.perf_counter() - start
+                print("Training the predictor took", end, "seconds")
+                if not os.path.isdir(md['serialize_path']):
+                    os.makedirs(md['serialize_path'])
+                predictor.serialize(Path(md['serialize_path'] + "/"))
+            else:
+                ### Load pre-trained predictors
+                predictor = fc.load_predictor(md['serialize_path'])
 
-    ### Train network
-    if md['train_predictor']:
-        start = time.perf_counter()
-        predictor = fc.train_predictor(train, md)
-        end = time.perf_counter() - start
-        print("Training the predictor took", end, "seconds")
-        if not os.path.isdir(md['serialize_path']):
-            os.makedirs(md['serialize_path'])
-        predictor.serialize(Path(md['serialize_path'] + "/"))
-    else:
-        ### Load pre-trained predictors
-        predictor = fc.load_predictor(md['serialize_path'])
-
-    ### Compute validation metrics
-    validation_slices = evaluation.split_validation(valid, md)
-    #validation_slices = validation_slices[:5]
-    start = time.perf_counter()
-    forecast = fc.make_forecast_vector(predictor, validation_slices)
-    end = time.perf_counter() - start
-    print("Creating forecasts took", end, "seconds\n Start rescaling")
-    start = time.perf_counter()
-    validation_slices, forecast = dp.postprocess_data_vector(validation_slices, forecast)
-    end = time.perf_counter() - start
-    print("Rescaling took", end, "seconds\n Start validating...")
-    start = time.perf_counter()
-    slices = dp.listdata_to_array(validation_slices)
-    f = [Forecast([m.samples for m in n]) for n in forecast]
-    evals = evaluation.validate_mp(slices, f)
-    end = time.perf_counter() - start
-    print("Evaluation took", end, "seconds")
-
-    with open(md['serialize_path'] + "evaluation.txt", "w") as file:
-        e = np.stack(evals)
-        for i in range(len(evals)):
-            file.write("Slice: " + str(i) + "\n")
-            for j in range(len(evals[i])):
-                file.write("Sensor: " + str(j) + "\n")
-                for k in range(len(evals[i][j])):
-                    file.write("{:.2f}".format(evals[i][j][k]) + ", ")
-                file.write("\n")
-
-            file.write("\n\n")
-        file.write("Average: " + str(np.average(e)))
+            ### Compute validation metrics
+            validation_slices = evaluation.split_validation(valid, md)
+            # validation_slices = validation_slices[:5]
+            start = time.perf_counter()
+            forecast = fc.make_forecast_vector(predictor, validation_slices)
+            end = time.perf_counter() - start
+            print("Creating forecasts took", end, "seconds\n Start rescaling")
+            start = time.perf_counter()
+            validation_slices, forecast = dp.postprocess_data_vector(validation_slices, forecast)
+            end = time.perf_counter() - start
+            print("Rescaling took", end, "seconds\n Start validating...")
+            start = time.perf_counter()
+            slices = dp.listdata_to_array(validation_slices)
+            f = [Forecast([m.samples for m in n]) for n in forecast]
+            evals = np.stack(evaluation.validate_mp(slices, f))
+            end = time.perf_counter() - start
+            print("Evaluation took", end, "seconds")
+            e = np.average(evals)
+            print(f"Parameter {param} with value {md[param]} had evaluation {e}")
+            if param == 'stop' or res - e < 0.1:
+                flag = False
+            if flag:
+                md[param] += step
+                res = e
+        except:
+            flag = False
+    print(f"The final result of parameter {param} is: {md[param]} with evaluation {e}")
+    # with open(md['serialize_path'] + "evaluation.txt", "w") as file:
+    #     e = np.stack(evals)
+    #     for i in range(len(evals)):
+    #         file.write("Slice: " + str(i) + "\n")
+    #         for j in range(len(evals[i])):
+    #             file.write("Sensor: " + str(j) + "\n")
+    #             for k in range(len(evals[i][j])):
+    #                 file.write("{:.2f}".format(evals[i][j][k]) + ", ")
+    #             file.write("\n")
+    #
+    #         file.write("\n\n")
+    #     file.write("Average: " + str(np.average(e)))
