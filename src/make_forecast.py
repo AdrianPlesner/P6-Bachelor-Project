@@ -23,7 +23,7 @@ def train_predictor(data=None, md=None):
         exit("Missing metadata for training")
     if data is None:
         exit("Missing data for training")
-    trainer = Trainer(ctx="cpu",
+    trainer = Trainer(ctx=mx.context.gpu(),
                       epochs=100,
                       batch_size=32,
                       learning_rate=1e-3,
@@ -82,8 +82,8 @@ def train_predictor(data=None, md=None):
         )
     elif md['estimator'] == "TempFlow":
         trainer = pts.Trainer(
-            device=torch.device('cpu'),
-            epochs=100,
+            device=torch.device('cuda'),
+            epochs=20,
             batch_size=32,
             learning_rate=1e-3,
             num_batches_per_epoch=1143
