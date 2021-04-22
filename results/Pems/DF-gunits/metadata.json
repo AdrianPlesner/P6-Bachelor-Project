@@ -9,7 +9,7 @@
   "estimator": "DeepFactor",
   "kernel": "",
   "distribution": "StudentT",
-  "global_units": 10,
+  "global_units": 12,
   "global_layers": 10,
   "factors": 50,
   "local_units": 25,

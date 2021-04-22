@@ -10,7 +10,7 @@
   "kernel": "",
   "distribution": "StudentT",
   "global_units": 10,
-  "global_layers": 10,
+  "global_layers": 1,
   "factors": 50,
   "local_units": 25,
   "local_layers": 5,

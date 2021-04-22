@@ -13,7 +13,7 @@
   "global_layers": 10,
   "factors": 50,
   "local_units": 25,
-  "local_layers": 1,
+  "local_layers": 3,
   "cell_type": "gru",
   "serialize_path": "results/Pems/DF-llayers/"
 }

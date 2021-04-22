@@ -24,7 +24,7 @@ def train_predictor(data=None, md=None):
     if data is None:
         exit("Missing data for training")
     trainer = Trainer(ctx=mx.context.gpu(),
-                      epochs=100,
+                      epochs=50,
                       batch_size=32,
                       learning_rate=1e-3,
                       hybridize=False,

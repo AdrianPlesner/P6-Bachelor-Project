@@ -79,14 +79,15 @@ if __name__ == '__main__':
             print("Evaluation took", end, "seconds")
             e = np.average(evals)
             print(f"Parameter {param} with value {md[param]} had evaluation {e}")
-            if param == 'stop' or res - e < 0.1:
+            if param == 'stop' or res - e < 0.005:
                 flag = False
             if flag:
                 md[param] += step
                 res = e
         except:
             flag = False
-    print(f"The final result of parameter {param} is: {md[param]} with evaluation {e}")
+    if not param == 'stop':
+        print(f"The final result of parameter {param} is: {md[param]} with evaluation {e}")
     # with open(md['serialize_path'] + "evaluation.txt", "w") as file:
     #     e = np.stack(evals)
     #     for i in range(len(evals)):

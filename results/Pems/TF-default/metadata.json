@@ -14,5 +14,6 @@
   "blocks": 3,
   "hidden_size": 100,
   "num_hidden": 2,
-  "conditioning": 200
+  "conditioning": 200,
+  "serialize_path": "results/Pems/TF-default/"
 }
