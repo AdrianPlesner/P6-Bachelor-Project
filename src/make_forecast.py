@@ -117,6 +117,8 @@ def train_predictor(data=None, md=None):
 
 
 def make_forecast(predictor, data):
+    #grouper_train = MultivariateGrouper(max_target_dim=325)
+    #data = grouper_train(data)
     return list(predictor.predict(data, num_samples=250))
 
 
@@ -185,6 +187,7 @@ def plot_forecast(lst_data, forecast_entry, num, md, offset=0, path="", sensor=-
 
 
 def load_predictor(path):
+    #, device = torch.device('cpu')
     p = Predictor.deserialize(Path(path))
     p.prediction_net.ctx = p.ctx
 
