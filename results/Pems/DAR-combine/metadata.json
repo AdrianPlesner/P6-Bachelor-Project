@@ -1,0 +1,16 @@
+{
+  "path": "data/pems-bay.h5",
+  "sensors": 325,
+  "freq": "5Min",
+  "make_plots": false,
+  "normalize": true,
+  "train_predictor": true,
+  "prediction_length": 12,
+  "estimator": "DeepAR",
+  "kernel": "",
+  "layers": 1,
+  "cells": 20,
+  "cell_type": "lstm",
+  "dropout_rate": 0.1,
+  "serialize_path": "results/Pems/DAR-combine/"
+}

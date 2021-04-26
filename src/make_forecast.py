@@ -103,10 +103,9 @@ def train_predictor(data=None, md=None):
             n_blocks=md['blocks'],
             hidden_size=md['hidden_size'],
             n_hidden=md['num_hidden'],
+            dropout_rate=md['dropout_rate'],
             conditioning_length=md['conditioning']
         )
-        grouper_train = MultivariateGrouper(max_target_dim=325)
-        data = grouper_train(data)
     else:
         estimator = None
         exit("Invalid estimator")
@@ -116,9 +115,10 @@ def train_predictor(data=None, md=None):
     return estimator.train(data)
 
 
-def make_forecast(predictor, data):
-    #grouper_train = MultivariateGrouper(max_target_dim=325)
-    #data = grouper_train(data)
+def make_forecast(predictor, data, md):
+    if md['estimator'] == 'TempFlow':
+        grouper_train = MultivariateGrouper(max_target_dim=325)
+        data = grouper_train(data)
     return list(predictor.predict(data, num_samples=250))
 
 
@@ -186,9 +186,10 @@ def plot_forecast(lst_data, forecast_entry, num, md, offset=0, path="", sensor=-
     plt.close()
 
 
-def load_predictor(path):
-    #, device = torch.device('cpu')
-    p = Predictor.deserialize(Path(path))
-    p.prediction_net.ctx = p.ctx
-
+def load_predictor(path, md):
+    if md['estimator'] == 'TempFlow':
+        p = Predictor.deserialize(Path(path), device=torch.device('cuda'))
+    else:
+        p = Predictor.deserialize(Path(path))
+        p.prediction_net.ctx = p.ctx
     return p

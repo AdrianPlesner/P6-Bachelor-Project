@@ -15,5 +15,6 @@
   "hidden_size": 100,
   "num_hidden": 2,
   "conditioning": 200,
+  "dropout_rate": 0.1,
   "serialize_path": "results/Pems/TF-default/"
 }

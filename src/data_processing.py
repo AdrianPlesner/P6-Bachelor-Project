@@ -25,16 +25,10 @@ def postprocess_data(ld, forecast):
 
     for n in range(len(ld.list_data)):
         ld.list_data[n]['target'] = rescale_data(ld.list_data[n]['target'], ld.list_data[n]['scaler'])
-        f_mean = rescale_data(forecast[n].mean.reshape(-1, 1), ld.list_data[n]['scaler']).reshape(-1)
-        for m in range(len(f_mean)):
-            forecast[n].mean[m] = f_mean[m]
-        f_median = rescale_data(forecast[n].median.reshape(-1, 1), ld.list_data[n]['scaler']).reshape(-1)
-        for m in range(len(f_median)):
-            forecast[n].median[m] = f_median[m]
-        for m in range(len(forecast[n].samples)):
-            sample = rescale_data(forecast[n].samples[m].reshape(-1, 1), ld.list_data[n]['scaler']).reshape(-1)
+        for m in range(len(forecast.samples[n])):
+            sample = rescale_data(forecast.samples[n][m].reshape(-1, 1), ld.list_data[n]['scaler']).reshape(-1)
             for k in range(len(sample)):
-                forecast[n].samples[m][k] = sample[k]
+                forecast.samples[n][m][k] = sample[k]
     return ld, forecast
 
 

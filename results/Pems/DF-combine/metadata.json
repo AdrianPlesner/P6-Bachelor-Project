@@ -9,11 +9,11 @@
   "estimator": "DeepFactor",
   "kernel": "",
   "distribution": "StudentT",
-  "global_units": 10,
-  "global_layers": 10,
-  "factors": 50,
-  "local_units": 25,
-  "local_layers": 5,
+  "global_units": 17,
+  "global_layers": 5,
+  "factors": 60,
+  "local_units": 30,
+  "local_layers": 4,
   "cell_type": "gru",
   "serialize_path": "results/Pems/DF-combine/"
 }

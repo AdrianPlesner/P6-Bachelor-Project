@@ -1,4 +1,6 @@
 import numpy as np
+from gluonts.dataset.multivariate_grouper import MultivariateGrouper
+
 import properscoring as ps
 import pandas as pd
 from gluonts.dataset.common import ListDataset
@@ -18,13 +20,14 @@ import scipy.integrate as integrate
 def split_validation(data, md):
     step = md['prediction_length']
     t = pd.date_range(start=data.list_data[0]['start'], freq=md['freq'], periods=len(data.list_data[0]['target']))
-    return [ListDataset([{
+    dum = [ListDataset([{
         'start': t[n],
         'target': d['target'][n:n + step],
         'sensor_id': d['sensor_id'][n:n + step],
         'time_feat': d['time_feat'][::, n:n + step],
         'scaler': d['scaler']
     } for d in data.list_data], freq=md['freq']) for n in range(0, len(t), step)]
+    return dum
 
 
 def validate(data_slice, forecast):
