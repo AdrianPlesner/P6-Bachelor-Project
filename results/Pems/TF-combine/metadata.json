@@ -12,9 +12,12 @@
   "cell_type": "LSTM",
   "flow": "RealNVP",
   "blocks": 3,
-  "hidden_size": 10,
+  "hidden_size": 100,
   "num_hidden": 2,
   "conditioning": 200,
   "dropout_rate": 0.1,
-  "serialize_path": "results/Pems/TF-hiddensize/"
+  "serialize_path": "results/Pems/TF-combine/",
+  "params": ["layers", "cells", "blocks", "hidden_size", "num_hidden", "conditioning", "dropout_rate"],
+  "start": [1, 2, 1, 10, 1, 10, 0.05],
+  "step": [1, 5, 1, 10, 1, 25, 0.05]
 }

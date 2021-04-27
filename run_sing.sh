@@ -8,5 +8,5 @@
 
 #srun singularity build --fakeroot tensorflow_custom.sif <build-file-path>
 
-srun singularity exec --nv -B src:/src -B results:/results -B data:/data  mxnet_21.02-py3.sif python /src/main.py results/Pems/DAR-dropout/metadata.json dropout_rate 5 100
+srun singularity exec --nv -B src:/src -B results:/results -B data:/data  mxnet_21.02-py3.sif python /src/main.py results/Pems/DF-combine/metadata.json
 srun echo "finished successful"

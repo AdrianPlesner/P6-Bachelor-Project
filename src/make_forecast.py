@@ -106,6 +106,8 @@ def train_predictor(data=None, md=None):
             dropout_rate=md['dropout_rate'],
             conditioning_length=md['conditioning']
         )
+        grouper_train = MultivariateGrouper(max_target_dim=325)
+        data = grouper_train(data)
     else:
         estimator = None
         exit("Invalid estimator")

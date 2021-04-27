@@ -12,5 +12,8 @@
   "cells": 20,
   "cell_type": "lstm",
   "dropout_rate": 0.1,
-  "serialize_path": "results/Pems/DAR-combine/"
+  "serialize_path": "results/Pems/DAR-combine/",
+  "params": ["layers", "cells", "dropout_rate"],
+  "start": [1, 2, 0.05],
+  "step": [1, 2, 0.05]
 }

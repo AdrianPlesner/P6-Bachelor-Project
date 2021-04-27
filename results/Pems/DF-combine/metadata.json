@@ -15,5 +15,8 @@
   "local_units": 30,
   "local_layers": 4,
   "cell_type": "gru",
-  "serialize_path": "results/Pems/DF-combine/"
+  "serialize_path": "results/Pems/DF-combine/",
+  "params": ["global_units", "global_layers", "factors", "local_units", "local_layers"],
+  "start": [2, 1, 5, 5, 1],
+  "step": [2, 1, 5, 5, 1]
 }
