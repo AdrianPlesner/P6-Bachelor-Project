@@ -16,6 +16,7 @@ import mxnet as mx
 from pts.model.tempflow import TempFlowEstimator
 import torch
 from gluonts.dataset.multivariate_grouper import MultivariateGrouper
+import gluonts.time_feature as time
 
 
 def train_predictor(data=None, md=None):
@@ -40,7 +41,8 @@ def train_predictor(data=None, md=None):
             context_length=md['prediction_length'],
             cardinality=md['sensors'],
             trainer=trainer,
-            kernel_output=kernel
+            kernel_output=kernel,
+            time_features=[time.DayOfWeek(), time.HourOfDay(), time.MinuteOfHour()]
 
         )
     elif md['estimator'] == "DeepFactor":
@@ -68,6 +70,7 @@ def train_predictor(data=None, md=None):
             cell_type=md["cell_type"],
             distr_output=distribution
 
+
         )
     elif md['estimator'] == "DeepAR":
         estimator = DeepAREstimator(
@@ -78,7 +81,8 @@ def train_predictor(data=None, md=None):
             num_layers=md['layers'],
             num_cells=md['cells'],
             cell_type=md['cell_type'],
-            dropout_rate=md['dropout_rate']
+            dropout_rate=md['dropout_rate'],
+            use_feat_static_real=True
         )
     elif md['estimator'] == "TempFlow":
         trainer = pts.Trainer(
@@ -104,7 +108,8 @@ def train_predictor(data=None, md=None):
             hidden_size=md['hidden_size'],
             n_hidden=md['num_hidden'],
             dropout_rate=md['dropout_rate'],
-            conditioning_length=md['conditioning']
+            conditioning_length=md['conditioning'],
+            time_features=[time.DayOfWeek(), time.HourOfDay(), time.MinuteOfHour()]
         )
         grouper_train = MultivariateGrouper(max_target_dim=325)
         data = grouper_train(data)
