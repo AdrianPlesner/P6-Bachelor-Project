@@ -20,5 +20,5 @@
   "params": ["layers", "cells", "blocks", "hidden_size", "num_hidden", "conditioning", "dropout_rate"],
   "start": [1, 2, 1, 10, 1, 10, 0.05],
   "step": [1, 5, 1, 10, 1, 25, 0.05],
-  "end": [11, 60, 10, 150, 275, 0.55]
+  "end": [11, 60, 10, 150, 10, 275, 0.55]
 }
