@@ -165,24 +165,22 @@ make_forecast_vector = np.vectorize(make_forecast, otypes=[list])
 #     #plt.savefig("out-data/plot" + str(num))
 
 
-def plot_forecast(lst_data, forecast_entry, num, md, offset=0, path="", sensor=-1):
-    if sensor == -1:
-        sensor = num
-    plot_length = md['test_length'] + md['train_length']
+def plot_forecast(train, true, forecast_entry, num, md, evalu):
+    plot_length = md['prediction_length'] * 2
     prediction_intervals = (90.0, 50.0)
     legend = ["observations", "mean prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
-    data = [pd.date_range(start=lst_data.list_data[0]['start'], freq=md['freq'], periods=plot_length),
-            lst_data.list_data[0]['target']]
+    data = [pd.date_range(start=train.list_data[0]['start'], freq=md['freq'], periods=plot_length),
+            np.hstack([train.list_data[num]['target'], true.list_data[num]['target']])]
     fig, ax = plt.subplots(1, 1, figsize=(20, 10))
-    plt.plot(data[0][offset:plot_length], data[1][offset:plot_length])
-    plt.plot(forecast_entry.index, forecast_entry.mean, color='#008000')
-    y1, y2 = dp.make_prediction_interval(forecast_entry, 0.67)
-    plt.fill_between(data[0][md['train_length']:plot_length], y1, y2, color='#00800080')
-    y1, y2 = dp.make_prediction_interval(forecast_entry, 1.64)
-    plt.fill_between(data[0][md['train_length']:plot_length], y1, y2, color='#00800060')
+    plt.plot(data[0], data[1])
+    plt.plot(data[0][md['prediction_length']:plot_length], forecast_entry.mean[num], color='#008000')
+    y1, y2 = dp.make_prediction_interval(forecast_entry.samples[num], forecast_entry.mean[num], 0.67)
+    plt.fill_between(data[0][md['prediction_length']:plot_length], y1, y2, color='#00800080')
+    y1, y2 = dp.make_prediction_interval(forecast_entry.samples[num], forecast_entry.mean[num], 1.64)
+    plt.fill_between(data[0][md['prediction_length']:plot_length], y1, y2, color='#00800060')
     plt.grid(which="both")
     plt.legend(legend, loc="upper left")
-    plt.title("dataset " + str(sensor))
+    plt.title("evaluation " + str(evalu))
     plt.show()
     #    plt.savefig(md['deserialize_path'] + "pictures/" + str(num) + "/" + path)
     plt.close()
@@ -190,7 +188,7 @@ def plot_forecast(lst_data, forecast_entry, num, md, offset=0, path="", sensor=-
 
 def load_predictor(path, md):
     if md['estimator'] == 'TempFlow':
-        p = Predictor.deserialize(Path(path), device=torch.device('cuda'))
+        p = Predictor.deserialize(Path(path), device=torch.device('cpu'))
     else:
         p = Predictor.deserialize(Path(path))
         p.prediction_net.ctx = p.ctx

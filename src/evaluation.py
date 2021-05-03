@@ -133,8 +133,9 @@ class Forecast:
     n is the number of sensors i.e. 325 sensors
     m is the number of samples per sensor i.e. 250 samples
     o is the prediction length i.e. 12 data point"""
-    def __init__(self, f):
+    def __init__(self, f, m):
         self.samples = f
+        self.mean = m
 
 
 class DataSlice:
