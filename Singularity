@@ -7,9 +7,9 @@ pip install numpy
 pip install pandas
 pip install mxnet
 pip install sklearn
-pip install git+https://github.com/awslabs/gluon-ts.git@master#egg=gluonts
-pip install --no-deps pytorchts==0.3.1
 pip install wandb
 pip install torch
 pip install scipy
+pip install gluonts
+pip install pytorchts
 
