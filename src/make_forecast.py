@@ -5,7 +5,6 @@ from gluonts.model.deepar import DeepAREstimator
 from gluonts.mx.distribution import StudentTOutput, MultivariateGaussianOutput, LowrankMultivariateGaussianOutput
 from gluonts.mx.kernels import RBFKernelOutput, PeriodicKernelOutput
 from gluonts.mx.trainer import Trainer
-from gluonts.evaluation.backtest import make_evaluation_predictions
 import matplotlib.pyplot as plt
 from pathlib import Path
 from gluonts.model.predictor import Predictor
