@@ -26,7 +26,7 @@ if __name__ == '__main__':
         i = 0
         if len(sys.argv) > 2:
             param = sys.argv[2]
-            i = sys.argv[3]
+            i = int(sys.argv[3])
             # step = int(sys.argv[3])
             # div = int(sys.argv[4])
             # if div > 0:
