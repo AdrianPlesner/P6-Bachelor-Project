@@ -100,6 +100,7 @@ if __name__ == '__main__':
             except:
                 raise
         md[param] = result
+        print(f"The best value for {param} is {result} with evaluation {best}")
         if not param == 'stop':
             print(f"The final result is {str(md)}\n with evaluation {best}")
             with open(path, "w") as jsonfile:
@@ -130,7 +131,7 @@ if __name__ == '__main__':
         ### Compute validation metrics
         validation_slices = evaluation.split_validation(valid, md)
         for _ in range(5):
-            i = random.randint(1,len(validation_slices))
+            i = random.randint(1, len(validation_slices)-1)
             v_slices = validation_slices[i-1:i+1]
             forecast = fc.make_forecast_vector(predictor, v_slices, md)
             if md['estimator'] == "TempFlow":

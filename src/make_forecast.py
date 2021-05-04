@@ -93,7 +93,7 @@ def train_predictor(data=None, md=None):
             num_batches_per_epoch=1143
         )
         estimator = TempFlowEstimator(
-            input_size=656,
+            input_size=653,
             freq=md['freq'],
             prediction_length=md['prediction_length'],
             target_dim=325,
@@ -109,6 +109,7 @@ def train_predictor(data=None, md=None):
             n_hidden=md['num_hidden'],
             dropout_rate=md['dropout_rate'],
             conditioning_length=md['conditioning'],
+            num_parallel_samples=100,
             time_features=[time.DayOfWeek(), time.HourOfDay(), time.MinuteOfHour()]
         )
         grouper_train = MultivariateGrouper(max_target_dim=325)
@@ -193,7 +194,7 @@ def plot_forecast(train, true, forecast_entry, num, md, evalu):
 
 def load_predictor(path, md):
     if md['estimator'] == 'TempFlow':
-        p = Predictor.deserialize(Path(path), device=torch.device('cpu'))
+        p = Predictor.deserialize(Path(path), device=torch.device('cuda'))
     else:
         p = Predictor.deserialize(Path(path))
         p.prediction_net.ctx = p.ctx

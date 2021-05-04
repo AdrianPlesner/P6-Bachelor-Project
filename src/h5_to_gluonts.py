@@ -6,6 +6,7 @@ from gluonts.transform import AddConstFeature
 from gluonts.transform import AddTimeFeatures
 from gluonts.transform import ListFeatures
 import gluonts.time_feature as time
+import numpy as np
 
 
 def load_h5_to_gluon(path, md):
@@ -27,13 +28,13 @@ def load_h5_to_gluon(path, md):
         for n in range(len(list_data.list_data)):
             t = AddConstFeature("sensor_id", "target", 12, data.axes[0].values[n], int)
             list_data.list_data[n] = t.map_transform(list_data.list_data[n], b)
-            idx = loc.axes[0].index(data.axes[0].values[n])
-            t = AddConstFeature("lat", "target", 12, loc.values[idx, 0], int)
+            idx = np.where(loc.axes[0].values == str(data.axes[0].values[n]))[0][0]
+            t = AddConstFeature("lat", "target", 12, loc.values[idx, 0])
             list_data.list_data[n] = t.map_transform(list_data.list_data[n], b)
-            t = AddConstFeature("long", "target", 12, loc.values[idx, 1], int)
+            t = AddConstFeature("long", "target", 12, loc.values[idx, 1])
             list_data.list_data[n] = t.map_transform(list_data.list_data[n], b)
-            t = ListFeatures("feat_static_real", ["sensor_id", "lat", "long"], False)
-            list_data.list_data[n] = t.map_transform(list_data.list_data[n], b)
+            #t = ListFeatures("feat_static_real", ["sensor_id", "lat", "long"], False)
+            #list_data.list_data[n] = t.map_transform(list_data.list_data[n], b)
         t = AddTimeFeatures("start", "target", "time_feat", [time.DayOfWeek(), time.HourOfDay(), time.MinuteOfHour()], md['prediction_length'])
         for n in range(len(list_data.list_data)):
             list_data.list_data[n] = t.map_transform(list_data.list_data[n], b)
