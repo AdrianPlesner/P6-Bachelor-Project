@@ -42,9 +42,9 @@ if __name__ == '__main__':
     # hg.plot_train_test(train, test)
     if md['normalize']:
         for data in (train, valid, test):
-            for i in range(len(data)):
-                data.list_data[i]['target'], data.list_data[i]['scaler'] = dp.preprocess_data(
-                    data.list_data[i]['target'])
+            for n in range(len(data)):
+                data.list_data[n]['target'], data.list_data[n]['scaler'] = dp.preprocess_data(
+                    data.list_data[n]['target'])
     end = time.perf_counter() - start
     print("Loading data took", end, "seconds")
     # if md['make_plots']:
