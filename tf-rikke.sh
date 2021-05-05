@@ -10,5 +10,5 @@
 
 declare -a param=("layers" "cells" "blocks" "hidden_size" "num_hidden" "conditioning" "dropout_rate")
 echo "this is job $SLURM_ARRAY_JOB_ID with task $SLURM_ARRAY_TASK_ID"
-srun singularity exec --nv -B src:/src -B results:/results -B data/"$SLURM_ARRAY_TASK_ID":/data  mxnet_21.02-py3.sif python /src/main.py results/Pems/TF-combine/metadata.json "${param[$SLURM_ARRAY_TASK_ID]}" "$SLURM_ARRAY_TASK_ID"
+srun singularity exec --nv -B src:/src -B results:/results -B data:/data  mxnet_21.02-py3.sif python /src/main.py results/Pems/TF-combine/metadata.json "${param[$SLURM_ARRAY_TASK_ID]}" "$SLURM_ARRAY_TASK_ID"
 echo "finished successful"

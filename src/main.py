@@ -19,11 +19,11 @@ if __name__ == '__main__':
         if path == "":
             exit()
         param = 'stop'
-        i = 0
+        i = -1
     else:
         path = sys.argv[1]
         param = 'stop'
-        i = 0
+        i = -1
         if len(sys.argv) > 2:
             param = sys.argv[2]
             i = int(sys.argv[3])
@@ -37,6 +37,8 @@ if __name__ == '__main__':
     print(str(md))
     ### Load data
     start = time.perf_counter()
+    if i >= 0:
+        md['path'] = "data/" + str(i) + "/pems-bay.h5"
     train, valid, test = hg.load_h5_to_gluon(md['path'], md)
     # if md['make_plots']:
     # hg.plot_train_test(train, test)
