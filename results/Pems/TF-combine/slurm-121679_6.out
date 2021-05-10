@@ -1,0 +1,11 @@
+this is job 121679 with task 6
+/user/student.aau.dk/raster16/.local/lib/python3.8/site-packages/gluonts/json.py:45: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+{'path': 'data/pems-bay.h5', 'sensors': 325, 'freq': '5Min', 'make_plots': False, 'normalize': True, 'train_predictor': True, 'prediction_length': 12, 'estimator': 'TempFlow', 'layers': 2, 'cells': 40, 'cell_type': 'LSTM', 'flow': 'RealNVP', 'blocks': 3, 'hidden_size': 100, 'num_hidden': 2, 'conditioning': 200, 'dropout_rate': 0.1, 'serialize_path': 'results/Pems/TF-combine/', 'params': ['layers', 'cells', 'blocks', 'hidden_size', 'num_hidden', 'conditioning', 'dropout_rate'], 'start': [1, 2, 1, 10, 1, 10, 0.05], 'step': [1, 5, 1, 10, 1, 25, 0.05], 'end': [11, 60, 10, 150, 10, 275, 0.55]}
+Loading data took 2.4535510893911123 seconds
+Traceback (most recent call last):
+  File "/src/main.py", line 59, in <module>
+    for p in range(md[param], end, step):
+TypeError: 'float' object cannot be interpreted as an integer
+srun: error: nv-ai-01.srv.aau.dk: task 0: Exited with exit code 1
+finished successful

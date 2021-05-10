@@ -1,0 +1,13 @@
+this is job 121452 with task 4
+/user/student.aau.dk/raster16/.local/lib/python3.8/site-packages/gluonts/json.py:45: UserWarning: Using `json`-module for json-handling. Consider installing one of `orjson`, `ujson` to speed up serialization and deserialization.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/src/main.py", line 2, in <module>
+    import data_processing as dp
+  File "/src/data_processing.py", line 3, in <module>
+    from evaluation import DataSlice
+  File "/src/evaluation.py", line 4, in <module>
+    import properscoring as ps
+ModuleNotFoundError: No module named 'properscoring'
+srun: error: nv-ai-03.srv.aau.dk: task 0: Exited with exit code 1
+finished successful
