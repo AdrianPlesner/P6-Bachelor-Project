@@ -8,7 +8,7 @@
   "prediction_length": 12,
   "estimator": "TempFlow",
   "layers": 6,
-  "cells": 40,
+  "cells": 37,
   "cell_type": "LSTM",
   "flow": "RealNVP",
   "blocks": 2,

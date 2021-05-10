@@ -26,44 +26,45 @@ def train_predictor(data=None, md=None):
         exit("Missing metadata for training")
     if data is None:
         exit("Missing data for training")
-    trainer = Trainer(ctx=mx.context.gpu(),
+    trainer = Trainer(ctx='cpu',
                       epochs=50,
                       batch_size=32,
                       learning_rate=1e-3,
                       hybridize=False,
                       num_batches_per_epoch=1143)
-    if md['distribution'] == "StudentT":
-        distribution = StudentTOutput()
-    elif md['distribution'] == "Gaussian":
-        distribution = MultivariateGaussianOutput()
-    elif md['distribution'] == "Low-rank gaussian":
-        distribution = LowrankMultivariateGaussianOutput()
-    elif md['distribution'] == "Gamma":
-        distribution = GammaOutput()
-    elif md['distribution'] == 'Beta':
-        distribution = BetaOutput()
-    elif md['distribution'] == 'GenPareto':
-        distribution = GenParetoOutput()
-    elif md['distribution'] == 'Laplace':
-        distribution = LaplaceOutput()
-    elif md['distribution'] == 'NegativeBinomial':
-        distribution = NegativeBinomialOutput()
-    elif md['distribution'] == 'Uniform':
-        distribution = UniformOutput()
-    elif md['distribution'] == 'Binned':
-        distribution = BinnedOutput()
-    elif md['distribution'] == 'Poisson':
-        distribution = PoissonOutput()
-    elif md['distribution'] == 'BoxCox':
-        distribution = BoxCoxTransformOutput()
-    elif md['distribution'] == 'Dirichlet':
-        distribution = DirichletMultinomialOutput()
-    elif md['distribution'] == 'LogitNormal':
-        distribution = LogitNormalOutput()
-    elif md['distribution'] == 'Deterministic':
-        distribution = DeterministicOutput()
-    else:
-        distribution = None
+    if 'distribution' in md.keys():
+        if md['distribution'] == "StudentT":
+            distribution = StudentTOutput()
+        elif md['distribution'] == "Gaussian":
+            distribution = MultivariateGaussianOutput()
+        elif md['distribution'] == "Low-rank gaussian":
+            distribution = LowrankMultivariateGaussianOutput()
+        elif md['distribution'] == "Gamma":
+            distribution = GammaOutput()
+        elif md['distribution'] == 'Beta':
+            distribution = BetaOutput()
+        elif md['distribution'] == 'GenPareto':
+            distribution = GenParetoOutput()
+        elif md['distribution'] == 'Laplace':
+            distribution = LaplaceOutput()
+        elif md['distribution'] == 'NegativeBinomial':
+            distribution = NegativeBinomialOutput()
+        elif md['distribution'] == 'Uniform':
+            distribution = UniformOutput()
+        elif md['distribution'] == 'Binned':
+            distribution = BinnedOutput()
+        elif md['distribution'] == 'Poisson':
+            distribution = PoissonOutput()
+        elif md['distribution'] == 'BoxCox':
+            distribution = BoxCoxTransformOutput()
+        elif md['distribution'] == 'Dirichlet':
+            distribution = DirichletMultinomialOutput()
+        elif md['distribution'] == 'LogitNormal':
+            distribution = LogitNormalOutput()
+        elif md['distribution'] == 'Deterministic':
+            distribution = DeterministicOutput()
+        else:
+            distribution = None
     if md['estimator'] is None or md['estimator'] == "GP":
         if md['kernel'] == "RBF":
             kernel = RBFKernelOutput()
