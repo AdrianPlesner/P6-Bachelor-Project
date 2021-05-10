@@ -2,7 +2,10 @@ import pts
 from gluonts.model.gp_forecaster import GaussianProcessEstimator
 from gluonts.model.deep_factor import DeepFactorEstimator
 from gluonts.model.deepar import DeepAREstimator
-from gluonts.mx.distribution import StudentTOutput, MultivariateGaussianOutput, LowrankMultivariateGaussianOutput
+from gluonts.mx.distribution import StudentTOutput, MultivariateGaussianOutput, LowrankMultivariateGaussianOutput, \
+    GammaOutput, BetaOutput, GenParetoOutput, LaplaceOutput, NegativeBinomialOutput, UniformOutput, BinnedOutput, \
+    PoissonOutput, BoxCoxTransformOutput, DirichletOutput, DirichletMultinomialOutput, LogitNormalOutput, \
+    DeterministicOutput
 from gluonts.mx.kernels import RBFKernelOutput, PeriodicKernelOutput
 from gluonts.mx.trainer import Trainer
 import matplotlib.pyplot as plt
@@ -29,6 +32,38 @@ def train_predictor(data=None, md=None):
                       learning_rate=1e-3,
                       hybridize=False,
                       num_batches_per_epoch=1143)
+    if md['distribution'] == "StudentT":
+        distribution = StudentTOutput()
+    elif md['distribution'] == "Gaussian":
+        distribution = MultivariateGaussianOutput()
+    elif md['distribution'] == "Low-rank gaussian":
+        distribution = LowrankMultivariateGaussianOutput()
+    elif md['distribution'] == "Gamma":
+        distribution = GammaOutput()
+    elif md['distribution'] == 'Beta':
+        distribution = BetaOutput()
+    elif md['distribution'] == 'GenPareto':
+        distribution = GenParetoOutput()
+    elif md['distribution'] == 'Laplace':
+        distribution = LaplaceOutput()
+    elif md['distribution'] == 'NegativeBinomial':
+        distribution = NegativeBinomialOutput()
+    elif md['distribution'] == 'Uniform':
+        distribution = UniformOutput()
+    elif md['distribution'] == 'Binned':
+        distribution = BinnedOutput()
+    elif md['distribution'] == 'Poisson':
+        distribution = PoissonOutput()
+    elif md['distribution'] == 'BoxCox':
+        distribution = BoxCoxTransformOutput()
+    elif md['distribution'] == 'Dirichlet':
+        distribution = DirichletMultinomialOutput()
+    elif md['distribution'] == 'LogitNormal':
+        distribution = LogitNormalOutput()
+    elif md['distribution'] == 'Deterministic':
+        distribution = DeterministicOutput()
+    else:
+        distribution = None
     if md['estimator'] is None or md['estimator'] == "GP":
         if md['kernel'] == "RBF":
             kernel = RBFKernelOutput()
@@ -45,16 +80,6 @@ def train_predictor(data=None, md=None):
 
         )
     elif md['estimator'] == "DeepFactor":
-        if md['distribution'] == "StudentT":
-            distribution = StudentTOutput()
-        elif md['distribution'] == "Gaussian":
-            distribution = MultivariateGaussianOutput()
-        elif md['distribution'] == "Low-rank gaussian":
-            distribution = LowrankMultivariateGaussianOutput()
-        else:
-            distribution = None
-            exit("Missing distribution")
-
         estimator = DeepFactorEstimator(
             freq=md['freq'],
             prediction_length=md['prediction_length'],
@@ -68,8 +93,6 @@ def train_predictor(data=None, md=None):
             num_layers_local=md['local_layers'],
             cell_type=md["cell_type"],
             distr_output=distribution
-
-
         )
     elif md['estimator'] == "DeepAR":
         estimator = DeepAREstimator(
@@ -81,7 +104,8 @@ def train_predictor(data=None, md=None):
             num_cells=md['cells'],
             cell_type=md['cell_type'],
             dropout_rate=md['dropout_rate'],
-            use_feat_static_real=True
+            use_feat_static_real=True,
+            distr_output=distribution
         )
     elif md['estimator'] == "TempFlow":
         trainer = pts.Trainer(
