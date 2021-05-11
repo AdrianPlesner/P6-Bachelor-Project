@@ -37,7 +37,6 @@ if __name__ == '__main__':
                     data.list_data[n]['target'])
     predictor = fc.load_predictor(md['serialize_path'], md)
     test_slices = evaluation.split_validation(test, md)
-    test_slices = test_slices[:100]
     test = None
     ss = []
     while len(test_slices) > 100:

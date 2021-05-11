@@ -27,7 +27,7 @@ def train_predictor(data=None, md=None):
         exit("Missing metadata for training")
     if data is None:
         exit("Missing data for training")
-    trainer = Trainer(ctx=mx.context.gpu(),
+    trainer = Trainer(ctx=mx.context.cpu(),
                       epochs=50,
                       batch_size=32,
                       learning_rate=1e-3,

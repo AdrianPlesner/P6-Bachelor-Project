@@ -144,5 +144,5 @@ if __name__ == '__main__':
             slices = dp.listdata_to_array(v_slices)
             evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast)-1]))
             e = np.average(evals)
-            u = random.randint(0, 324)
+            u = random.randint(0, len(data.list_data)-1)
             fc.plot_forecast(v_slices[0], v_slices[1], forecast[0], u, md, np.average(evals[0, u, ::]))
