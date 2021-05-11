@@ -41,7 +41,19 @@ def validate(data_slice, forecast):
 validate_vector = np.vectorize(validate, otypes=[list])
 
 
-def validate_mp(data, forecast):
+def validate_mse(data_slice, forecast):
+    result = []
+    for n in range(len(forecast.mean)):
+        val = data_slice.data[n]
+        forc = forecast.mean[n]
+        result.append(np.average((val-forc)**2))
+    return np.asarray(result)
+
+
+validate_mse_vector = np.vectorize(validate_mse, otypes=[list])
+
+
+def validate_mp(data, forecast, mse=False):
     assert len(data) == len(forecast)
     n_proc = mp.cpu_count()
     chunk_size = len(data) // n_proc
@@ -68,7 +80,10 @@ def validate_mp(data, forecast):
     with mp.Pool(processes=n_proc) as pool:
         # starts the sub-processes without blocking
         # pass the chunk to each worker process
-        proc_results = [pool.apply_async(validate_vector, args=(chunk[0], chunk[1],)) for chunk in proc_chunks]
+        if mse:
+            proc_results = [pool.apply_async(validate_mse_vector, args=(chunk[0], chunk[1],)) for chunk in proc_chunks]
+        else:
+            proc_results = [pool.apply_async(validate_vector, args=(chunk[0], chunk[1],)) for chunk in proc_chunks]
 
         result_chunks = []
         # blocks until all results are fetched
@@ -129,7 +144,9 @@ class Forecast:
     """Expects a 3d array/list with dimensions (n,m,o)
     n is the number of sensors i.e. 325 sensors
     m is the number of samples per sensor i.e. 250 samples
-    o is the prediction length i.e. 12 data point"""
+    o is the prediction length i.e. 12 data point
+    mean is a n x o array
+    """
     def __init__(self, f, m):
         self.samples = f
         self.mean = m

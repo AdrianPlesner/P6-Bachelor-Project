@@ -1,3 +1,4 @@
+import mxnet
 import pts
 from gluonts.model.gp_forecaster import GaussianProcessEstimator
 from gluonts.model.deep_factor import DeepFactorEstimator
@@ -26,7 +27,7 @@ def train_predictor(data=None, md=None):
         exit("Missing metadata for training")
     if data is None:
         exit("Missing data for training")
-    trainer = Trainer(ctx='cpu',
+    trainer = Trainer(ctx=mx.context.gpu(),
                       epochs=50,
                       batch_size=32,
                       learning_rate=1e-3,
