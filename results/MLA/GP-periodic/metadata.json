@@ -1,0 +1,12 @@
+{
+  "path": "data/metr-la.h5",
+  "sensors": 325,
+  "freq": "5Min",
+  "make_plots": false,
+  "normalize": true,
+  "train_predictor": true,
+  "prediction_length": 12,
+  "estimator": "GP",
+  "kernel": "Periodic",
+  "serialize_path": "results/MLA/GP-periodic/"
+}
