@@ -5,7 +5,7 @@ from gluonts.model.deep_factor import DeepFactorEstimator
 from gluonts.model.deepar import DeepAREstimator
 from gluonts.mx.distribution import StudentTOutput, MultivariateGaussianOutput, LowrankMultivariateGaussianOutput, \
     GammaOutput, BetaOutput, GenParetoOutput, LaplaceOutput, NegativeBinomialOutput, UniformOutput, BinnedOutput, \
-    PoissonOutput, BoxCoxTransformOutput, DirichletOutput, DirichletMultinomialOutput, LogitNormalOutput, \
+    PoissonOutput, BoxCoxTransformOutput, DirichletMultinomialOutput, LogitNormalOutput, \
     DeterministicOutput
 from gluonts.mx.kernels import RBFKernelOutput, PeriodicKernelOutput
 from gluonts.mx.trainer import Trainer
