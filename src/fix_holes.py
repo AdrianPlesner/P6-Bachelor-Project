@@ -17,8 +17,8 @@ class DateList:
         self.mean = np.mean(self.values)
         self.std = np.std(self.values)
 
-    def draw_val(self):
-        return np.random.normal(self.mean, self.std)
+    def draw_val(self, num):
+        return np.random.normal(self.mean, self.std, num)
 
 
 store = pd.HDFStore("data/metr-la.h5")
@@ -65,7 +65,7 @@ for n in range(len(data.values)):
         if e <= 0:
             date = data.axes[1][m]
             day_list = sensors[n][date.day_of_week][date.hour][date.minute // 5]
-            data.values[n, m] = day_list.draw_val()
+            data.values[n, m] = day_list.draw_val(1)
 
 data = data.T
 
