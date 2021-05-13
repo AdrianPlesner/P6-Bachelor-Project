@@ -4,7 +4,7 @@
   "freq": "5Min",
   "make_plots": false,
   "normalize": true,
-  "train_predictor": false,
+  "train_predictor": true,
   "prediction_length": 12,
   "estimator": "TempFlow",
   "layers": 2,

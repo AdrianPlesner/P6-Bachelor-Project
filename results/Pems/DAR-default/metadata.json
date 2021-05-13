@@ -7,6 +7,7 @@
   "train_predictor": true,
   "prediction_length": 12,
   "estimator": "DeepAR",
+  "distribution": "StudentT",
   "kernel": "",
   "layers": 2,
   "cells": 40,
