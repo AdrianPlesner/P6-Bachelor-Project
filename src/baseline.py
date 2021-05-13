@@ -78,5 +78,5 @@ if __name__ == '__main__':
     test_slices = ev.split_validation(test, md)
     slices = listdata_to_array(test_slices)
     forecasts = [make_forecast(slice) for slice in test_slices]
-    mse = np.stack(ev.validate_mp(slices[1:], forecasts[:len(forecasts) - 1], mse=True))
-    crps = np.stack(ev.validate_mp(slices[1:], forecasts[:len(forecasts) - 1], mse=False))
+    mse = np.stack(ev.validate_mp(slices, forecasts, mse=True))
+    crps = np.stack(ev.validate_mp(slices, forecasts, mse=False))
