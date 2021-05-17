@@ -80,7 +80,7 @@ if __name__ == '__main__':
                 start = time.perf_counter()
                 forecast = fc.make_forecast_vector(predictor, validation_slices, md)
                 if md['estimator'] == "TempFlow":
-                    forecast = [Forecast([slice[0].samples[::, ::, n] for n in range(325)], [slice[0].mean[::, n] for n in range(325)]) for slice in forecast]
+                    forecast = [Forecast([slice[0].samples[::, ::, n] for n in range(md['sensors'])], [slice[0].mean[::, n] for n in range(md['sensors'])]) for slice in forecast]
                 else:
                     forecast = [Forecast([sensor.samples for sensor in slice], [sensor.mean for sensor in slice]) for slice in forecast]
                 end = time.perf_counter() - start
@@ -137,7 +137,7 @@ if __name__ == '__main__':
             v_slices = validation_slices[i-1:i+1]
             forecast = fc.make_forecast_vector(predictor, v_slices, md)
             if md['estimator'] == "TempFlow":
-                forecast = [Forecast([slice[0].samples[::, ::, n] for n in range(325)], [slice[0].mean[::, n] for n in range(325)]) for slice in forecast]
+                forecast = [Forecast([slice[0].samples[::, ::, n] for n in range(md['sensors'])], [slice[0].mean[::, n] for n in range(md['sensors'])]) for slice in forecast]
             else:
                 forecast = [Forecast([sensor.samples for sensor in slice], [sensor.mean for sensor in slice]) for slice in forecast]
             v_slices, forecast = dp.postprocess_data_vector(v_slices, forecast)

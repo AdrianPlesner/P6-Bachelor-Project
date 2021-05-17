@@ -1,6 +1,6 @@
 {
-  "path": "data/pems-bay.h5",
-  "sensors": 325,
+  "path": "data/metr-la.h5",
+  "sensors": 207,
   "freq": "5Min",
   "make_plots": false,
   "normalize": true,
@@ -16,5 +16,5 @@
   "num_hidden": 2,
   "conditioning": 185,
   "dropout_rate": 0.1,
-  "serialize_path": "results/Pems/TF-combine/"
+  "serialize_path": "results/MLA/TF-combine/"
 }
