@@ -1,15 +1,10 @@
-from pathlib import Path
 import data_processing as dp
 import evaluation as evaluation
-import tsv_to_gluon as tg
 import h5_to_gluonts as hg
 import make_forecast as fc
-import random
 import numpy as np
 import sys
 import json
-import os
-import time
 from evaluation import Forecast
 
 if __name__ == '__main__':
@@ -20,11 +15,6 @@ if __name__ == '__main__':
             exit()
     with open(path) as md_file:
         md = json.load(md_file)
-
-    eval_method = input("CRPS or MSE evaluation?")
-    if not (eval_method == 'CRPS' or eval_method == 'MSE'):
-        print("unknown evaluation metric")
-        exit(1)
     print(str(md))
     print("loading data...")
     train, valid, test = hg.load_h5_to_gluon(md['path'], md)
@@ -44,13 +34,14 @@ if __name__ == '__main__':
         test_slices = test_slices[100:]
     ss.append(test_slices)
     test_slices = None
-    e = []
+    crps = []
+    mse = []
     for slices in ss:
         print("making predictions...")
         forecast = fc.make_forecast_vector(predictor, slices, md)
         if md['estimator'] == "TempFlow":
             forecast = [
-                Forecast([slice[0].samples[::, ::, n] for n in range(325)], [slice[0].mean[::, n] for n in range(325)])
+                Forecast([slice[0].samples[::, ::, n] for n in range(md['sensors'])], [slice[0].mean[::, n] for n in range(md['sensors'])])
                 for slice in forecast]
         else:
             forecast = [Forecast([sensor.samples for sensor in slice], [sensor.mean for sensor in slice]) for slice in
@@ -59,8 +50,12 @@ if __name__ == '__main__':
         slices, forecast = dp.postprocess_data_vector(slices, forecast)
         slices = dp.listdata_to_array(slices)
         print("evaluating...")
-        evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast) - 1], mse=(eval_method == 'MSE')))
-        e.append(np.average(evals))
-    e = np.array(e)
-    e = np.average(e)
-    print(f"evaluation on test is {e}")
+        evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast) - 1], mse=False))
+        crps.append(np.average(evals))
+        evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast) - 1], mse=True))
+        mse.append((np.average(evals)))
+    crps = np.array(crps)
+    crps = np.average(crps)
+    mse = np.array(mse)
+    mse = np.average(mse)
+    print(f"evaluation on test is CRPS: {crps}, MSE: {mse}")

@@ -1,4 +1,3 @@
-import mxnet
 import pts
 from gluonts.model.gp_forecaster import GaussianProcessEstimator
 from gluonts.model.deep_factor import DeepFactorEstimator
@@ -112,16 +111,16 @@ def train_predictor(data=None, md=None):
     elif md['estimator'] == "TempFlow":
         trainer = pts.Trainer(
             device=torch.device('cuda'),
-            epochs=20,
+            epochs=40,
             batch_size=32,
             learning_rate=1e-3,
             num_batches_per_epoch=1143
         )
         estimator = TempFlowEstimator(
-            input_size=653,
+            input_size=(2*md['sensors'])+3,
             freq=md['freq'],
             prediction_length=md['prediction_length'],
-            target_dim=325,
+            target_dim=md['sensors'],
             trainer=trainer,
             context_length=md['prediction_length'],
             num_layers=md['layers'],
@@ -137,7 +136,7 @@ def train_predictor(data=None, md=None):
             num_parallel_samples=100,
             time_features=[time.DayOfWeek(), time.HourOfDay(), time.MinuteOfHour()]
         )
-        grouper_train = MultivariateGrouper(max_target_dim=325)
+        grouper_train = MultivariateGrouper(max_target_dim=md['sensors'])
         data = grouper_train(data)
     else:
         estimator = None
@@ -150,7 +149,7 @@ def train_predictor(data=None, md=None):
 
 def make_forecast(predictor, data, md):
     if md['estimator'] == 'TempFlow':
-        grouper_train = MultivariateGrouper(max_target_dim=325)
+        grouper_train = MultivariateGrouper(max_target_dim=md['sensors'])
         data = grouper_train(data)
     return list(predictor.predict(data, num_samples=250))
 
