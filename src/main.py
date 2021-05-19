@@ -37,8 +37,8 @@ if __name__ == '__main__':
     print(str(md))
     ### Load data
     start = time.perf_counter()
-    if i >= 0:
-        md['path'] = "data/" + str(i) + "/pems-bay.h5"
+    #if i >= 0:
+       # md['path'] = "data/" + str(i) + "/pems-bay.h5"
     train, valid, test = hg.load_h5_to_gluon(md['path'], md)
     # if md['make_plots']:
     # hg.plot_train_test(train, test)
@@ -53,13 +53,21 @@ if __name__ == '__main__':
     # hg.plot_train_test(train, test)
     if 'params' in md:
         param = md['params'][i]
-        md[param] = md['start'][i]
+        s = md['start'][i]
+        if param == 'distribution':
+            dists = md[param]
+            md[param] = dists[s]
+        else:
+            md[param] = s
         step = md['step'][i]
         end = md['end'][i]
         best = 10.0
         result = 0
-        for p in range(md[param], end, step):
-            md[param] = p
+        for p in range(s, end, step):
+            if param == "distribution":
+                md[param] = dists[p]
+            else:
+                md[param] = p
             try:
                 ### Train network
                 if md['train_predictor']:

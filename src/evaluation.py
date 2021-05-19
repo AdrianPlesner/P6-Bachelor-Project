@@ -46,7 +46,7 @@ def validate_mse(data_slice, forecast):
     for n in range(len(forecast.mean)):
         val = data_slice.data[n]
         forc = forecast.mean[n]
-        result.append(np.average((val-forc)**2))
+        result.append(np.array((val-forc)**2))
     return np.asarray(result)
 
 

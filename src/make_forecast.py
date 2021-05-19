@@ -36,9 +36,7 @@ def train_predictor(data=None, md=None):
         if md['distribution'] == "StudentT":
             distribution = StudentTOutput()
         elif md['distribution'] == "Gaussian":
-            distribution = MultivariateGaussianOutput()
-        elif md['distribution'] == "Low-rank gaussian":
-            distribution = LowrankMultivariateGaussianOutput()
+            distribution = MultivariateGaussianOutput(md['sensors'])
         elif md['distribution'] == "Gamma":
             distribution = GammaOutput()
         elif md['distribution'] == 'Beta':
@@ -51,18 +49,12 @@ def train_predictor(data=None, md=None):
             distribution = NegativeBinomialOutput()
         elif md['distribution'] == 'Uniform':
             distribution = UniformOutput()
-        elif md['distribution'] == 'Binned':
-            distribution = BinnedOutput()
         elif md['distribution'] == 'Poisson':
             distribution = PoissonOutput()
         elif md['distribution'] == 'BoxCox':
             distribution = BoxCoxTransformOutput()
-        elif md['distribution'] == 'Dirichlet':
-            distribution = DirichletMultinomialOutput()
         elif md['distribution'] == 'LogitNormal':
             distribution = LogitNormalOutput()
-        elif md['distribution'] == 'Deterministic':
-            distribution = DeterministicOutput()
         else:
             distribution = None
     if md['estimator'] is None or md['estimator'] == "GP":
