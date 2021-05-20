@@ -51,7 +51,7 @@ if __name__ == '__main__':
     print("Loading data took", end, "seconds")
     # if md['make_plots']:
     # hg.plot_train_test(train, test)
-    if 'params' in md:
+    if 'params' in md and not md['make_plots']:
         param = md['params'][i]
         s = md['start'][i]
         if param == 'distribution':
@@ -139,10 +139,10 @@ if __name__ == '__main__':
             predictor = fc.load_predictor(md['serialize_path'], md)
 
         ### Compute validation metrics
-        validation_slices = evaluation.split_validation(valid, md)
-        for _ in range(5):
-            i = random.randint(1, len(validation_slices)-1)
-            v_slices = validation_slices[i-1:i+1]
+        validation_slices = evaluation.split_validation(test, md)
+        for _ in range(1):
+            i = 784
+            v_slices = validation_slices[i-6:i+6]
             forecast = fc.make_forecast_vector(predictor, v_slices, md)
             if md['estimator'] == "TempFlow":
                 forecast = [Forecast([slice[0].samples[::, ::, n] for n in range(md['sensors'])], [slice[0].mean[::, n] for n in range(md['sensors'])]) for slice in forecast]
@@ -151,6 +151,12 @@ if __name__ == '__main__':
             v_slices, forecast = dp.postprocess_data_vector(v_slices, forecast)
             slices = dp.listdata_to_array(v_slices)
             evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast)-1]))
-            e = np.average(evals)
-            u = random.randint(0, len(data.list_data)-1)
-            fc.plot_forecast(v_slices[0], v_slices[1], forecast[0], u, md, np.average(evals[0, u, ::]))
+            u = 126
+            f = forecast[0]
+            for n in forecast[1:11]:
+                f.extend(n)
+            d = v_slices[1]
+            for n in v_slices[2:]:
+                for m in range(len(n.list_data)):
+                    d.list_data[m]['target'] = np.append(d.list_data[m]['target'], n.list_data[m]['target'])
+            fc.plot_forecast(v_slices[0], d, f, u, md, np.average(evals[::, u, ::]))

@@ -151,6 +151,12 @@ class Forecast:
         self.samples = f
         self.mean = m
 
+    def extend(self, f):
+        assert len(self.samples), len(f.samples)
+        for n in range(len(self.samples)):
+            self.samples[n] = np.append(self.samples[n], f.samples[n], axis=1)
+            self.mean[n] = np.append(self.mean[n], f.mean[n])
+
 
 class DataSlice:
     """Expects a 2d array/list with dimensions (n,m)

@@ -38,10 +38,14 @@ def postprocess_data(ld, forecast):
 postprocess_data_vector = np.vectorize(postprocess_data, otypes=[list, list])
 
 
-def make_prediction_interval(samples, mean, p):
-    std = np.std(samples, axis=0)
-    top = mean + p * std
-    bottom = mean - p * std
+def make_prediction_interval(samples, p):
+    s = np.sort(samples, axis=0)
+    t = (p + ((100 - p)/2))/100
+    b = 1-t
+    t = t*(len(samples) + 1)
+    b = b * (len(samples) + 1)
+    top = s[int(t)]
+    bottom = s[int(b)]
     return top, bottom
 
 

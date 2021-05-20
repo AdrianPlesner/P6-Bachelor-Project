@@ -19,6 +19,7 @@ from pts.model.tempflow import TempFlowEstimator
 import torch
 from gluonts.dataset.multivariate_grouper import MultivariateGrouper
 import gluonts.time_feature as time
+from matplotlib.dates import HourLocator
 
 
 def train_predictor(data=None, md=None):
@@ -98,7 +99,8 @@ def train_predictor(data=None, md=None):
             cell_type=md['cell_type'],
             dropout_rate=md['dropout_rate'],
             use_feat_static_real=False,
-            distr_output=distribution
+            distr_output=distribution,
+            time_features=[time.DayOfWeek(), time.HourOfDay(), time.MinuteOfHour()]
         )
     elif md['estimator'] == "TempFlow":
         trainer = pts.Trainer(
@@ -149,60 +151,26 @@ def make_forecast(predictor, data, md):
 make_forecast_vector = np.vectorize(make_forecast, otypes=[list])
 
 
-# def make_forecast(predictor, data, md):
-#     md['data_sets'] = len(data)
-#     f = []
-#     t = []
-#     f_e = []
-#     t_e = []
-#     for n in range(md['data_sets']):
-#         forecast_it, ts_it = make_evaluation_predictions(
-#             dataset=data[n],  # test dataset
-#             predictor=predictor[n],  # predictor
-#             num_samples=100,  # number of sample paths we want for evaluation
-#         )
-#         f.append(list(forecast_it))
-#         t.append(list(ts_it))
-#         t_e.append(t[n][0])
-#         f_e.append(f[n][0])
-#     return t_e, f_e
-
-
-# def plot_prob_forecasts(ts_entry, forecast_entry, num, md):
-#     plot_length = md['test_length'] + md['train_length']
-#     prediction_intervals = (90.0, 50.0)
-#     legend = ["observations", "median prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
-#
-#     fig, ax = plt.subplots(1, 1, figsize=(20, 10))
-#     ts_entry[-plot_length:].plot(ax=ax)  # plot the time series
-#     forecast_entry.plot(prediction_intervals=(), color='#008000')
-#     y1, y2 = dp.make_prediction_interval(forecast_entry.mean, 0.67)
-#     plt.fill_between(ts_entry[md['train_length']:plot_length], y1, y2, color='#00800080')
-#     y1, y2 = dp.make_prediction_interval(forecast_entry.mean, 1.64)
-#     plt.fill_between(ts_entry[md['train_length']:plot_length], y1, y2, color='#00800060')
-#     plt.grid(which="both")
-#     plt.legend(legend, loc="upper left")
-#     plt.title("dataset " + str(num))
-#     plt.show()
-#     #plt.savefig("out-data/plot" + str(num))
-
-
 def plot_forecast(train, true, forecast_entry, num, md, evalu):
-    plot_length = md['prediction_length'] * 2
+    plot_length = md['prediction_length'] * 12
     prediction_intervals = (90.0, 50.0)
     legend = ["observations", "mean prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
     data = [pd.date_range(start=train.list_data[0]['start'], freq=md['freq'], periods=plot_length),
             np.hstack([train.list_data[num]['target'], true.list_data[num]['target']])]
-    fig, ax = plt.subplots(1, 1, figsize=(20, 10))
+    fig, ax = plt.subplots(1, 1, figsize=(8, 4))
+    plt.xlabel('Date [mm-dd hh]')
+    plt.ylabel('Speed [mph]')
     plt.plot(data[0], data[1])
     plt.plot(data[0][md['prediction_length']:plot_length], forecast_entry.mean[num], color='#008000')
-    y1, y2 = dp.make_prediction_interval(forecast_entry.samples[num], forecast_entry.mean[num], 0.67)
+    y1, y2 = dp.make_prediction_interval(forecast_entry.samples[num], 50)
     plt.fill_between(data[0][md['prediction_length']:plot_length], y1, y2, color='#00800080')
-    y1, y2 = dp.make_prediction_interval(forecast_entry.samples[num], forecast_entry.mean[num], 1.64)
+    y1, y2 = dp.make_prediction_interval(forecast_entry.samples[num], 90)
     plt.fill_between(data[0][md['prediction_length']:plot_length], y1, y2, color='#00800060')
     plt.grid(which="both")
-    plt.legend(legend, loc="upper left")
-    plt.title("evaluation " + str(evalu))
+    ax.xaxis.set_minor_locator(HourLocator())
+
+    plt.legend(legend, loc="lower left")
+    plt.title(f"{md['estimator']}, sensor: {num}, CRPS {evalu}")
     plt.show()
     #    plt.savefig(md['deserialize_path'] + "pictures/" + str(num) + "/" + path)
     plt.close()
@@ -210,7 +178,8 @@ def plot_forecast(train, true, forecast_entry, num, md, evalu):
 
 def load_predictor(path, md):
     if md['estimator'] == 'TempFlow':
-        p = Predictor.deserialize(Path(path), device=torch.device('cuda'))
+        gpu = torch.cuda.is_available()
+        p = Predictor.deserialize(Path(path), device=torch.device('cuda') if gpu else torch.device('cpu'))
     else:
         p = Predictor.deserialize(Path(path))
         p.prediction_net.ctx = p.ctx
