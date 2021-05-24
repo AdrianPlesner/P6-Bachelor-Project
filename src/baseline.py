@@ -38,7 +38,7 @@ def make_forecast(slice):
 
 
 if __name__ == '__main__':
-    md = {'freq': "5Min", 'prediction_length': 12, 'path': "data/pems-bay.h5"}
+    md = {'freq': "5Min", 'prediction_length': 12, 'path': "data/metr-la.h5"}
     train, valid, test = hg.load_h5_to_gluon(md['path'], md)
     for n in test.list_data:
         n['scaler'] = None
@@ -79,7 +79,7 @@ if __name__ == '__main__':
     data_slices = listdata_to_array(test_slices)
     ss = []
     while len(test_slices) > 100:
-        ss.append((test_slices[:100],data_slices[:100]))
+        ss.append((test_slices[:100], data_slices[:100]))
         test_slices = test_slices[100:]
         data_slices = data_slices[100:]
     ss.append((test_slices, data_slices))
@@ -89,6 +89,6 @@ if __name__ == '__main__':
     crps = []
     for slices in ss:
         forecasts = [make_forecast(slice) for slice in slices[0]]
-        mse.append(np.average(np.stack(ev.validate_mp(slices[1], forecasts, mse=True))))
-        crps.append(np.average(np.stack(ev.validate_mp(slices[1], forecasts, mse=False))))
+        mse.append(np.average(np.stack(ev.validate_mp(slices[1], forecasts, mse=True))[::, ::, 11]))
+        crps.append(np.average(np.stack(ev.validate_mp(slices[1], forecasts, mse=False))[::, ::, 11]))
     print(f'crps: {np.average(np.stack(crps))}, mse: {np.average(np.stack(mse))}')

@@ -151,15 +151,16 @@ def make_forecast(predictor, data, md):
 make_forecast_vector = np.vectorize(make_forecast, otypes=[list])
 
 
-def plot_forecast(train, true, forecast_entry, num, md, evalu):
+def plot_forecast(train, true, forecast_entry, num, md, crps, mse):
     plot_length = md['prediction_length'] * 12
-    prediction_intervals = (90.0, 50.0)
-    legend = ["observations", "mean prediction"] + [f"{k}% prediction interval" for k in prediction_intervals][::-1]
+    prediction_intervals = (90, 50)
+    legend = ["observations", "mean prediction"] + [f"{k}% interval" for k in prediction_intervals][::-1]
     data = [pd.date_range(start=train.list_data[0]['start'], freq=md['freq'], periods=plot_length),
             np.hstack([train.list_data[num]['target'], true.list_data[num]['target']])]
-    fig, ax = plt.subplots(1, 1, figsize=(8, 4))
-    plt.xlabel('Date [mm-dd hh]')
-    plt.ylabel('Speed [mph]')
+    fig, ax = plt.subplots(1, 1, figsize=(10, 6))
+    #plt.rcParams['font.size'] = 20
+    plt.xlabel('Date [mm-dd hh]', fontsize=20)
+    plt.ylabel('Speed [mph]', fontsize=20)
     plt.plot(data[0], data[1])
     plt.plot(data[0][md['prediction_length']:plot_length], forecast_entry.mean[num], color='#008000')
     y1, y2 = dp.make_prediction_interval(forecast_entry.samples[num], 50)
@@ -168,9 +169,20 @@ def plot_forecast(train, true, forecast_entry, num, md, evalu):
     plt.fill_between(data[0][md['prediction_length']:plot_length], y1, y2, color='#00800060')
     plt.grid(which="both")
     ax.xaxis.set_minor_locator(HourLocator())
+    for tick in ax.xaxis.get_major_ticks():
+        tick.label.set_fontsize(16)
+    for tick in ax.yaxis.get_major_ticks():
+        tick.label.set_fontsize(16)
 
-    plt.legend(legend, loc="lower left")
-    plt.title(f"{md['estimator']}, sensor: {num}, CRPS {evalu}")
+    plt.legend(legend, fontsize=16, loc='best')
+    es = ""
+    if md['estimator'] == 'GP':
+        es = 'Gaussian Process'
+    elif md['estimator'] == 'TempFlow':
+        es = 'CNFlows'
+    else:
+        es = md['estimator']
+    plt.title(f"{es}, sensor: {num}, CRPS: " + '{:.4f}'.format(crps) + ", MSE: " + '{:.4f}'.format(mse), fontsize=20)
     plt.show()
     #    plt.savefig(md['deserialize_path'] + "pictures/" + str(num) + "/" + path)
     plt.close()

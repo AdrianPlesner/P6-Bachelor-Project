@@ -150,7 +150,8 @@ if __name__ == '__main__':
                 forecast = [Forecast([sensor.samples for sensor in slice], [sensor.mean for sensor in slice]) for slice in forecast]
             v_slices, forecast = dp.postprocess_data_vector(v_slices, forecast)
             slices = dp.listdata_to_array(v_slices)
-            evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast)-1]))
+            crps = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast)-1]))
+            mse = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast)-1], mse=True))
             u = 126
             f = forecast[0]
             for n in forecast[1:11]:
@@ -159,4 +160,4 @@ if __name__ == '__main__':
             for n in v_slices[2:]:
                 for m in range(len(n.list_data)):
                     d.list_data[m]['target'] = np.append(d.list_data[m]['target'], n.list_data[m]['target'])
-            fc.plot_forecast(v_slices[0], d, f, u, md, np.average(evals[::, u, ::]))
+            fc.plot_forecast(v_slices[0], d, f, u, md, np.average(crps[::, u, 11]), np.average(mse[::, u, 11]))

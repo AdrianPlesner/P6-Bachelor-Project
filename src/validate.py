@@ -36,7 +36,10 @@ if __name__ == '__main__':
     test_slices = None
     crps = []
     mse = []
+    i = 1
     for slices in ss:
+        print(f'{i} of {len(ss)}')
+        i += 1
         print("making predictions...")
         forecast = fc.make_forecast_vector(predictor, slices, md)
         if md['estimator'] == "TempFlow":
@@ -51,9 +54,9 @@ if __name__ == '__main__':
         slices = dp.listdata_to_array(slices)
         print("evaluating...")
         evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast) - 1], mse=False))
-        crps.append(np.average(evals))
+        crps.append(np.average(evals[::, ::, 11]))
         evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast) - 1], mse=True))
-        mse.append((np.average(evals)))
+        mse.append((np.average(evals[::, ::, 11])))
     crps = np.array(crps)
     crps = np.average(crps)
     mse = np.array(mse)
