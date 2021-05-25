@@ -2,19 +2,16 @@ import numpy as np
 import pandas as pd
 from gluonts.dataset.common import ListDataset
 import multiprocessing as mp
-import time
 import scipy.integrate as integrate
 
 
-# def evaluate_forecast(data, forecast, length):
-#     observation = data.list_data[0]['target'].reshape(-1, 1)[-length:]
-#     mean = forecast.mean
-#     std = np.std(forecast.samples, axis=0)
-#     e = ps.crps_gaussian(observation, mean, std)
-#     return np.average(e)
-
-
 def split_validation(data, md):
+    """
+    Split a data set into slices of prediction length given by metadata
+    :param data: ListData object to split
+    :param md: Metadata dictionary
+    :return: List of ListData objects each containing prediction_length data points
+    """
     step = md['prediction_length']
     t = pd.date_range(start=data.list_data[0]['start'], freq=md['freq'], periods=len(data.list_data[0]['target']))
     dum = [ListDataset([{
@@ -27,7 +24,14 @@ def split_validation(data, md):
     return dum
 
 
-def validate(data_slice, forecast):
+def validate_crps(data_slice, forecast):
+    """
+    Validate forecast against data_slice using CRPS
+    :param data_slice: DataSlice to validate against
+    :param forecast: Forecast to validate
+    :return: Array of CRPS values for each value in forecast
+    """
+    # Sort samples to estimate CDF
     x = [np.sort(n, 0) for n in forecast.samples]
     evaluation = []
     for n in range(len(x)):
@@ -38,10 +42,19 @@ def validate(data_slice, forecast):
     return np.asarray(evaluation)
 
 
-validate_vector = np.vectorize(validate, otypes=[list])
+validate_crps_vector = np.vectorize(validate_crps, otypes=[list])
+"""
+Vectorized version of validate_crps()
+"""
 
 
 def validate_mse(data_slice, forecast):
+    """
+    Validate forecast against data_slice using MSE
+    :param data_slice: DataSlice to validate against
+    :param forecast: Forecast to validate
+    :return: Array of MSE values for each value in forecast
+    """
     result = []
     for n in range(len(forecast.mean)):
         val = data_slice.data[n]
@@ -51,10 +64,21 @@ def validate_mse(data_slice, forecast):
 
 
 validate_mse_vector = np.vectorize(validate_mse, otypes=[list])
+"""
+Vectorized version of validate_mse()
+"""
 
 
 def validate_mp(data, forecast, mse=False):
+    """
+     Validate forecast against data using either CRPS or MSE with multiprocessing to speedup the process
+    :param data: List of DataSlice objects to validate against
+    :param forecast: List of Forecast objects to validate
+    :param mse: whether to use MSE (True) or CRPS (False) for evaluation
+    :return: Array of validation values of corresponding to values in forecast
+    """
     assert len(data) == len(forecast)
+    # Split for number of cpu cores
     n_proc = mp.cpu_count()
     chunk_size = len(data) // n_proc
     rem = len(data) % n_proc
@@ -83,7 +107,7 @@ def validate_mp(data, forecast, mse=False):
         if mse:
             proc_results = [pool.apply_async(validate_mse_vector, args=(chunk[0], chunk[1],)) for chunk in proc_chunks]
         else:
-            proc_results = [pool.apply_async(validate_vector, args=(chunk[0], chunk[1],)) for chunk in proc_chunks]
+            proc_results = [pool.apply_async(validate_crps_vector, args=(chunk[0], chunk[1],)) for chunk in proc_chunks]
 
         result_chunks = []
         # blocks until all results are fetched
@@ -123,10 +147,20 @@ def _crps(val, a):
 
 
 crps_vector = np.vectorize(_crps, otypes=[list])
+"""
+Vectorised version of _crps()
+"""
 
 
 class CdfShell:
+    """
+    Object for estimating a Cumulative Distribution Function
+    """
     def __init__(self, a):
+        """
+        Initalize CDF object
+        :param a: arrray of samples for which the CDF is estimated
+        """
         self.x = a
         self.y = np.arange(len(a)) / float(len(a))
 
@@ -134,6 +168,11 @@ class CdfShell:
     y = []
 
     def cdf(self, a):
+        """
+        CDF function of the object
+        :param a: CDF input
+        :return: Corresponding CDF output
+        """
         v = np.searchsorted(self.x, a, 'left')
         if v == len(self.y):
             return 1.0
@@ -141,17 +180,27 @@ class CdfShell:
 
 
 class Forecast:
-    """Expects a 3d array/list with dimensions (n,m,o)
-    n is the number of sensors i.e. 325 sensors
-    m is the number of samples per sensor i.e. 250 samples
-    o is the prediction length i.e. 12 data point
-    mean is a n x o array
+    """
+    A Forecast object containing samples and mean value of a forecast
     """
     def __init__(self, f, m):
+        """
+        :param f: Expects a 3d array/list with dimensions (n,m,o)
+        n is the number of sensors i.e. 325 sensors
+        m is the number of samples per sensor i.e. 250 samples
+        o is the prediction length i.e. 12 data point
+        mean is a n x o array
+        :param m: array of mean values should have dimensions (n,o)
+        """
         self.samples = f
         self.mean = m
 
     def extend(self, f):
+        """
+        Append forecast objects together
+        :param f: Forecast object to append to this one
+        :return:
+        """
         assert len(self.samples), len(f.samples)
         for n in range(len(self.samples)):
             self.samples[n] = np.append(self.samples[n], f.samples[n], axis=1)
@@ -159,8 +208,13 @@ class Forecast:
 
 
 class DataSlice:
-    """Expects a 2d array/list with dimensions (n,m)
-    n is the number of sensors i.e. 325 sensors
-    m is the data length i.e. 12 data points"""
+    """
+    Contains a slice of data
+    """
     def __init__(self, data):
+        """
+        :param data: Expects a 2d array/list with dimensions (n,m)
+        n is the number of sensors i.e. 325 sensors
+        m is the data length i.e. 12 data points
+        """
         self.data = data

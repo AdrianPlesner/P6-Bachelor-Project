@@ -2,10 +2,9 @@ import pts
 from gluonts.model.gp_forecaster import GaussianProcessEstimator
 from gluonts.model.deep_factor import DeepFactorEstimator
 from gluonts.model.deepar import DeepAREstimator
-from gluonts.mx.distribution import StudentTOutput, MultivariateGaussianOutput, LowrankMultivariateGaussianOutput, \
-    GammaOutput, BetaOutput, GenParetoOutput, LaplaceOutput, NegativeBinomialOutput, UniformOutput, BinnedOutput, \
-    PoissonOutput, BoxCoxTransformOutput, DirichletMultinomialOutput, LogitNormalOutput, \
-    DeterministicOutput
+from gluonts.mx.distribution import StudentTOutput, MultivariateGaussianOutput, \
+    GammaOutput, BetaOutput, GenParetoOutput, LaplaceOutput, NegativeBinomialOutput, UniformOutput, \
+    PoissonOutput, BoxCoxTransformOutput, LogitNormalOutput
 from gluonts.mx.kernels import RBFKernelOutput, PeriodicKernelOutput
 from gluonts.mx.trainer import Trainer
 import matplotlib.pyplot as plt
@@ -23,16 +22,24 @@ from matplotlib.dates import HourLocator
 
 
 def train_predictor(data=None, md=None):
+    """
+    Train a predictor based in data with parameters defined in md
+    :param data: ListData object to train the predictor on
+    :param md: metadata dictionary containing the necessary hyper parameters for the desired model
+    :return: GluonTS predictor object trained on data corresponding to md
+    """
     if md is None:
         exit("Missing metadata for training")
     if data is None:
         exit("Missing data for training")
+    # Setup Trainer object
     trainer = Trainer(ctx=mx.context.gpu(),
                       epochs=50,
                       batch_size=32,
                       learning_rate=1e-3,
                       hybridize=False,
                       num_batches_per_epoch=1143)
+    # Pick distribution output
     if 'distribution' in md.keys():
         if md['distribution'] == "StudentT":
             distribution = StudentTOutput()
@@ -103,8 +110,9 @@ def train_predictor(data=None, md=None):
             time_features=[time.DayOfWeek(), time.HourOfDay(), time.MinuteOfHour()]
         )
     elif md['estimator'] == "TempFlow":
+        # Setup Trainer object for CNFlows as it uses another framework
         trainer = pts.Trainer(
-            device=torch.device('cpu'),
+            device=torch.device('cuda'),
             epochs=40,
             batch_size=32,
             learning_rate=1e-3,
@@ -130,6 +138,7 @@ def train_predictor(data=None, md=None):
             num_parallel_samples=100,
             time_features=[time.DayOfWeek(), time.HourOfDay(), time.MinuteOfHour()]
         )
+        # CNFLows takes multivariates in another format where 'target' is a multidimensional array
         grouper_train = MultivariateGrouper(max_target_dim=md['sensors'])
         data = grouper_train(data)
     else:
@@ -142,6 +151,13 @@ def train_predictor(data=None, md=None):
 
 
 def make_forecast(predictor, data, md):
+    """
+    Makes a forecast with predictor given data
+    :param predictor: Predictor object to create forecast from
+    :param data: ListData used for input to the predictor
+    :param md: metadata dictionary
+    :return: GluonTS forecast array
+    """
     if md['estimator'] == 'TempFlow':
         grouper_train = MultivariateGrouper(max_target_dim=md['sensors'])
         data = grouper_train(data)
@@ -149,9 +165,23 @@ def make_forecast(predictor, data, md):
 
 
 make_forecast_vector = np.vectorize(make_forecast, otypes=[list])
+"""
+Vectorized version of make_forecast()
+"""
 
 
 def plot_forecast(train, true, forecast_entry, num, md, crps, mse):
+    """
+    Plot forecasts with data and prediction intervals
+    :param train: training data
+    :param true: true value
+    :param forecast_entry: forecast
+    :param num: senser number
+    :param md: metadata
+    :param crps: crps value
+    :param mse: mse value
+    :return:
+    """
     plot_length = md['prediction_length'] * 12
     prediction_intervals = (90, 50)
     legend = ["observations", "mean prediction"] + [f"{k}% interval" for k in prediction_intervals][::-1]
@@ -189,6 +219,12 @@ def plot_forecast(train, true, forecast_entry, num, md, crps, mse):
 
 
 def load_predictor(path, md):
+    """
+    Deserialized predictor from files
+    :param path: path to the directory where the predictor is serialized
+    :param md: metadata dictionary
+    :return:
+    """
     if md['estimator'] == 'TempFlow':
         gpu = torch.cuda.is_available()
         p = Predictor.deserialize(Path(path), device=torch.device('cuda') if gpu else torch.device('cpu'))

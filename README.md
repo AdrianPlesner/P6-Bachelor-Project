@@ -1,2 +1,3 @@
 # P6-Bachelor-Project
-The Bachelor project of group SW617F21
+The Bachelor project of group SW617F21 at Aalborg University.
+

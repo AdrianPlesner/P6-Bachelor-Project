@@ -17,7 +17,7 @@ if __name__ == '__main__':
         md = json.load(md_file)
     print(str(md))
     print("loading data...")
-    train, valid, test = hg.load_h5_to_gluon(md['path'], md)
+    train, valid, test = hg.load_h5_to_gluon(md)
     train = None
     valid = None
     if md['normalize']:
@@ -34,10 +34,10 @@ if __name__ == '__main__':
         test_slices = test_slices[100:]
     ss.append(test_slices)
     test_slices = None
-    crps = []
-    mse = []
-    i = 1
-    for slices in ss:
+    crps = [1.7224956801866227, 3.803354537745989, 2.9051642275541494, 2.782289626992883, 3.681359840599693]
+    mse = [48.33668691786062, 206.07779788093828, 137.11092287929506, 141.20524759155234, 206.8943411822521]
+    i = 6
+    for slices in ss[5:]:
         print(f'{i} of {len(ss)}')
         i += 1
         print("making predictions...")
