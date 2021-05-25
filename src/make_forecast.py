@@ -104,7 +104,7 @@ def train_predictor(data=None, md=None):
         )
     elif md['estimator'] == "TempFlow":
         trainer = pts.Trainer(
-            device=torch.device('cuda'),
+            device=torch.device('cpu'),
             epochs=40,
             batch_size=32,
             learning_rate=1e-3,

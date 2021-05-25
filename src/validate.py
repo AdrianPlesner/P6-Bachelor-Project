@@ -57,6 +57,8 @@ if __name__ == '__main__':
         crps.append(np.average(evals[::, ::, 11]))
         evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast) - 1], mse=True))
         mse.append((np.average(evals[::, ::, 11])))
+        print(crps)
+        print(mse)
     crps = np.array(crps)
     crps = np.average(crps)
     mse = np.array(mse)
