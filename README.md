@@ -30,6 +30,6 @@ Training and testing are done sequentially, changes need to be made to the code,
 Run src/LSTM-SCH/main.py to run a batch. 
 
 Use the src/LSTM-SCH/conf.py file to configure a run.   
-  filepath: is used to specify the data set to use
-  start_sensor & end_sensor: is used to specify the range of sensor to run in the batch
-  max_threads: the maximum number of threads to run simulatenly 
+*  filepath: is used to specify the data set to use
+*  start_sensor & end_sensor: is used to specify the range of sensor to run in the batch
+*  max_threads: the maximum number of threads to run simulatenly 
