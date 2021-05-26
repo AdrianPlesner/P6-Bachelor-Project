@@ -23,3 +23,13 @@ To evaluate a model on the test set, run src/validate.py with the path to the me
 
 # LST-SCH
 
+The LST-SCH generates a xlsx file containing the MSE and CRPS result for all the sensors within a batch run. Do note, that this file is overwritten each time the code is runned. The first column contain the CRPS results and the second the MSE results. Note that the xlsx file is 1 index, and not zero, which gives a offset in the indexing compared to the python code. 
+
+Training and testing are done sequentially, changes need to be made to the code, if the trained model needs to be saved. 
+
+Run src/LSTM-SCH/main.py to run a batch. 
+
+Use the src/LSTM-SCH/conf.py file to configure a run.   
+  filepath: is used to specify the data set to use
+  start_sensor & end_sensor: is used to specify the range of sensor to run in the batch
+  max_threads: the maximum number of threads to run simulatenly 
