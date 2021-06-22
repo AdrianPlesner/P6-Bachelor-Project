@@ -1,3 +1,5 @@
+import csv
+
 import evaluation as ev
 import h5_to_gluonts as hg
 from data_processing import listdata_to_array
@@ -10,6 +12,7 @@ class DateList:
     A class for keeping all values with the same day of the week, hour of the day, minute of the hour, and sensor in
      order to compute historical average baseline
     """
+
     def __init__(self, dow, hod, moh, sensor):
         """
         Create a DeteList instance
@@ -60,12 +63,13 @@ def make_forecast(slice, sensors):
 
 def compute_baseline(path):
     """
-    Compute histroical average baseline gor at given data set
+    Compute histroical average baseline for at given data set
     :param path: path to data file
     :return: a tuple containing arrays of CRPS and MSE evaluation of the HA baseline
     """
-    md = {'freq': "5Min", 'prediction_length': 12, 'path': path}
-    train, valid, test = hg.load_h5_to_gluon(md['path'], md)
+    print("Load data")
+    md = {'freq': "5Min", 'prediction_length': 12, 'path': path, 'serialize_path': "results/MLA/Baseline/"}
+    train, valid, test = hg.load_h5_to_gluon(md)
     for n in test.list_data:
         n['scaler'] = None
     # Create DateList objects
@@ -82,9 +86,10 @@ def compute_baseline(path):
             days.append(hours)
         sensors.append(days)
     # put values from training data into DateList objects
+    print("Partition data")
     for s in range(len(train.list_data)):
         ### Beware i,j,k are harcoded values for the weekday, hour and minute of the first data point
-        i = 6
+        i = 3
         j = 0
         k = 0
         sens = train.list_data[s]
@@ -108,15 +113,38 @@ def compute_baseline(path):
         ss.append((test_slices[:100], data_slices[:100]))
         test_slices = test_slices[100:]
         data_slices = data_slices[100:]
-    ss.append((test_slices, data_slices))
+    if len(test_slices) > 1:
+        ss.append((test_slices, data_slices))
     test_slices = None
     data_slices = None
     # Validate forecasts
     mse = []
     crps = []
+    i = 1
     for slices in ss:
+        print(f"validating {i} of {len(ss)}")
+        i += 1
         forecasts = [make_forecast(slice, sensors) for slice in slices[0]]
-        mse.append(np.average(np.stack(ev.validate_mp(slices[1], forecasts, mse=True))[::, ::, 11]))
-        crps.append(np.average(np.stack(ev.validate_mp(slices[1], forecasts, mse=False))[::, ::, 11]))
-    print(f'crps: {np.average(np.stack(crps))}, mse: {np.average(np.stack(mse))}')
-    return crps, mse
+        mse.append(np.stack(ev.validate_mp(slices[1], forecasts, mse=True)))
+        crps.append(np.stack(ev.validate_mp(slices[1], forecasts, mse=False)))
+    cjoin = crps[0]
+    for i in crps[1:]:
+        cjoin = np.append(cjoin, i, 0)
+    crps = np.average(cjoin, 0)
+    mjoin = mse[0]
+    for i in mse[1:]:
+        mjoin = np.append(mjoin, i, 0)
+    mse = np.average(mjoin, 0)
+
+    f = open(md['serialize_path'] + "crps.csv", 'w', newline='')
+    writer = csv.writer(f)
+    writer.writerows(crps)
+    f.close()
+    f = open(md['serialize_path'] + "mse.csv", 'w', newline='')
+    writer = csv.writer(f)
+    writer.writerows(mse)
+    f.close()
+
+
+if __name__ == '__main__':
+    compute_baseline("data/metr-la.h5")

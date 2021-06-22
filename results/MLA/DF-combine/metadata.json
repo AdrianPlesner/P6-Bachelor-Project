@@ -8,8 +8,4 @@
   "local_layers": 6,
   "cell_type": "gru",
   "serialize_path": "results/MLA/DF-combine/",
-  "params": ["global_units", "global_layers", "factors", "local_units", "local_layers"],
-  "start": [2, 1, 5, 5, 1],
-  "step": [2, 1, 5, 5, 1],
-  "end": [25, 11, 100, 55, 11],
   "stop": true}

@@ -5,6 +5,7 @@ import make_forecast as fc
 import numpy as np
 import sys
 import json
+import csv
 from evaluation import Forecast
 
 if __name__ == '__main__':
@@ -13,6 +14,8 @@ if __name__ == '__main__':
                      "please give it:")
         if path == "":
             exit()
+    else:
+        path = sys.argv[1]
     with open(path) as md_file:
         md = json.load(md_file)
     print(str(md))
@@ -32,12 +35,13 @@ if __name__ == '__main__':
     while len(test_slices) > 100:
         ss.append(test_slices[:100])
         test_slices = test_slices[100:]
-    ss.append(test_slices)
+    if len(test_slices) > 1:
+        ss.append(test_slices)
     test_slices = None
-    crps = [1.7224956801866227, 3.803354537745989, 2.9051642275541494, 2.782289626992883, 3.681359840599693]
-    mse = [48.33668691786062, 206.07779788093828, 137.11092287929506, 141.20524759155234, 206.8943411822521]
-    i = 6
-    for slices in ss[5:]:
+    crps = []
+    mse = []
+    i = 1
+    for slices in ss:
         print(f'{i} of {len(ss)}')
         i += 1
         print("making predictions...")
@@ -54,13 +58,23 @@ if __name__ == '__main__':
         slices = dp.listdata_to_array(slices)
         print("evaluating...")
         evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast) - 1], mse=False))
-        crps.append(np.average(evals[::, ::, 11]))
+        crps.append(evals)
         evals = np.stack(evaluation.validate_mp(slices[1:], forecast[:len(forecast) - 1], mse=True))
-        mse.append((np.average(evals[::, ::, 11])))
-        print(crps)
-        print(mse)
-    crps = np.array(crps)
-    crps = np.average(crps)
-    mse = np.array(mse)
-    mse = np.average(mse)
-    print(f"evaluation on test is CRPS: {crps}, MSE: {mse}")
+        mse.append(evals)
+    cjoin = crps[0]
+    for i in crps[1:]:
+        cjoin = np.append(cjoin, i, 0)
+    crps = np.average(cjoin, 0)
+    mjoin = mse[0]
+    for i in mse[1:]:
+        mjoin = np.append(mjoin, i, 0)
+    mse = np.average(mjoin, 0)
+
+    f = open(md['serialize_path'] + "crps.csv", 'w', newline='')
+    writer = csv.writer(f)
+    writer.writerows(crps)
+    f.close()
+    f = open(md['serialize_path'] + "mse.csv", 'w', newline='')
+    writer = csv.writer(f)
+    writer.writerows(mse)
+    f.close()

@@ -41,7 +41,7 @@ def load_data(md):
     data
     :return: a tuple of the training, validation and testing partitions of the data according to the metadata
     """
-    train, valid, test = hg.load_h5_to_gluon(md['path'], md)
+    train, valid, test = hg.load_h5_to_gluon(md)
 
     if md['normalize']:
         # Normalize data if implied by metadata
@@ -87,6 +87,7 @@ def validate_predictor(data, predictor, md):
     print("Evaluation took", end, "seconds")
     e = np.average(evals)
     return e
+
 
 
 def get_predictor(data, md):

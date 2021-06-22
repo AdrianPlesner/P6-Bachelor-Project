@@ -227,7 +227,7 @@ def load_predictor(path, md):
     """
     if md['estimator'] == 'TempFlow':
         gpu = torch.cuda.is_available()
-        p = Predictor.deserialize(Path(path), device=torch.device('cuda') if gpu else torch.device('cpu'))
+        p = Predictor.deserialize(Path(path))
     else:
         p = Predictor.deserialize(Path(path))
         p.prediction_net.ctx = p.ctx

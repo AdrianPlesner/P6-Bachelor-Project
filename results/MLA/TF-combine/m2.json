@@ -10,11 +10,11 @@
   "layers": 6,
   "cells": 37,
   "cell_type": "GRU",
-  "flow": "RealNVP",
+  "flow": "MAF",
   "blocks": 2,
   "hidden_size": 70,
   "num_hidden": 2,
   "conditioning": 185,
   "dropout_rate": 0.1,
-  "serialize_path": "results/MLA/TF-combine/m1/"
+  "serialize_path": "results/MLA/TF-combine/m2/"
 }

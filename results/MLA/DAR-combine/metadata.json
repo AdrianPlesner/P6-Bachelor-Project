@@ -5,8 +5,5 @@
   "cell_type": "lstm",
   "dropout_rate": 0.15,
   "serialize_path": "results/MLA/DAR-combine/",
-  "params": ["layers", "cells", "dropout_rate"],
-  "start": [1, 5, 5],
-  "step": [1, 5, 5],
-  "end": [11, 60, 60],
+  "distribution": "StudentT",
   "stop": true}

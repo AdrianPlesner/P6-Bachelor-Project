@@ -1,12 +1,8 @@
 {"path": "data/pems-bay.h5", "sensors": 325, "freq": "5Min", "make_plots": true, "normalize": true,
-  "train_predictor": false, "prediction_length": 12, "estimator": "DeepAR", "kernel": "", "distribution": "StudentT",
+  "train_predictor": true, "prediction_length": 12, "estimator": "DeepAR", "kernel": "", "distribution": "StudentT",
   "layers": 6,
   "cells": 50,
   "cell_type": "lstm",
   "dropout_rate": 0.3,
   "serialize_path": "results/Pems/DAR-combine/",
-  "params": ["layers", "cells", "dropout_rate"],
-  "start": [1, 5, 5],
-  "step": [1, 5, 5],
-  "end": [11, 60, 60],
   "stop": true}

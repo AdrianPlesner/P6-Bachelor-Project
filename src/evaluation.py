@@ -20,7 +20,7 @@ def split_validation(data, md):
         'sensor_id': d['sensor_id'][n:n + step],
         'time_feat': d['time_feat'][::, n:n + step],
         'scaler': d['scaler']
-    } for d in data.list_data], freq=md['freq']) for n in range(0, len(t), step)]
+    } for d in data.list_data], freq=md['freq']) for n in range(0, len(t)-11, 1)]
     return dum
 
 
